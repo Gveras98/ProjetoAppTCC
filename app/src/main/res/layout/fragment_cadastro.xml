@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CadastroFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="@string/cadastro"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btn_Atualizar_Cadastro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/atualizar_cadastro"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <!-- Adicionar lista para exibição dos Cadastro -->
+
+
+    <!-- Botão Para Exibir os Medicamentos -->
+    <Button
+        android:id="@+id/btn_Medicamentos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/medicamentos"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <!-- Botão Para Exibir as Alergias -->
+    <Button
+        android:id="@+id/btn_Alergias"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/alergias"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+
+</LinearLayout>

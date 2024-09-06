@@ -1,0 +1,39 @@
+<resources>
+    // Nome do APP
+    <string name="app_name"> Vital + </string>
+
+    //Strings do menu
+    <string name="exame"> Exames </string>
+    <string name="agenda"> Agenda </string>
+    <string name="cadastro"> Cadastro </string>
+    <string name="dependente">Dependentes </string>
+
+    //Strings do Exames
+    <string name="cadastrar_exame"> Novo Exame </string>
+
+    //Strings do Agendamentos
+    <string name="cadastrar_agendamento"> Novo Agendamento </string>
+
+    //Strings do Cadastro
+    <string name="atualizar_cadastro"> Atualizar Cadastro </string>"
+    <string name="medicamentos"> Medicamentos </string>
+    <string name="alergias"> Alergias </string>
+
+    //Strings do Dependente
+
+    //Strings Form Exames
+    <string name="f.especialidade"> Especialidade: </string>
+    <string name="f.data"> Data </string>
+    <string name="f.local"> Local </string>
+    <string name="f.procedimento"> Procedimento </string>
+    <string name="f.anexo"> Anexo </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    //Strings Form Agendamentos
+
+    //Strings Form Cadastro
+
+
+</resources>

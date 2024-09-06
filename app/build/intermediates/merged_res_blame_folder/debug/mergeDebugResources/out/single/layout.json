@@ -1,0 +1,54 @@
+[
+    {
+        "merged": "C:\\Users\\Gabriel Veras\\.gradle\\daemon\\8.7\\com.example.projetovital.app-mergeDebugResources-36:\\layout\\fragment_alergia.xml",
+        "source": "C:\\Users\\Gabriel Veras\\.gradle\\daemon\\8.7\\com.example.projetovital.app-main-39:\\layout\\fragment_alergia.xml"
+    },
+    {
+        "merged": "C:\\Users\\Gabriel Veras\\.gradle\\daemon\\8.7\\com.example.projetovital.app-mergeDebugResources-36:\\layout\\fragment_agenda.xml",
+        "source": "C:\\Users\\Gabriel Veras\\.gradle\\daemon\\8.7\\com.example.projetovital.app-main-39:\\layout\\fragment_agenda.xml"
+    },
+    {
+        "merged": "C:\\Users\\Gabriel Veras\\.gradle\\daemon\\8.7\\com.example.projetovital.app-mergeDebugResources-36:\\layout\\fragment_form_agenda.xml",
+        "source": "C:\\Users\\Gabriel Veras\\.gradle\\daemon\\8.7\\com.example.projetovital.app-main-39:\\layout\\fragment_form_agenda.xml"
+    },
+    {
+        "merged": "com.example.projetovital.app-mergeDebugResources-36:/layout/fragment_form_exames.xml",
+        "source": "com.example.projetovital.app-main-39:/layout/fragment_form_exames.xml"
+    },
+    {
+        "merged": "C:\\Users\\Gabriel Veras\\.gradle\\daemon\\8.7\\com.example.projetovital.app-mergeDebugResources-36:\\layout\\fragment_form_exames.xml",
+        "source": "C:\\Users\\Gabriel Veras\\.gradle\\daemon\\8.7\\com.example.projetovital.app-main-39:\\layout\\fragment_form_exames.xml"
+    },
+    {
+        "merged": "C:\\Users\\Gabriel Veras\\.gradle\\daemon\\8.7\\com.example.projetovital.app-mergeDebugResources-36:\\layout\\fragment_dependente.xml",
+        "source": "C:\\Users\\Gabriel Veras\\.gradle\\daemon\\8.7\\com.example.projetovital.app-main-39:\\layout\\fragment_dependente.xml"
+    },
+    {
+        "merged": "C:\\Users\\Gabriel Veras\\.gradle\\daemon\\8.7\\com.example.projetovital.app-mergeDebugResources-36:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\Gabriel Veras\\.gradle\\daemon\\8.7\\com.example.projetovital.app-main-39:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Gabriel Veras\\.gradle\\daemon\\8.7\\com.example.projetovital.app-mergeDebugResources-36:\\layout\\fragment_form_alergia.xml",
+        "source": "C:\\Users\\Gabriel Veras\\.gradle\\daemon\\8.7\\com.example.projetovital.app-main-39:\\layout\\fragment_form_alergia.xml"
+    },
+    {
+        "merged": "C:\\Users\\Gabriel Veras\\.gradle\\daemon\\8.7\\com.example.projetovital.app-mergeDebugResources-36:\\layout\\fragment_exames.xml",
+        "source": "C:\\Users\\Gabriel Veras\\.gradle\\daemon\\8.7\\com.example.projetovital.app-main-39:\\layout\\fragment_exames.xml"
+    },
+    {
+        "merged": "C:\\Users\\Gabriel Veras\\.gradle\\daemon\\8.7\\com.example.projetovital.app-mergeDebugResources-36:\\layout\\fragment_cadastro.xml",
+        "source": "C:\\Users\\Gabriel Veras\\.gradle\\daemon\\8.7\\com.example.projetovital.app-main-39:\\layout\\fragment_cadastro.xml"
+    },
+    {
+        "merged": "C:\\Users\\Gabriel Veras\\.gradle\\daemon\\8.7\\com.example.projetovital.app-mergeDebugResources-36:\\layout\\fragment_form_cadastro.xml",
+        "source": "C:\\Users\\Gabriel Veras\\.gradle\\daemon\\8.7\\com.example.projetovital.app-main-39:\\layout\\fragment_form_cadastro.xml"
+    },
+    {
+        "merged": "C:\\Users\\Gabriel Veras\\.gradle\\daemon\\8.7\\com.example.projetovital.app-mergeDebugResources-36:\\layout\\fragment_form_medicamento.xml",
+        "source": "C:\\Users\\Gabriel Veras\\.gradle\\daemon\\8.7\\com.example.projetovital.app-main-39:\\layout\\fragment_form_medicamento.xml"
+    },
+    {
+        "merged": "C:\\Users\\Gabriel Veras\\.gradle\\daemon\\8.7\\com.example.projetovital.app-mergeDebugResources-36:\\layout\\fragment_medicamento.xml",
+        "source": "C:\\Users\\Gabriel Veras\\.gradle\\daemon\\8.7\\com.example.projetovital.app-main-39:\\layout\\fragment_medicamento.xml"
+    }
+]
