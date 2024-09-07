@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CalendarView;
 import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -22,9 +23,14 @@ public final class FragmentAgendaBinding implements ViewBinding {
   @NonNull
   public final Button btnCadAgendamento;
 
-  private FragmentAgendaBinding(@NonNull LinearLayout rootView, @NonNull Button btnCadAgendamento) {
+  @NonNull
+  public final CalendarView calendarView;
+
+  private FragmentAgendaBinding(@NonNull LinearLayout rootView, @NonNull Button btnCadAgendamento,
+      @NonNull CalendarView calendarView) {
     this.rootView = rootView;
     this.btnCadAgendamento = btnCadAgendamento;
+    this.calendarView = calendarView;
   }
 
   @Override
@@ -60,7 +66,13 @@ public final class FragmentAgendaBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentAgendaBinding((LinearLayout) rootView, btnCadAgendamento);
+      id = R.id.calendarView;
+      CalendarView calendarView = ViewBindings.findChildViewById(rootView, id);
+      if (calendarView == null) {
+        break missingId;
+      }
+
+      return new FragmentAgendaBinding((LinearLayout) rootView, btnCadAgendamento, calendarView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

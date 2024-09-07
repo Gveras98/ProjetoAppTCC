@@ -3248,6 +3248,7 @@ id btn_Cad_Exames
 id btn_Medicamentos
 id buttonPanel
 id cache_measures
+id calendarView
 id callMeasure
 id cancel_button
 id carryVelocity
