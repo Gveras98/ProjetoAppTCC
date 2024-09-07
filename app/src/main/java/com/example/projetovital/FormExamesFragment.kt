@@ -24,6 +24,7 @@ import com.google.mlkit.vision.documentscanner.GmsDocumentScanningResult
 class FormExamesFragment : Fragment() {
 
     private lateinit var binding: FragmentFormExamesBinding
+
     private val scannerLauncher =
         registerForActivityResult(ActivityResultContracts.StartIntentSenderForResult()) { result ->
             if (result.resultCode == RESULT_OK) {
@@ -60,7 +61,7 @@ class FormExamesFragment : Fragment() {
         activity?.let {
             val options = GmsDocumentScannerOptions.Builder()
                 .setGalleryImportAllowed(true)
-                .setPageLimit(15)
+                .setPageLimit(20)
                 .setResultFormats(RESULT_FORMAT_PDF)
                 .setScannerMode(SCANNER_MODE_FULL)
                 .build()

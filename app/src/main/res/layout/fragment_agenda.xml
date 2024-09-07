@@ -24,6 +24,11 @@
         android:textSize="24sp"
         android:textStyle="bold" />
 
+    <CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <!-- Adicionar lista para exibição dos agendamentos -->
 
 
