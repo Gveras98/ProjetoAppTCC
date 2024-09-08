@@ -1,6 +1,6 @@
 package com.example.projetovital
 
-class Mask  {
+class Mask {
     //Implementar as Mascaras
 
 }

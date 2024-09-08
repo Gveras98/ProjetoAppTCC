@@ -1,10 +1,11 @@
 package com.example.projetovital.data.db.entity
+
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import java.util.Date
 
 @Entity(tableName = "tblCadastro")
-data class CadastroEntity (
+data class CadastroEntity(
     @PrimaryKey(autoGenerate = true)
     val idUser: Long = 0,
     val nomeUser: String,

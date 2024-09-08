@@ -27,7 +27,7 @@
             android:text="@string/cadastrar_exame"
             android:textAlignment="center"
             android:textSize="24sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <!-- Adicionar lista para exibição dos exames -->
 

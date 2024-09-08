@@ -24,8 +24,8 @@
             android:id="@+id/btnNovoAlergia"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/alergia.novo"
             android:padding="16dp"
+            android:text="@string/alergia.novo"
             android:textAlignment="center"
             android:textSize="24sp"
             android:textStyle="bold" />

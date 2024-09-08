@@ -39,11 +39,11 @@
             android:id="@+id/btnAlergiaSalvar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
             android:text="@string/alergia.salvar"
             android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp" />
+            android:textStyle="bold" />
 
 
     </LinearLayout>
