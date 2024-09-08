@@ -18,6 +18,10 @@ class AlergiaFragment : Fragment() {
         // Inflate o layout usando ViewBinding
         binding = FragmentAlergiaBinding.inflate(inflater, container, false)
 
+        binding.btnNovoAlergia.setOnClickListener {
+            // Navegue para o fragmento de formulário de alergia
+            (activity as? MainActivity)?.replaceFragment(FormAlergiaFragment())
+        }
 
         // Retorna a view raiz do binding
         return binding.root

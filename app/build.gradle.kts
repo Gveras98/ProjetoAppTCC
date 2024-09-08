@@ -1,6 +1,9 @@
+// Arquivo build.gradle (nível de módulo)
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("kotlin-android")
+    id("kotlin-kapt")
 }
 
 android {
@@ -39,17 +42,25 @@ android {
     }
 }
 
-dependencies {
 
+dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation("androidx.activity:activity-ktx:1.9.2")
     implementation(libs.androidx.constraintlayout)
+
     //Google ML Kit
     implementation("com.google.android.gms:play-services-mlkit-document-scanner:16.0.0-beta1")
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    // Room components
+    implementation("androidx.room:room-ktx:2.6.1")
+    kapt("androidx.room:room-compiler:2.6.1")
+    androidTestImplementation("androidx.room:room-testing:2.6.1")
 }
+

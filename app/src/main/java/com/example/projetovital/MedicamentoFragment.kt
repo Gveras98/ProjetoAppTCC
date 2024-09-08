@@ -18,6 +18,10 @@ class MedicamentoFragment : Fragment() {
         // Inflate o layout usando ViewBinding
         binding = FragmentMedicamentoBinding.inflate(inflater, container, false)
 
+        binding.btnNovoMedicamento.setOnClickListener {
+            // Navegue para o fragmento de formulário de medicamento
+            (activity as? MainActivity)?.replaceFragment(FormMedicamentoFragment())
+        }
 
         // Retorna a view raiz do binding
         return binding.root

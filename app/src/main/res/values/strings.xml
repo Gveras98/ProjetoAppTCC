@@ -2,6 +2,9 @@
     // Nome do APP
     <string name="app_name"> Vital + </string>
 
+    //Strings Teste
+    <string name="teste"> Cadastro </string>
+
     //Strings do menu
     <string name="exame"> Exames </string>
     <string name="agenda"> Agenda </string>
@@ -11,29 +14,76 @@
     //Strings do Exames
     <string name="cadastrar_exame"> Novo Exame </string>
 
-    //Strings do Agendamentos
-    <string name="cadastrar_agendamento"> Novo Agendamento </string>
-
-    //Strings do Cadastro
-    <string name="atualizar_cadastro"> Atualizar Cadastro </string>"
-    <string name="medicamentos"> Medicamentos </string>
-    <string name="alergias"> Alergias </string>
-
-    //Strings do Dependente
-
     //Strings Form Exames
     <string name="f.especialidade"> Especialidade: </string>
     <string name="f.data"> Data </string>
     <string name="f.local"> Local </string>
     <string name="f.procedimento"> Procedimento </string>
     <string name="f.anexo"> Anexo </string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
-    //Strings Form Agendamentos
+    //Strings do Agendamentos
+    <string name="cadastrar_agendamento"> Novo Agendamento </string>
+
+    //Strings Form Agendamento
+    <string name="ag.especialidade"> Especialidade: </string>
+    <string name="ag.data"> Data: </string>
+    <string name="ag.hora"> Hora: </string>
+    <string name="ag.local"> Local: </string>
+    <string name="ag.procedimento"> Procedimento: </string>
+
+    //Strings do Cadastro
+    <string name="atualizar_cadastro"> Atualizar Cadastro </string>"
+    <string name="medicamentos"> Medicamentos </string>
+    <string name="alergias"> Alergias </string>
 
     //Strings Form Cadastro
+    <string name="CadNome">Nome:</string>
+    <string name="CadSexo">Sexo:</string>
+    <string name="CadMasculino">Masculino</string>
+    <string name="CadFeminino">Feminino</string>
+    <string name="CadNascimento">Data de Nascimento:</string>
+    <string name="CadCPF">CPF:</string>
+    <string name="CadEndereco">Endereço:</string>
+    <string name="CadCEP">CEP</string>
+    <string name="CadTelefone">Telefone</string>
+    <string name="CadEmail">Email</string>
+    <string name="CadSus">Número SUS</string>
+    <string name="CadPlanoSaude">Plano de Saúde</string>
+    <string name="CadNumPlanoSaude">Número do Plano de Saúde</string>
+    <string name="CadTipoSanguineo">Tipo Sanguíneo</string>
+    <string name="CadSalvar">Salvar</string>
+
+    //Trocar os Hints por Strings
+    <string-array name="tipos_sanguineos">
+        <item>A+</item>
+        <item>A-</item>
+        <item>B+</item>
+        <item>B-</item>
+        <item>AB+</item>
+        <item>AB-</item>
+        <item>O+</item>
+        <item>O-</item>
+        <item>Não informado</item>
+    </string-array>
+
+
+    //string de Medicamentos
+    <string name="med.novo"> Novo Medicamento </string>">
+
+    //Strings Form Medicamentos
+    <string name="med.nome"> Nome: </string>
+    <string name="med.duracao"> Duração: </string>
+    <string name="med.dose"> Dose: </string>">
+    <string name="med.intervalo"> Intervalo: </string>
+    <string name="med.salvar"> Salvar </string>
+
+    //Strings Alergias
+    <string name="alergia.novo"> Nova Alergia </string>
+    //Strings Form Alergias
+    <string name="alergia.nome"> Nome: </string>
+    <string name="alergia.salvar"> Salvar </string>
+
 
 
 </resources>

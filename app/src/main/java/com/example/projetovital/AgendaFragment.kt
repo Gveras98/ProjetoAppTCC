@@ -18,7 +18,10 @@ class AgendaFragment : Fragment() {
         // Inflate o layout usando ViewBinding
         binding = FragmentAgendaBinding.inflate(inflater, container, false)
 
-
+        binding.btnCadAgendamento.setOnClickListener {
+            // Chama a função replaceFragment da MainActivity
+            (activity as? MainActivity)?.replaceFragment(FormAgendaFragment())
+        }
         // Adicionar as Funções para Medicamentos e Alergias
 
         // Retorna a view raiz do binding

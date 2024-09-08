@@ -6,7 +6,6 @@
     android:orientation="vertical"
     tools:context=".CadastroFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -20,11 +19,11 @@
         android:id="@+id/btn_Atualizar_Cadastro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/atualizar_cadastro"
+        android:text="@string/teste"
         android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="bold" />
-
+    <!-- Botão Provisorio Para testes de Cadastro -->
     <!-- Adicionar lista para exibição dos Cadastro -->
 
 

@@ -15,33 +15,57 @@
         android:textSize="36sp"
         android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/etEspecialidade"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/EtEspecialidade"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Especialidade"
-        android:inputType="text" />
+        android:layout_height="wrap_content">
 
-    <EditText
-        android:id="@+id/etData"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Data"
-        android:inputType="date" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etExameEspecialidade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Especialidade"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/etLocal"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputEtData"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Local"
-        android:inputType="text" />
+        android:layout_height="wrap_content">
 
-    <EditText
-        android:id="@+id/etProcedimento"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Data"
+            android:inputType="date" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputEtLocal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Procedimento"
-        android:inputType="text" />
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etLocal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Local"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputEtProcedimento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etProcedimento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Procedimento"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:layout_width="match_parent"
@@ -63,6 +87,7 @@
         android:id="@+id/btnSalvar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="16sp"
         android:text="Salvar" />
 
 </LinearLayout>

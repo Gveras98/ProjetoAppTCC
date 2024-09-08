@@ -4,25 +4,70 @@ package com.example.projetovital.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
+import android.widget.Button;
+import android.widget.ScrollView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import com.example.projetovital.R;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import java.lang.NullPointerException;
 import java.lang.Override;
+import java.lang.String;
 
 public final class FragmentFormMedicamentoBinding implements ViewBinding {
   @NonNull
-  private final FrameLayout rootView;
+  private final ScrollView rootView;
 
-  private FragmentFormMedicamentoBinding(@NonNull FrameLayout rootView) {
+  @NonNull
+  public final Button btnMedSalvar;
+
+  @NonNull
+  public final TextInputEditText etMedDose;
+
+  @NonNull
+  public final TextInputEditText etMedDuracao;
+
+  @NonNull
+  public final TextInputEditText etMedIntervalo;
+
+  @NonNull
+  public final TextInputEditText etMedNome;
+
+  @NonNull
+  public final TextInputLayout inputEtDose;
+
+  @NonNull
+  public final TextInputLayout inputEtDuracao;
+
+  @NonNull
+  public final TextInputLayout inputEtIntervalo;
+
+  @NonNull
+  public final TextInputLayout inputEtNome;
+
+  private FragmentFormMedicamentoBinding(@NonNull ScrollView rootView, @NonNull Button btnMedSalvar,
+      @NonNull TextInputEditText etMedDose, @NonNull TextInputEditText etMedDuracao,
+      @NonNull TextInputEditText etMedIntervalo, @NonNull TextInputEditText etMedNome,
+      @NonNull TextInputLayout inputEtDose, @NonNull TextInputLayout inputEtDuracao,
+      @NonNull TextInputLayout inputEtIntervalo, @NonNull TextInputLayout inputEtNome) {
     this.rootView = rootView;
+    this.btnMedSalvar = btnMedSalvar;
+    this.etMedDose = etMedDose;
+    this.etMedDuracao = etMedDuracao;
+    this.etMedIntervalo = etMedIntervalo;
+    this.etMedNome = etMedNome;
+    this.inputEtDose = inputEtDose;
+    this.inputEtDuracao = inputEtDuracao;
+    this.inputEtIntervalo = inputEtIntervalo;
+    this.inputEtNome = inputEtNome;
   }
 
   @Override
   @NonNull
-  public FrameLayout getRoot() {
+  public ScrollView getRoot() {
     return rootView;
   }
 
@@ -43,10 +88,69 @@ public final class FragmentFormMedicamentoBinding implements ViewBinding {
 
   @NonNull
   public static FragmentFormMedicamentoBinding bind(@NonNull View rootView) {
-    if (rootView == null) {
-      throw new NullPointerException("rootView");
-    }
+    // The body of this method is generated in a way you would not otherwise write.
+    // This is done to optimize the compiled bytecode for size and performance.
+    int id;
+    missingId: {
+      id = R.id.btnMedSalvar;
+      Button btnMedSalvar = ViewBindings.findChildViewById(rootView, id);
+      if (btnMedSalvar == null) {
+        break missingId;
+      }
 
-    return new FragmentFormMedicamentoBinding((FrameLayout) rootView);
+      id = R.id.etMedDose;
+      TextInputEditText etMedDose = ViewBindings.findChildViewById(rootView, id);
+      if (etMedDose == null) {
+        break missingId;
+      }
+
+      id = R.id.etMedDuracao;
+      TextInputEditText etMedDuracao = ViewBindings.findChildViewById(rootView, id);
+      if (etMedDuracao == null) {
+        break missingId;
+      }
+
+      id = R.id.etMedIntervalo;
+      TextInputEditText etMedIntervalo = ViewBindings.findChildViewById(rootView, id);
+      if (etMedIntervalo == null) {
+        break missingId;
+      }
+
+      id = R.id.etMedNome;
+      TextInputEditText etMedNome = ViewBindings.findChildViewById(rootView, id);
+      if (etMedNome == null) {
+        break missingId;
+      }
+
+      id = R.id.inputEtDose;
+      TextInputLayout inputEtDose = ViewBindings.findChildViewById(rootView, id);
+      if (inputEtDose == null) {
+        break missingId;
+      }
+
+      id = R.id.inputEtDuracao;
+      TextInputLayout inputEtDuracao = ViewBindings.findChildViewById(rootView, id);
+      if (inputEtDuracao == null) {
+        break missingId;
+      }
+
+      id = R.id.inputEtIntervalo;
+      TextInputLayout inputEtIntervalo = ViewBindings.findChildViewById(rootView, id);
+      if (inputEtIntervalo == null) {
+        break missingId;
+      }
+
+      id = R.id.inputEtNome;
+      TextInputLayout inputEtNome = ViewBindings.findChildViewById(rootView, id);
+      if (inputEtNome == null) {
+        break missingId;
+      }
+
+      return new FragmentFormMedicamentoBinding((ScrollView) rootView, btnMedSalvar, etMedDose,
+          etMedDuracao, etMedIntervalo, etMedNome, inputEtDose, inputEtDuracao, inputEtIntervalo,
+          inputEtNome);
+    }
+    String missingId = rootView.getResources().getResourceName(id);
+    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }

@@ -5,13 +5,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.projetovital.R;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -21,33 +22,52 @@ public final class FragmentFormExamesBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
+  public final TextInputLayout EtEspecialidade;
+
+  @NonNull
   public final Button btnSalvar;
 
   @NonNull
   public final Button btnScanner;
 
   @NonNull
-  public final EditText etData;
+  public final TextInputEditText etData;
 
   @NonNull
-  public final EditText etEspecialidade;
+  public final TextInputEditText etExameEspecialidade;
 
   @NonNull
-  public final EditText etLocal;
+  public final TextInputEditText etLocal;
 
   @NonNull
-  public final EditText etProcedimento;
+  public final TextInputEditText etProcedimento;
 
-  private FragmentFormExamesBinding(@NonNull LinearLayout rootView, @NonNull Button btnSalvar,
-      @NonNull Button btnScanner, @NonNull EditText etData, @NonNull EditText etEspecialidade,
-      @NonNull EditText etLocal, @NonNull EditText etProcedimento) {
+  @NonNull
+  public final TextInputLayout inputEtData;
+
+  @NonNull
+  public final TextInputLayout inputEtLocal;
+
+  @NonNull
+  public final TextInputLayout inputEtProcedimento;
+
+  private FragmentFormExamesBinding(@NonNull LinearLayout rootView,
+      @NonNull TextInputLayout EtEspecialidade, @NonNull Button btnSalvar,
+      @NonNull Button btnScanner, @NonNull TextInputEditText etData,
+      @NonNull TextInputEditText etExameEspecialidade, @NonNull TextInputEditText etLocal,
+      @NonNull TextInputEditText etProcedimento, @NonNull TextInputLayout inputEtData,
+      @NonNull TextInputLayout inputEtLocal, @NonNull TextInputLayout inputEtProcedimento) {
     this.rootView = rootView;
+    this.EtEspecialidade = EtEspecialidade;
     this.btnSalvar = btnSalvar;
     this.btnScanner = btnScanner;
     this.etData = etData;
-    this.etEspecialidade = etEspecialidade;
+    this.etExameEspecialidade = etExameEspecialidade;
     this.etLocal = etLocal;
     this.etProcedimento = etProcedimento;
+    this.inputEtData = inputEtData;
+    this.inputEtLocal = inputEtLocal;
+    this.inputEtProcedimento = inputEtProcedimento;
   }
 
   @Override
@@ -77,6 +97,12 @@ public final class FragmentFormExamesBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.EtEspecialidade;
+      TextInputLayout EtEspecialidade = ViewBindings.findChildViewById(rootView, id);
+      if (EtEspecialidade == null) {
+        break missingId;
+      }
+
       id = R.id.btnSalvar;
       Button btnSalvar = ViewBindings.findChildViewById(rootView, id);
       if (btnSalvar == null) {
@@ -90,31 +116,50 @@ public final class FragmentFormExamesBinding implements ViewBinding {
       }
 
       id = R.id.etData;
-      EditText etData = ViewBindings.findChildViewById(rootView, id);
+      TextInputEditText etData = ViewBindings.findChildViewById(rootView, id);
       if (etData == null) {
         break missingId;
       }
 
-      id = R.id.etEspecialidade;
-      EditText etEspecialidade = ViewBindings.findChildViewById(rootView, id);
-      if (etEspecialidade == null) {
+      id = R.id.etExameEspecialidade;
+      TextInputEditText etExameEspecialidade = ViewBindings.findChildViewById(rootView, id);
+      if (etExameEspecialidade == null) {
         break missingId;
       }
 
       id = R.id.etLocal;
-      EditText etLocal = ViewBindings.findChildViewById(rootView, id);
+      TextInputEditText etLocal = ViewBindings.findChildViewById(rootView, id);
       if (etLocal == null) {
         break missingId;
       }
 
       id = R.id.etProcedimento;
-      EditText etProcedimento = ViewBindings.findChildViewById(rootView, id);
+      TextInputEditText etProcedimento = ViewBindings.findChildViewById(rootView, id);
       if (etProcedimento == null) {
         break missingId;
       }
 
-      return new FragmentFormExamesBinding((LinearLayout) rootView, btnSalvar, btnScanner, etData,
-          etEspecialidade, etLocal, etProcedimento);
+      id = R.id.inputEtData;
+      TextInputLayout inputEtData = ViewBindings.findChildViewById(rootView, id);
+      if (inputEtData == null) {
+        break missingId;
+      }
+
+      id = R.id.inputEtLocal;
+      TextInputLayout inputEtLocal = ViewBindings.findChildViewById(rootView, id);
+      if (inputEtLocal == null) {
+        break missingId;
+      }
+
+      id = R.id.inputEtProcedimento;
+      TextInputLayout inputEtProcedimento = ViewBindings.findChildViewById(rootView, id);
+      if (inputEtProcedimento == null) {
+        break missingId;
+      }
+
+      return new FragmentFormExamesBinding((LinearLayout) rootView, EtEspecialidade, btnSalvar,
+          btnScanner, etData, etExameEspecialidade, etLocal, etProcedimento, inputEtData,
+          inputEtLocal, inputEtProcedimento);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

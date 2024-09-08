@@ -5,8 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.CalendarView;
-import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -18,24 +17,19 @@ import java.lang.String;
 
 public final class FragmentAgendaBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final ScrollView rootView;
 
   @NonNull
   public final Button btnCadAgendamento;
 
-  @NonNull
-  public final CalendarView calendarView;
-
-  private FragmentAgendaBinding(@NonNull LinearLayout rootView, @NonNull Button btnCadAgendamento,
-      @NonNull CalendarView calendarView) {
+  private FragmentAgendaBinding(@NonNull ScrollView rootView, @NonNull Button btnCadAgendamento) {
     this.rootView = rootView;
     this.btnCadAgendamento = btnCadAgendamento;
-    this.calendarView = calendarView;
   }
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public ScrollView getRoot() {
     return rootView;
   }
 
@@ -60,19 +54,13 @@ public final class FragmentAgendaBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.btn_Cad_Agendamento;
+      id = R.id.btnCadAgendamento;
       Button btnCadAgendamento = ViewBindings.findChildViewById(rootView, id);
       if (btnCadAgendamento == null) {
         break missingId;
       }
 
-      id = R.id.calendarView;
-      CalendarView calendarView = ViewBindings.findChildViewById(rootView, id);
-      if (calendarView == null) {
-        break missingId;
-      }
-
-      return new FragmentAgendaBinding((LinearLayout) rootView, btnCadAgendamento, calendarView);
+      return new FragmentAgendaBinding((ScrollView) rootView, btnCadAgendamento);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

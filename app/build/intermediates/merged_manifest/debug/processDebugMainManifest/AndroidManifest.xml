@@ -48,6 +48,10 @@
             </intent-filter>
         </activity>
 
+        <service
+            android:name="androidx.room.MultiInstanceInvalidationService"
+            android:directBootAware="true"
+            android:exported="false" />
         <!--
         This activity is an invisible delegate activity to start scanner activity
         and receive result, so it's unnecessary to support screen orientation and

@@ -1,16 +1,25 @@
-#Fri Sep 06 23:11:31 BRT 2024
+#Sun Sep 08 15:42:06 BRT 2024
 base.0=E\:\\ETEC\\Projeto TCC\\APP\\ProjetoVital\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=E\:\\ETEC\\Projeto TCC\\APP\\ProjetoVital\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
 base.2=E\:\\ETEC\\Projeto TCC\\APP\\ProjetoVital\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\15\\classes.dex
 base.3=E\:\\ETEC\\Projeto TCC\\APP\\ProjetoVital\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\3\\classes.dex
 base.4=E\:\\ETEC\\Projeto TCC\\APP\\ProjetoVital\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
+base.5=E\:\\ETEC\\Projeto TCC\\APP\\ProjetoVital\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\13\\classes.dex
+base.6=E\:\\ETEC\\Projeto TCC\\APP\\ProjetoVital\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\4\\classes.dex
+base.7=E\:\\ETEC\\Projeto TCC\\APP\\ProjetoVital\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\6\\classes.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=15/classes.dex
 path.3=3/classes.dex
 path.4=classes2.dex
+path.5=13/classes.dex
+path.6=4/classes.dex
+path.7=6/classes.dex
 renamed.0=classes.dex
 renamed.1=classes2.dex
 renamed.2=classes3.dex
 renamed.3=classes4.dex
 renamed.4=classes5.dex
+renamed.5=classes6.dex
+renamed.6=classes7.dex
+renamed.7=classes8.dex

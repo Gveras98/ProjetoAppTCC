@@ -4,25 +4,33 @@ package com.example.projetovital.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
+import android.widget.Button;
+import android.widget.ScrollView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import com.example.projetovital.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
+import java.lang.String;
 
 public final class FragmentMedicamentoBinding implements ViewBinding {
   @NonNull
-  private final FrameLayout rootView;
+  private final ScrollView rootView;
 
-  private FragmentMedicamentoBinding(@NonNull FrameLayout rootView) {
+  @NonNull
+  public final Button btnNovoMedicamento;
+
+  private FragmentMedicamentoBinding(@NonNull ScrollView rootView,
+      @NonNull Button btnNovoMedicamento) {
     this.rootView = rootView;
+    this.btnNovoMedicamento = btnNovoMedicamento;
   }
 
   @Override
   @NonNull
-  public FrameLayout getRoot() {
+  public ScrollView getRoot() {
     return rootView;
   }
 
@@ -43,10 +51,19 @@ public final class FragmentMedicamentoBinding implements ViewBinding {
 
   @NonNull
   public static FragmentMedicamentoBinding bind(@NonNull View rootView) {
-    if (rootView == null) {
-      throw new NullPointerException("rootView");
-    }
+    // The body of this method is generated in a way you would not otherwise write.
+    // This is done to optimize the compiled bytecode for size and performance.
+    int id;
+    missingId: {
+      id = R.id.btnNovoMedicamento;
+      Button btnNovoMedicamento = ViewBindings.findChildViewById(rootView, id);
+      if (btnNovoMedicamento == null) {
+        break missingId;
+      }
 
-    return new FragmentMedicamentoBinding((FrameLayout) rootView);
+      return new FragmentMedicamentoBinding((ScrollView) rootView, btnNovoMedicamento);
+    }
+    String missingId = rootView.getResources().getResourceName(id);
+    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }
