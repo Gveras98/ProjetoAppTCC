@@ -16,14 +16,17 @@ import com.example.projetovital.data.db.entity.CadastroEntity
 import com.example.projetovital.data.db.entity.ExamesEntity
 import com.example.projetovital.data.db.entity.MedicamentoEntity
 
-@Database(entities = [
-    AgendaEntity::class,
-    AlergiaEntity::class,
-    CadastroEntity::class,
-    ExamesEntity::class,
-    MedicamentoEntity::class,],
+@Database(
+    entities = [
+        AgendaEntity::class,
+        AlergiaEntity::class,
+        CadastroEntity::class,
+        ExamesEntity::class,
+        MedicamentoEntity::class,
+    ],
     version = 1,
-    exportSchema = false)
+    exportSchema = false
+)
 
 @TypeConverters(DateConverter::class)
 

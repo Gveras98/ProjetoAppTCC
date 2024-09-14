@@ -3,7 +3,6 @@ package com.example.projetovital.data.db.entity
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import androidx.room.TypeConverters
 import java.util.Date
 
 @Entity(tableName = "tblCadastro")
@@ -24,7 +23,7 @@ data class CadastroEntity(
     @ColumnInfo(name = "cpfUser")
     val cpfUser: String,
 
-    @ColumnInfo(name = "enderecoUser", )
+    @ColumnInfo(name = "enderecoUser")
     val enderecoUser: String,
 
     @ColumnInfo(name = "cepUser")
@@ -47,4 +46,4 @@ data class CadastroEntity(
 
     @ColumnInfo(name = "tipoSanguineoUser")
     val tipoSanguineoUser: String
-    )
+)

@@ -16,14 +16,14 @@ data class AgendaEntity(
     val especialidadeAgenda: String,
 
     @ColumnInfo(name = "dataAgenda")
-    val dataAgenda:Date,
+    val dataAgenda: Date,
 
     @ColumnInfo(name = "horaAgenda")
-    val horaAgenda:String,
+    val horaAgenda: String,
 
     @ColumnInfo(name = "localAgenda")
-    val localAgenda:String,
+    val localAgenda: String,
 
     @ColumnInfo(name = "procedimentoAgenda")
-    val procedimentoAgenda:String
+    val procedimentoAgenda: String
 )

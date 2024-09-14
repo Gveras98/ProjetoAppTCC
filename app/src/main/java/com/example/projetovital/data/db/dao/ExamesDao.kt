@@ -13,12 +13,15 @@ interface ExamesDao {
     //Read
     @Query("SELECT * FROM tblExames")
     fun getAll(): List<ExamesEntity>
+
     //Inserir
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(exames: ExamesEntity)
+
     //Update
     @Update
     suspend fun update(exames: ExamesEntity)
+
     //Delete
     @Query("DELETE FROM tblExames WHERE idExame = :id")
     suspend fun delete(id: Long)

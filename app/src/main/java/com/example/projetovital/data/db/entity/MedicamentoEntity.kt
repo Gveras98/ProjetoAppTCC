@@ -5,7 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "tblMedicamento")
-data class MedicamentoEntity (
+data class MedicamentoEntity(
     @ColumnInfo(name = "idMedicamento")
     @PrimaryKey(autoGenerate = true)
     val idMedicamento: Long = 0,
