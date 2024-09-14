@@ -5,7 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -17,19 +17,19 @@ import java.lang.String;
 
 public final class FragmentExamesBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final ScrollView rootView;
 
   @NonNull
   public final Button btnCadExames;
 
-  private FragmentExamesBinding(@NonNull LinearLayout rootView, @NonNull Button btnCadExames) {
+  private FragmentExamesBinding(@NonNull ScrollView rootView, @NonNull Button btnCadExames) {
     this.rootView = rootView;
     this.btnCadExames = btnCadExames;
   }
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public ScrollView getRoot() {
     return rootView;
   }
 
@@ -60,7 +60,7 @@ public final class FragmentExamesBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentExamesBinding((LinearLayout) rootView, btnCadExames);
+      return new FragmentExamesBinding((ScrollView) rootView, btnCadExames);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

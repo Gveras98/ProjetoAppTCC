@@ -5,14 +5,35 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
+import com.example.projetovital.data.db.dao.AgendaDao
+import com.example.projetovital.data.db.dao.AlergiaDao
 import com.example.projetovital.data.db.dao.CadastroDao
+import com.example.projetovital.data.db.dao.ExamesDao
+import com.example.projetovital.data.db.dao.MedicamentoDao
+import com.example.projetovital.data.db.entity.AgendaEntity
+import com.example.projetovital.data.db.entity.AlergiaEntity
 import com.example.projetovital.data.db.entity.CadastroEntity
+import com.example.projetovital.data.db.entity.ExamesEntity
+import com.example.projetovital.data.db.entity.MedicamentoEntity
 
-@Database(entities = [CadastroEntity::class], version = 1, exportSchema = false)
+@Database(entities = [
+    AgendaEntity::class,
+    AlergiaEntity::class,
+    CadastroEntity::class,
+    ExamesEntity::class,
+    MedicamentoEntity::class,],
+    version = 1,
+    exportSchema = false)
+
 @TypeConverters(DateConverter::class)
+
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun cadastroDao(): CadastroDao
+    abstract fun agendaDao(): AgendaDao
+    abstract fun examesDao(): ExamesDao
+    abstract fun medicamentoDao(): MedicamentoDao
+    abstract fun alergiaDao(): AlergiaDao
 
     companion object {
         @Volatile

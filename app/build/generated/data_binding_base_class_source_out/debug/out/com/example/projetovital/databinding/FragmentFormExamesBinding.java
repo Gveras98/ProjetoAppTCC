@@ -5,7 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -19,7 +19,7 @@ import java.lang.String;
 
 public final class FragmentFormExamesBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final ScrollView rootView;
 
   @NonNull
   public final TextInputLayout EtEspecialidade;
@@ -51,7 +51,7 @@ public final class FragmentFormExamesBinding implements ViewBinding {
   @NonNull
   public final TextInputLayout inputEtProcedimento;
 
-  private FragmentFormExamesBinding(@NonNull LinearLayout rootView,
+  private FragmentFormExamesBinding(@NonNull ScrollView rootView,
       @NonNull TextInputLayout EtEspecialidade, @NonNull Button btnSalvar,
       @NonNull Button btnScanner, @NonNull TextInputEditText etData,
       @NonNull TextInputEditText etExameEspecialidade, @NonNull TextInputEditText etLocal,
@@ -72,7 +72,7 @@ public final class FragmentFormExamesBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public ScrollView getRoot() {
     return rootView;
   }
 
@@ -157,7 +157,7 @@ public final class FragmentFormExamesBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentFormExamesBinding((LinearLayout) rootView, EtEspecialidade, btnSalvar,
+      return new FragmentFormExamesBinding((ScrollView) rootView, EtEspecialidade, btnSalvar,
           btnScanner, etData, etExameEspecialidade, etLocal, etProcedimento, inputEtData,
           inputEtLocal, inputEtProcedimento);
     }

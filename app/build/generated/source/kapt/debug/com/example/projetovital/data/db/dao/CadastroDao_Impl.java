@@ -44,7 +44,7 @@ public final class CadastroDao_Impl implements CadastroDao {
       @Override
       @NonNull
       protected String createQuery() {
-        return "INSERT OR REPLACE INTO `tblCadastro` (`idUser`,`nomeUser`,`sexoUser`,`dataNascimentoUser`,`cpfUser`,`enderecoUser`,`cepUsuarioUser`,`telefoneUser`,`emailUser`,`numSusUser`,`planoSaudeUser`,`numPlanoSaudeUser`,`tipoSanguineoUser`) VALUES (nullif(?, 0),?,?,?,?,?,?,?,?,?,?,?,?)";
+        return "INSERT OR REPLACE INTO `tblCadastro` (`idUser`,`nomeUser`,`sexoUser`,`dataNascimentoUser`,`cpfUser`,`enderecoUser`,`cepUser`,`telefoneUser`,`emailUser`,`numSusUser`,`planoSaudeUser`,`numPlanoSaudeUser`,`tipoSanguineoUser`) VALUES (nullif(?, 0),?,?,?,?,?,?,?,?,?,?,?,?)";
       }
 
       @Override
@@ -114,7 +114,7 @@ public final class CadastroDao_Impl implements CadastroDao {
       @Override
       @NonNull
       protected String createQuery() {
-        return "UPDATE OR ABORT `tblCadastro` SET `idUser` = ?,`nomeUser` = ?,`sexoUser` = ?,`dataNascimentoUser` = ?,`cpfUser` = ?,`enderecoUser` = ?,`cepUsuarioUser` = ?,`telefoneUser` = ?,`emailUser` = ?,`numSusUser` = ?,`planoSaudeUser` = ?,`numPlanoSaudeUser` = ?,`tipoSanguineoUser` = ? WHERE `idUser` = ?";
+        return "UPDATE OR ABORT `tblCadastro` SET `idUser` = ?,`nomeUser` = ?,`sexoUser` = ?,`dataNascimentoUser` = ?,`cpfUser` = ?,`enderecoUser` = ?,`cepUser` = ?,`telefoneUser` = ?,`emailUser` = ?,`numSusUser` = ?,`planoSaudeUser` = ?,`numPlanoSaudeUser` = ?,`tipoSanguineoUser` = ? WHERE `idUser` = ?";
       }
 
       @Override
@@ -237,7 +237,7 @@ public final class CadastroDao_Impl implements CadastroDao {
           final int _cursorIndexOfDataNascimentoUser = CursorUtil.getColumnIndexOrThrow(_cursor, "dataNascimentoUser");
           final int _cursorIndexOfCpfUser = CursorUtil.getColumnIndexOrThrow(_cursor, "cpfUser");
           final int _cursorIndexOfEnderecoUser = CursorUtil.getColumnIndexOrThrow(_cursor, "enderecoUser");
-          final int _cursorIndexOfCepUsuarioUser = CursorUtil.getColumnIndexOrThrow(_cursor, "cepUsuarioUser");
+          final int _cursorIndexOfCepUsuarioUser = CursorUtil.getColumnIndexOrThrow(_cursor, "cepUser");
           final int _cursorIndexOfTelefoneUser = CursorUtil.getColumnIndexOrThrow(_cursor, "telefoneUser");
           final int _cursorIndexOfEmailUser = CursorUtil.getColumnIndexOrThrow(_cursor, "emailUser");
           final int _cursorIndexOfNumSusUser = CursorUtil.getColumnIndexOrThrow(_cursor, "numSusUser");

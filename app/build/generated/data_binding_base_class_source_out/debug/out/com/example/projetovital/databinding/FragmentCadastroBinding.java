@@ -5,7 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -17,7 +17,7 @@ import java.lang.String;
 
 public final class FragmentCadastroBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final ScrollView rootView;
 
   @NonNull
   public final Button btnAlergias;
@@ -28,7 +28,7 @@ public final class FragmentCadastroBinding implements ViewBinding {
   @NonNull
   public final Button btnMedicamentos;
 
-  private FragmentCadastroBinding(@NonNull LinearLayout rootView, @NonNull Button btnAlergias,
+  private FragmentCadastroBinding(@NonNull ScrollView rootView, @NonNull Button btnAlergias,
       @NonNull Button btnAtualizarCadastro, @NonNull Button btnMedicamentos) {
     this.rootView = rootView;
     this.btnAlergias = btnAlergias;
@@ -38,7 +38,7 @@ public final class FragmentCadastroBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public ScrollView getRoot() {
     return rootView;
   }
 
@@ -81,7 +81,7 @@ public final class FragmentCadastroBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentCadastroBinding((LinearLayout) rootView, btnAlergias, btnAtualizarCadastro,
+      return new FragmentCadastroBinding((ScrollView) rootView, btnAlergias, btnAtualizarCadastro,
           btnMedicamentos);
     }
     String missingId = rootView.getResources().getResourceName(id);
