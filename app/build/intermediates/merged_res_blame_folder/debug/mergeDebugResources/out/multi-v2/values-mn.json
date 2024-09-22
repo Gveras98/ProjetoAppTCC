@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.projetovital.app-mergeDebugResources-39:/values-mn/values-mn.xml",
+            "outputFile": "com.example.projetovital.app-mergeDebugResources-42:/values-mn/values-mn.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Gabriel Veras\\.gradle\\caches\\transforms-4\\3ac17d5f10b0077ed9a6d6b8b9631b60\\transformed\\core-1.13.1\\res\\values-mn\\values-mn.xml",

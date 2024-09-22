@@ -57,6 +57,8 @@
     <string name="med.novo"> Novo Medicamento </string>
     <string name="med.salvar"> Salvar </string>
     <string name="medicamentos"> Medicamentos </string>
+    <string name="msg.erro"> Erro no Cadastro! </string>
+    <string name="msg.sucesso"> Cadastrado com Sucesso! </string>
     <string name="teste"> Cadastro </string>
     <style name="Base.Theme.ProjetoVital" parent="Theme.Material3.DayNight.NoActionBar">
         

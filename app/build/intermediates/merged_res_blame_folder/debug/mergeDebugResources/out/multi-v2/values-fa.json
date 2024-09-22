@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.projetovital.app-mergeDebugResources-39:/values-fa/values-fa.xml",
+            "outputFile": "com.example.projetovital.app-mergeDebugResources-42:/values-fa/values-fa.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Gabriel Veras\\.gradle\\caches\\transforms-4\\1aa8ef7d24568440e974bbbe2b917f06\\transformed\\play-services-basement-18.1.0\\res\\values-fa\\values.xml",

@@ -50,6 +50,11 @@
           <theme>@style/Theme.ProjetoVital</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_form_dependente.xml">
+        <config>
+          <theme>@style/Theme.ProjetoVital</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_form_exames.xml">
         <config>
           <theme>@style/Theme.ProjetoVital</theme>
@@ -61,6 +66,26 @@
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_medicamento.xml">
+        <config>
+          <theme>@style/Theme.ProjetoVital</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/item_agenda.xml">
+        <config>
+          <theme>@style/Theme.ProjetoVital</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/item_alergia.xml">
+        <config>
+          <theme>@style/Theme.ProjetoVital</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/item_cadastro.xml">
+        <config>
+          <theme>@style/Theme.ProjetoVital</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/item_exames.xml">
         <config>
           <theme>@style/Theme.ProjetoVital</theme>
         </config>
@@ -141,8 +166,10 @@
         <option value="CMakeLists.txt" />
         <option value="resourceFile" />
         <option value="valueResourceFile" />
-        <option value="Kotlin Class" />
         <option value="Kotlin Interface" />
+        <option value="Kotlin File" />
+        <option value="Kotlin Class" />
+        <option value="layoutResourceFile" />
       </list>
     </option>
   </component>
@@ -172,7 +199,7 @@
     <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
@@ -193,7 +220,7 @@
   &quot;keyToString&quot;: {
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;Android App.app.executor&quot;: &quot;Run&quot;,
-    &quot;ResourceManagerPrefKey.ResourceType&quot;: &quot;LAYOUT&quot;,
+    &quot;ResourceManagerPrefKey.ResourceType&quot;: &quot;DRAWABLE&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
@@ -207,7 +234,7 @@
     &quot;ignore_missing_gitignore&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_directory_selection&quot;: &quot;E:/ETEC/Projeto TCC/APP/ProjetoVital/app/src/main/java&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/ETEC/Projeto TCC/APP/ProjetoVital&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Gabriel Veras/Documents/AndroidStudio/ProjetoVital&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Dependencies&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
@@ -229,9 +256,16 @@
     <option name="LAST_EDITED_BUILD_TYPE" value="release" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\ETEC\Projeto TCC\APP\ProjetoVital\app\src\main\res\layout\cadastro" />
+      <recent name="E:\ETEC\Projeto TCC\APP\ProjetoVital\app\src\main\res\layout\Cadastro" />
+    </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
-      <recent name="com.example.projetovital.data.db" />
-      <recent name="com.example.projetovital.data.db.entity" />
+      <recent name="com.example.projetovital.datasource" />
+      <recent name="com.example.projetovital.ui.projetovital" />
+      <recent name="com.example.projetovital.ui.projetovital.Medicamento" />
+      <recent name="com.example.projetovital.ui.projetovital.Exames" />
+      <recent name="com.example.projetovital.ui.projetovital.Dependente" />
     </key>
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
       <recent name="com.example.projetovital.Form" />
@@ -402,7 +436,23 @@
       <option name="project" value="LOCAL" />
       <updated>1725822263084</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="ProjetoInicial">
+      <option name="closed" value="true" />
+      <created>1726353480443</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1726353480443</updated>
+    </task>
+    <task id="LOCAL-00013" summary="ProjetoInicial">
+      <option name="closed" value="true" />
+      <created>1726353525909</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1726353525909</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="UpdateCopyrightCheckinHandler">

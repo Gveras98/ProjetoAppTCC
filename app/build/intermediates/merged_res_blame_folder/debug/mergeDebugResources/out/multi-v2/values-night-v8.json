@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.projetovital.app-mergeDebugResources-39:/values-night-v8/values-night-v8.xml",
+            "outputFile": "com.example.projetovital.app-mergeDebugResources-42:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "E:\\ETEC\\Projeto TCC\\APP\\ProjetoVital\\app\\src\\main\\res\\values-night\\themes.xml",
+                    "source": "C:\\Users\\Gabriel Veras\\Documents\\AndroidStudio\\ProjetoVital\\app\\src\\main\\res\\values-night\\themes.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

@@ -26,7 +26,7 @@ public final class FragmentFormCadastroBinding implements ViewBinding {
   private final ScrollView rootView;
 
   @NonNull
-  public final EditText EtUserCEP;
+  public final EditText EtUserCep;
 
   @NonNull
   public final EditText EtUserEmail;
@@ -62,7 +62,7 @@ public final class FragmentFormCadastroBinding implements ViewBinding {
   public final RadioGroup etUserSexo;
 
   @NonNull
-  public final TextInputLayout inputEtUserCEP;
+  public final TextInputLayout inputEtUserCep;
 
   @NonNull
   public final TextInputLayout inputEtUserCpf;
@@ -106,13 +106,13 @@ public final class FragmentFormCadastroBinding implements ViewBinding {
   @NonNull
   public final Spinner spinnerTipoSanguineo;
 
-  private FragmentFormCadastroBinding(@NonNull ScrollView rootView, @NonNull EditText EtUserCEP,
+  private FragmentFormCadastroBinding(@NonNull ScrollView rootView, @NonNull EditText EtUserCep,
       @NonNull EditText EtUserEmail, @NonNull EditText EtUserEndereco,
       @NonNull EditText EtUserNumPlanoSaude, @NonNull EditText EtUserPlanoSaude,
       @NonNull EditText EtUserSus, @NonNull EditText EtUserTelefone, @NonNull Button btnCadSalvar,
       @NonNull EditText etUserCpf, @NonNull EditText etUserNascimento,
       @NonNull TextInputEditText etUserNome, @NonNull RadioGroup etUserSexo,
-      @NonNull TextInputLayout inputEtUserCEP, @NonNull TextInputLayout inputEtUserCpf,
+      @NonNull TextInputLayout inputEtUserCep, @NonNull TextInputLayout inputEtUserCpf,
       @NonNull TextInputLayout inputEtUserEmail, @NonNull TextInputLayout inputEtUserEndereco,
       @NonNull TextInputLayout inputEtUserNascimento, @NonNull TextInputLayout inputEtUserNome,
       @NonNull TextInputLayout inputEtUserNumPlanoSaude,
@@ -121,7 +121,7 @@ public final class FragmentFormCadastroBinding implements ViewBinding {
       @NonNull TextInputLayout inputSpinnerTipoSanguineo, @NonNull RadioButton rbFeminino,
       @NonNull RadioButton rbMasculino, @NonNull Spinner spinnerTipoSanguineo) {
     this.rootView = rootView;
-    this.EtUserCEP = EtUserCEP;
+    this.EtUserCep = EtUserCep;
     this.EtUserEmail = EtUserEmail;
     this.EtUserEndereco = EtUserEndereco;
     this.EtUserNumPlanoSaude = EtUserNumPlanoSaude;
@@ -133,7 +133,7 @@ public final class FragmentFormCadastroBinding implements ViewBinding {
     this.etUserNascimento = etUserNascimento;
     this.etUserNome = etUserNome;
     this.etUserSexo = etUserSexo;
-    this.inputEtUserCEP = inputEtUserCEP;
+    this.inputEtUserCep = inputEtUserCep;
     this.inputEtUserCpf = inputEtUserCpf;
     this.inputEtUserEmail = inputEtUserEmail;
     this.inputEtUserEndereco = inputEtUserEndereco;
@@ -177,9 +177,9 @@ public final class FragmentFormCadastroBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.EtUserCEP;
-      EditText EtUserCEP = ViewBindings.findChildViewById(rootView, id);
-      if (EtUserCEP == null) {
+      id = R.id.EtUserCep;
+      EditText EtUserCep = ViewBindings.findChildViewById(rootView, id);
+      if (EtUserCep == null) {
         break missingId;
       }
 
@@ -249,9 +249,9 @@ public final class FragmentFormCadastroBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.inputEtUserCEP;
-      TextInputLayout inputEtUserCEP = ViewBindings.findChildViewById(rootView, id);
-      if (inputEtUserCEP == null) {
+      id = R.id.inputEtUserCep;
+      TextInputLayout inputEtUserCep = ViewBindings.findChildViewById(rootView, id);
+      if (inputEtUserCep == null) {
         break missingId;
       }
 
@@ -339,9 +339,9 @@ public final class FragmentFormCadastroBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentFormCadastroBinding((ScrollView) rootView, EtUserCEP, EtUserEmail,
+      return new FragmentFormCadastroBinding((ScrollView) rootView, EtUserCep, EtUserEmail,
           EtUserEndereco, EtUserNumPlanoSaude, EtUserPlanoSaude, EtUserSus, EtUserTelefone,
-          btnCadSalvar, etUserCpf, etUserNascimento, etUserNome, etUserSexo, inputEtUserCEP,
+          btnCadSalvar, etUserCpf, etUserNascimento, etUserNome, etUserSexo, inputEtUserCep,
           inputEtUserCpf, inputEtUserEmail, inputEtUserEndereco, inputEtUserNascimento,
           inputEtUserNome, inputEtUserNumPlanoSaude, inputEtUserPlanoSaude, inputEtUserSexo,
           inputEtUserSus, inputEtUserTelefone, inputSpinnerTipoSanguineo, rbFeminino, rbMasculino,

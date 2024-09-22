@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.ScrollView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.projetovital.R;
@@ -28,12 +29,17 @@ public final class FragmentCadastroBinding implements ViewBinding {
   @NonNull
   public final Button btnMedicamentos;
 
+  @NonNull
+  public final RecyclerView recyclerCadastro;
+
   private FragmentCadastroBinding(@NonNull ScrollView rootView, @NonNull Button btnAlergias,
-      @NonNull Button btnAtualizarCadastro, @NonNull Button btnMedicamentos) {
+      @NonNull Button btnAtualizarCadastro, @NonNull Button btnMedicamentos,
+      @NonNull RecyclerView recyclerCadastro) {
     this.rootView = rootView;
     this.btnAlergias = btnAlergias;
     this.btnAtualizarCadastro = btnAtualizarCadastro;
     this.btnMedicamentos = btnMedicamentos;
+    this.recyclerCadastro = recyclerCadastro;
   }
 
   @Override
@@ -81,8 +87,14 @@ public final class FragmentCadastroBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.recyclerCadastro;
+      RecyclerView recyclerCadastro = ViewBindings.findChildViewById(rootView, id);
+      if (recyclerCadastro == null) {
+        break missingId;
+      }
+
       return new FragmentCadastroBinding((ScrollView) rootView, btnAlergias, btnAtualizarCadastro,
-          btnMedicamentos);
+          btnMedicamentos, recyclerCadastro);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

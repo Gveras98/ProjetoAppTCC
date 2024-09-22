@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.projetovital.app-mergeDebugResources-39:/values-en-rCA/values-en-rCA.xml",
+            "outputFile": "com.example.projetovital.app-mergeDebugResources-42:/values-en-rCA/values-en-rCA.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Gabriel Veras\\.gradle\\caches\\transforms-4\\cb03e68423171efa51d64a4a391e854a\\transformed\\appcompat-1.7.0\\res\\values-en-rCA\\values-en-rCA.xml",
