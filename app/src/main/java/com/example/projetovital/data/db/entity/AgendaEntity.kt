@@ -3,6 +3,7 @@ package com.example.projetovital.data.db.entity
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.time.LocalTime
 import java.util.Date
 
 
@@ -20,7 +21,7 @@ data class AgendaEntity(
     val dataAgenda: Date,
 
     @ColumnInfo(name = "horaAgenda")
-    val horaAgenda: String,
+    val horaAgenda: LocalTime,
 
     @ColumnInfo(name = "localAgenda")
     val localAgenda: String,

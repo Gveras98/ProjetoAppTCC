@@ -28,14 +28,14 @@ public final class FragmentFormAlergiaBinding implements ViewBinding {
   public final TextInputEditText etAlergiaNome;
 
   @NonNull
-  public final TextInputLayout inputEtNome;
+  public final TextInputLayout inputEtAlergiaNome;
 
   private FragmentFormAlergiaBinding(@NonNull ScrollView rootView, @NonNull Button btnAlergiaSalvar,
-      @NonNull TextInputEditText etAlergiaNome, @NonNull TextInputLayout inputEtNome) {
+      @NonNull TextInputEditText etAlergiaNome, @NonNull TextInputLayout inputEtAlergiaNome) {
     this.rootView = rootView;
     this.btnAlergiaSalvar = btnAlergiaSalvar;
     this.etAlergiaNome = etAlergiaNome;
-    this.inputEtNome = inputEtNome;
+    this.inputEtAlergiaNome = inputEtAlergiaNome;
   }
 
   @Override
@@ -77,14 +77,14 @@ public final class FragmentFormAlergiaBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.inputEtNome;
-      TextInputLayout inputEtNome = ViewBindings.findChildViewById(rootView, id);
-      if (inputEtNome == null) {
+      id = R.id.inputEtAlergiaNome;
+      TextInputLayout inputEtAlergiaNome = ViewBindings.findChildViewById(rootView, id);
+      if (inputEtAlergiaNome == null) {
         break missingId;
       }
 
       return new FragmentFormAlergiaBinding((ScrollView) rootView, btnAlergiaSalvar, etAlergiaNome,
-          inputEtNome);
+          inputEtAlergiaNome);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

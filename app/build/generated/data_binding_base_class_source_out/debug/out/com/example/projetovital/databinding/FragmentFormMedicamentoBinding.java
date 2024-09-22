@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ScrollView;
+import android.widget.Spinner;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -28,41 +29,42 @@ public final class FragmentFormMedicamentoBinding implements ViewBinding {
   public final TextInputEditText etMedDose;
 
   @NonNull
-  public final TextInputEditText etMedDuracao;
-
-  @NonNull
-  public final TextInputEditText etMedIntervalo;
-
-  @NonNull
   public final TextInputEditText etMedNome;
 
   @NonNull
   public final TextInputLayout inputEtDose;
 
   @NonNull
-  public final TextInputLayout inputEtDuracao;
-
-  @NonNull
-  public final TextInputLayout inputEtIntervalo;
-
-  @NonNull
   public final TextInputLayout inputEtNome;
 
+  @NonNull
+  public final TextInputLayout inputSpinnerEtDuracaoMed;
+
+  @NonNull
+  public final TextInputLayout inputSpinnerEtIntercaloMed;
+
+  @NonNull
+  public final Spinner spinnerEtDuracaoMed;
+
+  @NonNull
+  public final Spinner spinnerEtIntercaloMed;
+
   private FragmentFormMedicamentoBinding(@NonNull ScrollView rootView, @NonNull Button btnMedSalvar,
-      @NonNull TextInputEditText etMedDose, @NonNull TextInputEditText etMedDuracao,
-      @NonNull TextInputEditText etMedIntervalo, @NonNull TextInputEditText etMedNome,
-      @NonNull TextInputLayout inputEtDose, @NonNull TextInputLayout inputEtDuracao,
-      @NonNull TextInputLayout inputEtIntervalo, @NonNull TextInputLayout inputEtNome) {
+      @NonNull TextInputEditText etMedDose, @NonNull TextInputEditText etMedNome,
+      @NonNull TextInputLayout inputEtDose, @NonNull TextInputLayout inputEtNome,
+      @NonNull TextInputLayout inputSpinnerEtDuracaoMed,
+      @NonNull TextInputLayout inputSpinnerEtIntercaloMed, @NonNull Spinner spinnerEtDuracaoMed,
+      @NonNull Spinner spinnerEtIntercaloMed) {
     this.rootView = rootView;
     this.btnMedSalvar = btnMedSalvar;
     this.etMedDose = etMedDose;
-    this.etMedDuracao = etMedDuracao;
-    this.etMedIntervalo = etMedIntervalo;
     this.etMedNome = etMedNome;
     this.inputEtDose = inputEtDose;
-    this.inputEtDuracao = inputEtDuracao;
-    this.inputEtIntervalo = inputEtIntervalo;
     this.inputEtNome = inputEtNome;
+    this.inputSpinnerEtDuracaoMed = inputSpinnerEtDuracaoMed;
+    this.inputSpinnerEtIntercaloMed = inputSpinnerEtIntercaloMed;
+    this.spinnerEtDuracaoMed = spinnerEtDuracaoMed;
+    this.spinnerEtIntercaloMed = spinnerEtIntercaloMed;
   }
 
   @Override
@@ -104,18 +106,6 @@ public final class FragmentFormMedicamentoBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.etMedDuracao;
-      TextInputEditText etMedDuracao = ViewBindings.findChildViewById(rootView, id);
-      if (etMedDuracao == null) {
-        break missingId;
-      }
-
-      id = R.id.etMedIntervalo;
-      TextInputEditText etMedIntervalo = ViewBindings.findChildViewById(rootView, id);
-      if (etMedIntervalo == null) {
-        break missingId;
-      }
-
       id = R.id.etMedNome;
       TextInputEditText etMedNome = ViewBindings.findChildViewById(rootView, id);
       if (etMedNome == null) {
@@ -128,27 +118,39 @@ public final class FragmentFormMedicamentoBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.inputEtDuracao;
-      TextInputLayout inputEtDuracao = ViewBindings.findChildViewById(rootView, id);
-      if (inputEtDuracao == null) {
-        break missingId;
-      }
-
-      id = R.id.inputEtIntervalo;
-      TextInputLayout inputEtIntervalo = ViewBindings.findChildViewById(rootView, id);
-      if (inputEtIntervalo == null) {
-        break missingId;
-      }
-
       id = R.id.inputEtNome;
       TextInputLayout inputEtNome = ViewBindings.findChildViewById(rootView, id);
       if (inputEtNome == null) {
         break missingId;
       }
 
+      id = R.id.inputSpinnerEtDuracaoMed;
+      TextInputLayout inputSpinnerEtDuracaoMed = ViewBindings.findChildViewById(rootView, id);
+      if (inputSpinnerEtDuracaoMed == null) {
+        break missingId;
+      }
+
+      id = R.id.inputSpinnerEtIntercaloMed;
+      TextInputLayout inputSpinnerEtIntercaloMed = ViewBindings.findChildViewById(rootView, id);
+      if (inputSpinnerEtIntercaloMed == null) {
+        break missingId;
+      }
+
+      id = R.id.spinnerEtDuracaoMed;
+      Spinner spinnerEtDuracaoMed = ViewBindings.findChildViewById(rootView, id);
+      if (spinnerEtDuracaoMed == null) {
+        break missingId;
+      }
+
+      id = R.id.spinnerEtIntercaloMed;
+      Spinner spinnerEtIntercaloMed = ViewBindings.findChildViewById(rootView, id);
+      if (spinnerEtIntercaloMed == null) {
+        break missingId;
+      }
+
       return new FragmentFormMedicamentoBinding((ScrollView) rootView, btnMedSalvar, etMedDose,
-          etMedDuracao, etMedIntervalo, etMedNome, inputEtDose, inputEtDuracao, inputEtIntervalo,
-          inputEtNome);
+          etMedNome, inputEtDose, inputEtNome, inputSpinnerEtDuracaoMed, inputSpinnerEtIntercaloMed,
+          spinnerEtDuracaoMed, spinnerEtIntercaloMed);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

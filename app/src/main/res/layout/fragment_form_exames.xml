@@ -20,58 +20,63 @@
             android:textSize="36sp"
             android:textStyle="bold" />
 
+        <!-- Especialidade -->
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/EtEspecialidade"
+            android:id="@+id/EtExamesEspecialidade"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etExameEspecialidade"
+                android:id="@+id/etExamesEspecialidade"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Especialidade"
+                android:hint="@string/f.especialidade"
                 android:inputType="text"
                 android:padding="16dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!-- Data -->
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/inputEtData"
+            android:id="@+id/inputEtExamesData"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etData"
+                android:id="@+id/etExamesData"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Data"
-                android:inputType="date"
+                android:focusable="false"
+                android:hint="@string/f.data"
+                android:inputType="none"
                 android:padding="16dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!-- Local -->
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/inputEtLocal"
+            android:id="@+id/inputEtExamesLocal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etLocal"
+                android:id="@+id/etExamesLocal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Local"
+                android:hint="@string/f.local"
                 android:inputType="text"
                 android:padding="16dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!-- Procedimento -->
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/inputEtProcedimento"
+            android:id="@+id/inputEtExamesProcedimento"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etProcedimento"
+                android:id="@+id/etExamesProcedimento"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Procedimento"
+                android:hint="@string/f.procedimento"
                 android:inputType="text"
                 android:padding="16dp" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -81,23 +86,25 @@
             android:layout_height="wrap_content"
             android:padding="8dp"
             android:text="@string/f.anexo"
-            android:textSize="22sp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
         <Button
             android:id="@+id/btnScanner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="16dp"
             android:text="Scanner"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textSize="16sp" />
 
         <Button
-            android:id="@+id/btnSalvar"
+            android:id="@+id/btnExamesSalvar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="16dp"
             android:text="Salvar"
-            android:textSize="16sp" />
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 </ScrollView>

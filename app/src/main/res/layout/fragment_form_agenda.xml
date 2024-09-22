@@ -20,13 +20,14 @@
         android:textSize="36sp"
         android:textStyle="bold" />
 
+        <!-- Especialidade -->
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/inputEtEspecialidade"
+            android:id="@+id/inputEtAgendaEspecialidade"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etEspecialidade"
+                android:id="@+id/etAgendaEspecialidade"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/ag.especialidade"
@@ -34,41 +35,46 @@
                 android:padding="16dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!-- Data -->
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/inputEtData"
+            android:id="@+id/inputEtAgendaData"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etData"
+                android:id="@+id/etAgendaData"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/ag.data"
-                android:inputType="date"
+                android:focusable="false"
+                android:inputType="none"
                 android:padding="16dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!-- Hora -->
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/inputEtHora"
+            android:id="@+id/inputEtAgendaHora"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etHora"
+                android:id="@+id/etAgendaHora"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/ag.hora"
-                android:inputType="time"
+                android:focusable="false"
+                android:inputType="none"
                 android:padding="16dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!-- Local -->
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/inputEtLocal"
+            android:id="@+id/inputEtAgendaLocal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etLocal"
+                android:id="@+id/etAgendaLocal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/ag.local"
@@ -76,13 +82,14 @@
                 android:padding="16dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!-- Procedimento -->
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/inputEtProcedimento"
+            android:id="@+id/inputEtAgendaProcedimento"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etProcedimento"
+                android:id="@+id/etAgendaProcedimento"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/ag.procedimento"
@@ -91,7 +98,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/btnSalvar"
+            android:id="@+id/btnAgendaSalvar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"

@@ -61,8 +61,16 @@ public final class MedicamentoDao_Impl implements MedicamentoDao {
         } else {
           statement.bindString(3, entity.getDoseMedicamento());
         }
-        statement.bindDouble(4, entity.getDuracaoMedicamento());
-        statement.bindDouble(5, entity.getIntervaloMedicamento());
+        if (entity.getDuracaoMedicamento() == null) {
+          statement.bindNull(4);
+        } else {
+          statement.bindString(4, entity.getDuracaoMedicamento());
+        }
+        if (entity.getIntervaloMedicamento() == null) {
+          statement.bindNull(5);
+        } else {
+          statement.bindString(5, entity.getIntervaloMedicamento());
+        }
       }
     };
     this.__updateAdapterOfMedicamentoEntity = new EntityDeletionOrUpdateAdapter<MedicamentoEntity>(__db) {
@@ -86,8 +94,16 @@ public final class MedicamentoDao_Impl implements MedicamentoDao {
         } else {
           statement.bindString(3, entity.getDoseMedicamento());
         }
-        statement.bindDouble(4, entity.getDuracaoMedicamento());
-        statement.bindDouble(5, entity.getIntervaloMedicamento());
+        if (entity.getDuracaoMedicamento() == null) {
+          statement.bindNull(4);
+        } else {
+          statement.bindString(4, entity.getDuracaoMedicamento());
+        }
+        if (entity.getIntervaloMedicamento() == null) {
+          statement.bindNull(5);
+        } else {
+          statement.bindString(5, entity.getIntervaloMedicamento());
+        }
         statement.bindLong(6, entity.getIdMedicamento());
       }
     };
@@ -102,7 +118,8 @@ public final class MedicamentoDao_Impl implements MedicamentoDao {
   }
 
   @Override
-  public Object insert(final MedicamentoEntity medicamento, final Continuation<? super Long> arg1) {
+  public Object insert(final MedicamentoEntity medicamento,
+      final Continuation<? super Long> $completion) {
     return CoroutinesRoom.execute(__db, true, new Callable<Long>() {
       @Override
       @NonNull
@@ -116,11 +133,12 @@ public final class MedicamentoDao_Impl implements MedicamentoDao {
           __db.endTransaction();
         }
       }
-    }, arg1);
+    }, $completion);
   }
 
   @Override
-  public Object update(final MedicamentoEntity medicamento, final Continuation<? super Unit> arg1) {
+  public Object update(final MedicamentoEntity medicamento,
+      final Continuation<? super Unit> $completion) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       @NonNull
@@ -134,11 +152,11 @@ public final class MedicamentoDao_Impl implements MedicamentoDao {
           __db.endTransaction();
         }
       }
-    }, arg1);
+    }, $completion);
   }
 
   @Override
-  public Object delete(final long id, final Continuation<? super Unit> arg1) {
+  public Object delete(final long id, final Continuation<? super Unit> $completion) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       @NonNull
@@ -159,7 +177,7 @@ public final class MedicamentoDao_Impl implements MedicamentoDao {
           __preparedStmtOfDelete.release(_stmt);
         }
       }
-    }, arg1);
+    }, $completion);
   }
 
   @Override
@@ -194,10 +212,18 @@ public final class MedicamentoDao_Impl implements MedicamentoDao {
             } else {
               _tmpDoseMedicamento = _cursor.getString(_cursorIndexOfDoseMedicamento);
             }
-            final double _tmpDuracaoMedicamento;
-            _tmpDuracaoMedicamento = _cursor.getDouble(_cursorIndexOfDuracaoMedicamento);
-            final double _tmpIntervaloMedicamento;
-            _tmpIntervaloMedicamento = _cursor.getDouble(_cursorIndexOfIntervaloMedicamento);
+            final String _tmpDuracaoMedicamento;
+            if (_cursor.isNull(_cursorIndexOfDuracaoMedicamento)) {
+              _tmpDuracaoMedicamento = null;
+            } else {
+              _tmpDuracaoMedicamento = _cursor.getString(_cursorIndexOfDuracaoMedicamento);
+            }
+            final String _tmpIntervaloMedicamento;
+            if (_cursor.isNull(_cursorIndexOfIntervaloMedicamento)) {
+              _tmpIntervaloMedicamento = null;
+            } else {
+              _tmpIntervaloMedicamento = _cursor.getString(_cursorIndexOfIntervaloMedicamento);
+            }
             _item = new MedicamentoEntity(_tmpIdMedicamento,_tmpNomeMedicamento,_tmpDoseMedicamento,_tmpDuracaoMedicamento,_tmpIntervaloMedicamento);
             _result.add(_item);
           }

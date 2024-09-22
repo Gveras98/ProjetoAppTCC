@@ -22,56 +22,57 @@ public final class FragmentFormAgendaBinding implements ViewBinding {
   private final ScrollView rootView;
 
   @NonNull
-  public final Button btnSalvar;
+  public final Button btnAgendaSalvar;
 
   @NonNull
-  public final TextInputEditText etData;
+  public final TextInputEditText etAgendaData;
 
   @NonNull
-  public final TextInputEditText etEspecialidade;
+  public final TextInputEditText etAgendaEspecialidade;
 
   @NonNull
-  public final TextInputEditText etHora;
+  public final TextInputEditText etAgendaHora;
 
   @NonNull
-  public final TextInputEditText etLocal;
+  public final TextInputEditText etAgendaLocal;
 
   @NonNull
-  public final TextInputEditText etProcedimento;
+  public final TextInputEditText etAgendaProcedimento;
 
   @NonNull
-  public final TextInputLayout inputEtData;
+  public final TextInputLayout inputEtAgendaData;
 
   @NonNull
-  public final TextInputLayout inputEtEspecialidade;
+  public final TextInputLayout inputEtAgendaEspecialidade;
 
   @NonNull
-  public final TextInputLayout inputEtHora;
+  public final TextInputLayout inputEtAgendaHora;
 
   @NonNull
-  public final TextInputLayout inputEtLocal;
+  public final TextInputLayout inputEtAgendaLocal;
 
   @NonNull
-  public final TextInputLayout inputEtProcedimento;
+  public final TextInputLayout inputEtAgendaProcedimento;
 
-  private FragmentFormAgendaBinding(@NonNull ScrollView rootView, @NonNull Button btnSalvar,
-      @NonNull TextInputEditText etData, @NonNull TextInputEditText etEspecialidade,
-      @NonNull TextInputEditText etHora, @NonNull TextInputEditText etLocal,
-      @NonNull TextInputEditText etProcedimento, @NonNull TextInputLayout inputEtData,
-      @NonNull TextInputLayout inputEtEspecialidade, @NonNull TextInputLayout inputEtHora,
-      @NonNull TextInputLayout inputEtLocal, @NonNull TextInputLayout inputEtProcedimento) {
+  private FragmentFormAgendaBinding(@NonNull ScrollView rootView, @NonNull Button btnAgendaSalvar,
+      @NonNull TextInputEditText etAgendaData, @NonNull TextInputEditText etAgendaEspecialidade,
+      @NonNull TextInputEditText etAgendaHora, @NonNull TextInputEditText etAgendaLocal,
+      @NonNull TextInputEditText etAgendaProcedimento, @NonNull TextInputLayout inputEtAgendaData,
+      @NonNull TextInputLayout inputEtAgendaEspecialidade,
+      @NonNull TextInputLayout inputEtAgendaHora, @NonNull TextInputLayout inputEtAgendaLocal,
+      @NonNull TextInputLayout inputEtAgendaProcedimento) {
     this.rootView = rootView;
-    this.btnSalvar = btnSalvar;
-    this.etData = etData;
-    this.etEspecialidade = etEspecialidade;
-    this.etHora = etHora;
-    this.etLocal = etLocal;
-    this.etProcedimento = etProcedimento;
-    this.inputEtData = inputEtData;
-    this.inputEtEspecialidade = inputEtEspecialidade;
-    this.inputEtHora = inputEtHora;
-    this.inputEtLocal = inputEtLocal;
-    this.inputEtProcedimento = inputEtProcedimento;
+    this.btnAgendaSalvar = btnAgendaSalvar;
+    this.etAgendaData = etAgendaData;
+    this.etAgendaEspecialidade = etAgendaEspecialidade;
+    this.etAgendaHora = etAgendaHora;
+    this.etAgendaLocal = etAgendaLocal;
+    this.etAgendaProcedimento = etAgendaProcedimento;
+    this.inputEtAgendaData = inputEtAgendaData;
+    this.inputEtAgendaEspecialidade = inputEtAgendaEspecialidade;
+    this.inputEtAgendaHora = inputEtAgendaHora;
+    this.inputEtAgendaLocal = inputEtAgendaLocal;
+    this.inputEtAgendaProcedimento = inputEtAgendaProcedimento;
   }
 
   @Override
@@ -101,75 +102,76 @@ public final class FragmentFormAgendaBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.btnSalvar;
-      Button btnSalvar = ViewBindings.findChildViewById(rootView, id);
-      if (btnSalvar == null) {
+      id = R.id.btnAgendaSalvar;
+      Button btnAgendaSalvar = ViewBindings.findChildViewById(rootView, id);
+      if (btnAgendaSalvar == null) {
         break missingId;
       }
 
-      id = R.id.etData;
-      TextInputEditText etData = ViewBindings.findChildViewById(rootView, id);
-      if (etData == null) {
+      id = R.id.etAgendaData;
+      TextInputEditText etAgendaData = ViewBindings.findChildViewById(rootView, id);
+      if (etAgendaData == null) {
         break missingId;
       }
 
-      id = R.id.etEspecialidade;
-      TextInputEditText etEspecialidade = ViewBindings.findChildViewById(rootView, id);
-      if (etEspecialidade == null) {
+      id = R.id.etAgendaEspecialidade;
+      TextInputEditText etAgendaEspecialidade = ViewBindings.findChildViewById(rootView, id);
+      if (etAgendaEspecialidade == null) {
         break missingId;
       }
 
-      id = R.id.etHora;
-      TextInputEditText etHora = ViewBindings.findChildViewById(rootView, id);
-      if (etHora == null) {
+      id = R.id.etAgendaHora;
+      TextInputEditText etAgendaHora = ViewBindings.findChildViewById(rootView, id);
+      if (etAgendaHora == null) {
         break missingId;
       }
 
-      id = R.id.etLocal;
-      TextInputEditText etLocal = ViewBindings.findChildViewById(rootView, id);
-      if (etLocal == null) {
+      id = R.id.etAgendaLocal;
+      TextInputEditText etAgendaLocal = ViewBindings.findChildViewById(rootView, id);
+      if (etAgendaLocal == null) {
         break missingId;
       }
 
-      id = R.id.etProcedimento;
-      TextInputEditText etProcedimento = ViewBindings.findChildViewById(rootView, id);
-      if (etProcedimento == null) {
+      id = R.id.etAgendaProcedimento;
+      TextInputEditText etAgendaProcedimento = ViewBindings.findChildViewById(rootView, id);
+      if (etAgendaProcedimento == null) {
         break missingId;
       }
 
-      id = R.id.inputEtData;
-      TextInputLayout inputEtData = ViewBindings.findChildViewById(rootView, id);
-      if (inputEtData == null) {
+      id = R.id.inputEtAgendaData;
+      TextInputLayout inputEtAgendaData = ViewBindings.findChildViewById(rootView, id);
+      if (inputEtAgendaData == null) {
         break missingId;
       }
 
-      id = R.id.inputEtEspecialidade;
-      TextInputLayout inputEtEspecialidade = ViewBindings.findChildViewById(rootView, id);
-      if (inputEtEspecialidade == null) {
+      id = R.id.inputEtAgendaEspecialidade;
+      TextInputLayout inputEtAgendaEspecialidade = ViewBindings.findChildViewById(rootView, id);
+      if (inputEtAgendaEspecialidade == null) {
         break missingId;
       }
 
-      id = R.id.inputEtHora;
-      TextInputLayout inputEtHora = ViewBindings.findChildViewById(rootView, id);
-      if (inputEtHora == null) {
+      id = R.id.inputEtAgendaHora;
+      TextInputLayout inputEtAgendaHora = ViewBindings.findChildViewById(rootView, id);
+      if (inputEtAgendaHora == null) {
         break missingId;
       }
 
-      id = R.id.inputEtLocal;
-      TextInputLayout inputEtLocal = ViewBindings.findChildViewById(rootView, id);
-      if (inputEtLocal == null) {
+      id = R.id.inputEtAgendaLocal;
+      TextInputLayout inputEtAgendaLocal = ViewBindings.findChildViewById(rootView, id);
+      if (inputEtAgendaLocal == null) {
         break missingId;
       }
 
-      id = R.id.inputEtProcedimento;
-      TextInputLayout inputEtProcedimento = ViewBindings.findChildViewById(rootView, id);
-      if (inputEtProcedimento == null) {
+      id = R.id.inputEtAgendaProcedimento;
+      TextInputLayout inputEtAgendaProcedimento = ViewBindings.findChildViewById(rootView, id);
+      if (inputEtAgendaProcedimento == null) {
         break missingId;
       }
 
-      return new FragmentFormAgendaBinding((ScrollView) rootView, btnSalvar, etData,
-          etEspecialidade, etHora, etLocal, etProcedimento, inputEtData, inputEtEspecialidade,
-          inputEtHora, inputEtLocal, inputEtProcedimento);
+      return new FragmentFormAgendaBinding((ScrollView) rootView, btnAgendaSalvar, etAgendaData,
+          etAgendaEspecialidade, etAgendaHora, etAgendaLocal, etAgendaProcedimento,
+          inputEtAgendaData, inputEtAgendaEspecialidade, inputEtAgendaHora, inputEtAgendaLocal,
+          inputEtAgendaProcedimento);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

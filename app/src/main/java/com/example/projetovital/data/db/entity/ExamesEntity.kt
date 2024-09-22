@@ -22,4 +22,6 @@ data class ExamesEntity(
 
     @ColumnInfo(name = "procedimentoExame")
     val procedimentoExame: String
+
+    //Adicionar os anexos em pdf
 )

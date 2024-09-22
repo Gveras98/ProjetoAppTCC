@@ -16,10 +16,10 @@
 
     //Strings Form Exames
     <string name="f.especialidade"> Especialidade: </string>
-    <string name="f.data"> Data </string>
-    <string name="f.local"> Local </string>
-    <string name="f.procedimento"> Procedimento </string>
-    <string name="f.anexo"> Anexo </string>
+    <string name="f.data"> Data: </string>
+    <string name="f.local"> Local: </string>
+    <string name="f.procedimento"> Procedimento: </string>
+    <string name="f.anexo"> Anexo: </string>
 
 
     //Strings do Agendamentos
@@ -45,13 +45,13 @@
     <string name="CadNascimento">Data de Nascimento:</string>
     <string name="CadCPF">CPF:</string>
     <string name="CadEndereco">Endereço:</string>
-    <string name="CadCEP">CEP</string>
-    <string name="CadTelefone">Telefone</string>
-    <string name="CadEmail">Email</string>
-    <string name="CadSus">Número SUS</string>
-    <string name="CadPlanoSaude">Plano de Saúde</string>
-    <string name="CadNumPlanoSaude">Número do Plano de Saúde</string>
-    <string name="CadTipoSanguineo">Tipo Sanguíneo</string>
+    <string name="CadCEP">CEP:</string>
+    <string name="CadTelefone">Telefone:</string>
+    <string name="CadEmail">Email:</string>
+    <string name="CadSus">Número SUS:</string>
+    <string name="CadPlanoSaude">Plano de Saúde:</string>
+    <string name="CadNumPlanoSaude">Número do Plano de Saúde:</string>
+    <string name="CadTipoSanguineo">Tipo Sanguíneo:</string>
     <string name="CadSalvar">Salvar</string>
 
     //Trocar os Hints por Strings
@@ -78,10 +78,38 @@
     <string name="med.intervalo"> Intervalo: </string>
     <string name="med.salvar"> Salvar </string>
 
+    //Arrays para M
+    <string-array name="med_duracao">
+        <item>1 Dia</item>
+        <item>2 Dias</item>
+        <item>3 Dias</item>
+        <item>4 Dias</item>
+        <item>5 Dias</item>
+        <item>7 Dias</item>
+        <item>15 Dias</item>
+        <item>30 Dias</item>
+        <item>60 Dias </item>
+        <item>90 Dias</item>
+        <item>Continuo</item>
+        <item>Não Determinado</item>
+    </string-array>
+
+    <string-array name="med_intervalo">
+        <item>A Cada 4 Horas  </item>
+        <item>A Cada 6 Horas  </item>
+        <item>A Cada 8 Horas  </item>
+        <item>A Cada 12 Horas </item>
+        <item>Uma Vez ao Dia </item>
+        <item>Ao Acordar </item>
+        <item>No Almoço </item>
+        <item>Antes de Dormir </item>
+        <item>Não Determinado</item>
+    </string-array>
+
     //Strings Alergias
     <string name="alergia.novo"> Nova Alergia </string>
     //Strings Form Alergias
-    <string name="alergia.nome"> Nome: </string>
+    <string name="alergia.nome"> Nome Alergia: </string>
     <string name="alergia.salvar"> Salvar </string>
 
     //Mensagens

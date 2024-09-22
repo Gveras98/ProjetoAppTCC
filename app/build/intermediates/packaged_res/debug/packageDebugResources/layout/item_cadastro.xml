@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardCornerRadius="8dp" >
+    app:cardCornerRadius="8dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,7 +17,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:textSize="18sp"
-            tools:text="Nome: "/>
+            tools:text="Nome: " />
 
         <TextView
             android:id="@+id/textViewCadastroDataNascimento"
@@ -26,7 +25,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:textSize="18sp"
-            tools:text="Data Nascimento: "/>
+            tools:text="Data Nascimento: " />
 
         <TextView
             android:id="@+id/textViewCadastroCPF"
@@ -34,7 +33,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:textSize="18sp"
-            tools:text="CPF: "/>
+            tools:text="CPF: " />
 
         <TextView
             android:id="@+id/textViewCadastroEndereco"
@@ -42,7 +41,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:textSize="18sp"
-            tools:text="Endereço: "/>
+            tools:text="Endereço: " />
 
         <TextView
             android:id="@+id/textViewCadastroCEP"
@@ -50,7 +49,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:textSize="18sp"
-            tools:text="Cep: "/>
+            tools:text="Cep: " />
 
         <TextView
             android:id="@+id/textViewCadastroTelefone"
@@ -58,7 +57,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:textSize="18sp"
-            tools:text="Telefone "/>
+            tools:text="Telefone " />
 
         <TextView
             android:id="@+id/textViewCadastroEmail"
@@ -66,7 +65,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:textSize="18sp"
-            tools:text="email: "/>
+            tools:text="email: " />
 
         <TextView
             android:id="@+id/textViewCadastroNumeroSUS"
@@ -74,7 +73,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:textSize="18sp"
-            tools:text="N° Sus: "/>
+            tools:text="N° Sus: " />
 
         <TextView
             android:id="@+id/textViewCadastroPlanoSaude"
@@ -82,7 +81,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:textSize="18sp"
-            tools:text="Plano de Saúde: "/>
+            tools:text="Plano de Saúde: " />
 
         <TextView
             android:id="@+id/textViewCadastroNumeroPlanoSaude"
@@ -90,7 +89,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:textSize="18sp"
-            tools:text="N° Plano de Saúde: "/>
+            tools:text="N° Plano de Saúde: " />
 
         <TextView
             android:id="@+id/textViewCadastroTipoSanguineo"
@@ -98,7 +97,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:textSize="18sp"
-            tools:text="Tipo Sanguineo: "/>
+            tools:text="Tipo Sanguineo: " />
 
     </LinearLayout>
 

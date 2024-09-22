@@ -11,15 +11,15 @@ class ExamesDataSource(private val examesDao: ExamesDao) : ExamesRepository {
         return examesDao.getAll()
     }
 
-    override suspend fun insertExame(exames: ExamesEntity): Long {
+    override suspend fun insertExames(exames: ExamesEntity): Long {
         return examesDao.insert(exames)
     }
 
-    override suspend fun updateExame(exames: ExamesEntity) {
+    override suspend fun updateExames(exames: ExamesEntity) {
         examesDao.update(exames)
     }
 
-    override suspend fun deleteExame(exames: ExamesEntity) {
+    override suspend fun deleteExames(exames: ExamesEntity) {
         examesDao.delete(exames.idExame)
     }
 }

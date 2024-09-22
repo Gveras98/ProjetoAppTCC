@@ -40,6 +40,31 @@ class FormCadastroFragment : Fragment() {
         }
     }
 
+    //Configuração do layout
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        // Cria o layout usando ViewBinding
+        binding = FragmentFormCadastroBinding.inflate(inflater, container, false)
+
+        // Define a configuração do ARRAY de Tipo Sanguíneo
+        val adapter = ArrayAdapter.createFromResource(
+            requireContext(),
+            R.array.tipos_sanguineos,
+            android.R.layout.simple_spinner_item
+        ).apply {
+            setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        }
+        // Aplica o adapter ao Spinner
+        binding.spinnerTipoSanguineo.adapter = adapter
+
+        // Retorna a view raiz do binding
+        return binding.root
+    }
+
+
+    //Configuração dos campos do formulário
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -48,6 +73,7 @@ class FormCadastroFragment : Fragment() {
     }
 
     private fun inserirListeners() {
+
         // Configurar DatePickerDialog para o campo de nascimento
         binding.etUserNascimento.setOnClickListener {
             val calendar = Calendar.getInstance()
@@ -62,8 +88,10 @@ class FormCadastroFragment : Fragment() {
             }, ano, mes, dia).show()
         }
 
+        //Salvar Cadastro
         binding.btnCadSalvar.setOnClickListener {
             // Coleta dos dados dos campos do formulário
+
             val nome = binding.etUserNome.text.toString()
 
             // Obtendo o texto do RadioButton selecionado
@@ -102,7 +130,7 @@ class FormCadastroFragment : Fragment() {
             val cadastro = CadastroEntity(
                 nomeUser = nome,
                 sexoUser = sexo.firstOrNull() ?: ' ',
-                dataNascimentoUser = nascimento ?: Date(), // Certifique-se de lidar com isso
+                dataNascimentoUser = nascimento ?: Date(),
                 cpfUser = cpf,
                 enderecoUser = endereco,
                 cepUser = cep,
@@ -146,27 +174,5 @@ class FormCadastroFragment : Fragment() {
         binding.EtUserPlanoSaude.text?.clear()
         binding.EtUserNumPlanoSaude.text?.clear()
         binding.spinnerTipoSanguineo.setSelection(0)
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        // Cria o layout usando ViewBinding
-        binding = FragmentFormCadastroBinding.inflate(inflater, container, false)
-
-        // Define a configuração do ARRAY de Tipo Sanguíneo
-        val adapter = ArrayAdapter.createFromResource(
-            requireContext(),
-            R.array.tipos_sanguineos,
-            android.R.layout.simple_spinner_item
-        ).apply {
-            setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        }
-        // Aplica o adapter ao Spinner
-        binding.spinnerTipoSanguineo.adapter = adapter
-
-        // Retorna a view raiz do binding
-        return binding.root
     }
 }

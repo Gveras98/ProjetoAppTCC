@@ -9,13 +9,17 @@ data class MedicamentoEntity(
     @ColumnInfo(name = "idMedicamento")
     @PrimaryKey(autoGenerate = true)
     val idMedicamento: Long = 0,
+
     @ColumnInfo(name = "nomeMedicamento")
     val nomeMedicamento: String,
+
     @ColumnInfo(name = "doseMedicamento")
     val doseMedicamento: String,
+
     @ColumnInfo(name = "duracaoMedicamento")
-    val duracaoMedicamento: Double,
+    val duracaoMedicamento: String,
+    
     @ColumnInfo(name = "intervaloMedicamento")
-    val intervaloMedicamento: Double
+    val intervaloMedicamento: String
 
 )

@@ -15,6 +15,15 @@ public final class FormCadastroFragment extends androidx.fragment.app.Fragment {
     }
     
     @java.lang.Override
+    @org.jetbrains.annotations.NotNull
+    public android.view.View onCreateView(@org.jetbrains.annotations.NotNull
+    android.view.LayoutInflater inflater, @org.jetbrains.annotations.Nullable
+    android.view.ViewGroup container, @org.jetbrains.annotations.Nullable
+    android.os.Bundle savedInstanceState) {
+        return null;
+    }
+    
+    @java.lang.Override
     public void onViewCreated(@org.jetbrains.annotations.NotNull
     android.view.View view, @org.jetbrains.annotations.Nullable
     android.os.Bundle savedInstanceState) {
@@ -27,14 +36,5 @@ public final class FormCadastroFragment extends androidx.fragment.app.Fragment {
     }
     
     private final void limparCampos() {
-    }
-    
-    @java.lang.Override
-    @org.jetbrains.annotations.NotNull
-    public android.view.View onCreateView(@org.jetbrains.annotations.NotNull
-    android.view.LayoutInflater inflater, @org.jetbrains.annotations.Nullable
-    android.view.ViewGroup container, @org.jetbrains.annotations.Nullable
-    android.os.Bundle savedInstanceState) {
-        return null;
     }
 }

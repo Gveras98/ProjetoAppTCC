@@ -51,32 +51,47 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Duração Medicamento -->
+        <!-- Verificar a possibilidade: Ao Inves de Intervalo - Data Inicio / Data Fim -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="@string/med.duracao"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/inputEtDuracao"
+            android:id="@+id/inputSpinnerEtDuracaoMed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etMedDuracao"
+            <Spinner
+                android:id="@+id/spinnerEtDuracaoMed"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/med.duracao"
-                android:inputType="numberDecimal"
                 android:padding="16dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Intervalo Medicamento -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="@string/med.intervalo"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/inputEtIntervalo"
+            android:id="@+id/inputSpinnerEtIntercaloMed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etMedIntervalo"
+            <Spinner
+                android:id="@+id/spinnerEtIntercaloMed"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/med.intervalo"
-                android:inputType="numberDecimal"
                 android:padding="16dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -89,6 +104,5 @@
             android:text="@string/med.salvar"
             android:textSize="18sp"
             android:textStyle="bold" />
-
     </LinearLayout>
 </ScrollView>

@@ -22,6 +22,7 @@ import java.lang.Object;
 import java.lang.Override;
 import java.lang.String;
 import java.lang.SuppressWarnings;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
@@ -66,10 +67,11 @@ public final class AgendaDao_Impl implements AgendaDao {
         } else {
           statement.bindString(3, _tmp);
         }
-        if (entity.getHoraAgenda() == null) {
+        final String _tmp_1 = __dateConverter.fromLocalTime(entity.getHoraAgenda());
+        if (_tmp_1 == null) {
           statement.bindNull(4);
         } else {
-          statement.bindString(4, entity.getHoraAgenda());
+          statement.bindString(4, _tmp_1);
         }
         if (entity.getLocalAgenda() == null) {
           statement.bindNull(5);
@@ -105,10 +107,11 @@ public final class AgendaDao_Impl implements AgendaDao {
         } else {
           statement.bindString(3, _tmp);
         }
-        if (entity.getHoraAgenda() == null) {
+        final String _tmp_1 = __dateConverter.fromLocalTime(entity.getHoraAgenda());
+        if (_tmp_1 == null) {
           statement.bindNull(4);
         } else {
-          statement.bindString(4, entity.getHoraAgenda());
+          statement.bindString(4, _tmp_1);
         }
         if (entity.getLocalAgenda() == null) {
           statement.bindNull(5);
@@ -229,12 +232,14 @@ public final class AgendaDao_Impl implements AgendaDao {
               _tmp = _cursor.getString(_cursorIndexOfDataAgenda);
             }
             _tmpDataAgenda = __dateConverter.toDate(_tmp);
-            final String _tmpHoraAgenda;
+            final LocalTime _tmpHoraAgenda;
+            final String _tmp_1;
             if (_cursor.isNull(_cursorIndexOfHoraAgenda)) {
-              _tmpHoraAgenda = null;
+              _tmp_1 = null;
             } else {
-              _tmpHoraAgenda = _cursor.getString(_cursorIndexOfHoraAgenda);
+              _tmp_1 = _cursor.getString(_cursorIndexOfHoraAgenda);
             }
+            _tmpHoraAgenda = __dateConverter.toLocalTime(_tmp_1);
             final String _tmpLocalAgenda;
             if (_cursor.isNull(_cursorIndexOfLocalAgenda)) {
               _tmpLocalAgenda = null;

@@ -85,8 +85,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/CadNascimento"
-                android:inputType="none"
                 android:focusable="false"
+                android:inputType="none"
                 android:padding="16dp" />
         </com.google.android.material.textfield.TextInputLayout>
         <!-- CPF -->
@@ -210,6 +210,14 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Tipo Sanguíneo -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="@string/CadTipoSanguineo"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/inputSpinnerTipoSanguineo"
             android:layout_width="match_parent"
