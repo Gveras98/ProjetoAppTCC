@@ -16,6 +16,7 @@ import com.example.projetovital.data.db.DateConverter;
 import com.example.projetovital.data.db.entity.CadastroEntity;
 import java.lang.Class;
 import java.lang.Exception;
+import java.lang.Long;
 import java.lang.Object;
 import java.lang.Override;
 import java.lang.String;
@@ -73,10 +74,10 @@ public final class CadastroDao_Impl implements CadastroDao {
         } else {
           statement.bindString(6, entity.getEnderecoUser());
         }
-        if (entity.getCepUsuarioUser() == null) {
+        if (entity.getCepUser() == null) {
           statement.bindNull(7);
         } else {
-          statement.bindString(7, entity.getCepUsuarioUser());
+          statement.bindString(7, entity.getCepUser());
         }
         if (entity.getTelefoneUser() == null) {
           statement.bindNull(8);
@@ -143,10 +144,10 @@ public final class CadastroDao_Impl implements CadastroDao {
         } else {
           statement.bindString(6, entity.getEnderecoUser());
         }
-        if (entity.getCepUsuarioUser() == null) {
+        if (entity.getCepUser() == null) {
           statement.bindNull(7);
         } else {
-          statement.bindString(7, entity.getCepUsuarioUser());
+          statement.bindString(7, entity.getCepUser());
         }
         if (entity.getTelefoneUser() == null) {
           statement.bindNull(8);
@@ -185,16 +186,16 @@ public final class CadastroDao_Impl implements CadastroDao {
 
   @Override
   public Object insert(final CadastroEntity cadastro,
-      final Continuation<? super Unit> $completion) {
-    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
+      final Continuation<? super Long> $completion) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Long>() {
       @Override
       @NonNull
-      public Unit call() throws Exception {
+      public Long call() throws Exception {
         __db.beginTransaction();
         try {
-          __insertionAdapterOfCadastroEntity.insert(cadastro);
+          final Long _result = __insertionAdapterOfCadastroEntity.insertAndReturnId(cadastro);
           __db.setTransactionSuccessful();
-          return Unit.INSTANCE;
+          return _result;
         } finally {
           __db.endTransaction();
         }
@@ -237,7 +238,7 @@ public final class CadastroDao_Impl implements CadastroDao {
           final int _cursorIndexOfDataNascimentoUser = CursorUtil.getColumnIndexOrThrow(_cursor, "dataNascimentoUser");
           final int _cursorIndexOfCpfUser = CursorUtil.getColumnIndexOrThrow(_cursor, "cpfUser");
           final int _cursorIndexOfEnderecoUser = CursorUtil.getColumnIndexOrThrow(_cursor, "enderecoUser");
-          final int _cursorIndexOfCepUsuarioUser = CursorUtil.getColumnIndexOrThrow(_cursor, "cepUser");
+          final int _cursorIndexOfCepUser = CursorUtil.getColumnIndexOrThrow(_cursor, "cepUser");
           final int _cursorIndexOfTelefoneUser = CursorUtil.getColumnIndexOrThrow(_cursor, "telefoneUser");
           final int _cursorIndexOfEmailUser = CursorUtil.getColumnIndexOrThrow(_cursor, "emailUser");
           final int _cursorIndexOfNumSusUser = CursorUtil.getColumnIndexOrThrow(_cursor, "numSusUser");
@@ -277,11 +278,11 @@ public final class CadastroDao_Impl implements CadastroDao {
             } else {
               _tmpEnderecoUser = _cursor.getString(_cursorIndexOfEnderecoUser);
             }
-            final String _tmpCepUsuarioUser;
-            if (_cursor.isNull(_cursorIndexOfCepUsuarioUser)) {
-              _tmpCepUsuarioUser = null;
+            final String _tmpCepUser;
+            if (_cursor.isNull(_cursorIndexOfCepUser)) {
+              _tmpCepUser = null;
             } else {
-              _tmpCepUsuarioUser = _cursor.getString(_cursorIndexOfCepUsuarioUser);
+              _tmpCepUser = _cursor.getString(_cursorIndexOfCepUser);
             }
             final String _tmpTelefoneUser;
             if (_cursor.isNull(_cursorIndexOfTelefoneUser)) {
@@ -319,7 +320,7 @@ public final class CadastroDao_Impl implements CadastroDao {
             } else {
               _tmpTipoSanguineoUser = _cursor.getString(_cursorIndexOfTipoSanguineoUser);
             }
-            _item = new CadastroEntity(_tmpIdUser,_tmpNomeUser,_tmpSexoUser,_tmpDataNascimentoUser,_tmpCpfUser,_tmpEnderecoUser,_tmpCepUsuarioUser,_tmpTelefoneUser,_tmpEmailUser,_tmpNumSusUser,_tmpPlanoSaudeUser,_tmpNumPlanoSaudeUser,_tmpTipoSanguineoUser);
+            _item = new CadastroEntity(_tmpIdUser,_tmpNomeUser,_tmpSexoUser,_tmpDataNascimentoUser,_tmpCpfUser,_tmpEnderecoUser,_tmpCepUser,_tmpTelefoneUser,_tmpEmailUser,_tmpNumSusUser,_tmpPlanoSaudeUser,_tmpNumPlanoSaudeUser,_tmpTipoSanguineoUser);
             _result.add(_item);
           }
           return _result;

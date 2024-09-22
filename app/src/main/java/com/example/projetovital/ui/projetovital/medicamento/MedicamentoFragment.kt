@@ -1,10 +1,11 @@
-package com.example.projetovital
+package com.example.projetovital.ui.projetovital.medicamento
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.projetovital.MainActivity
 import com.example.projetovital.databinding.FragmentMedicamentoBinding
 
 class MedicamentoFragment : Fragment() {

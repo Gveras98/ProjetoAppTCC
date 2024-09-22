@@ -1,9 +1,9 @@
-package com.example.projetovital.datasource
+package com.example.projetovital.data.db.datasource
 
 import androidx.lifecycle.LiveData
 import com.example.projetovital.data.db.dao.AgendaDao
 import com.example.projetovital.data.db.entity.AgendaEntity
-import com.example.projetovital.repository.AgendaRepository
+import com.example.projetovital.data.db.repository.AgendaRepository
 
 class AgendaDataSource(private val agendaDao: AgendaDao) : AgendaRepository {
 
@@ -11,8 +11,8 @@ class AgendaDataSource(private val agendaDao: AgendaDao) : AgendaRepository {
         return agendaDao.getAll()
     }
 
-    override suspend fun insertAgenda(agenda: AgendaEntity) {
-        agendaDao.insert(agenda)
+    override suspend fun insertAgenda(agenda: AgendaEntity): Long {
+        return agendaDao.insert(agenda)
     }
 
     override suspend fun updateAgenda(agenda: AgendaEntity) {

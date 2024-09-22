@@ -1,4 +1,4 @@
-package com.example.projetovital
+package com.example.projetovital.ui.projetovital.exames
 
 import android.app.Activity
 import android.app.Activity.RESULT_OK

@@ -84,5 +84,9 @@
     <string name="alergia.nome"> Nome: </string>
     <string name="alergia.salvar"> Salvar </string>
 
+    //Mensagens
+    <string name="msg.sucesso"> Cadastrado com Sucesso! </string>
+    <string name="msg.erro"> Erro no Cadastro! </string>
+
 
 </resources>

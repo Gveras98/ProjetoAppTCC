@@ -1,9 +1,9 @@
-package com.example.projetovital.datasource
+package com.example.projetovital.data.db.datasource
 
 import androidx.lifecycle.LiveData
 import com.example.projetovital.data.db.dao.CadastroDao
 import com.example.projetovital.data.db.entity.CadastroEntity
-import com.example.projetovital.repository.CadastroRepository
+import com.example.projetovital.data.db.repository.CadastroRepository
 
 class CadastroDataSource(private val cadastroDao: CadastroDao) : CadastroRepository {
 

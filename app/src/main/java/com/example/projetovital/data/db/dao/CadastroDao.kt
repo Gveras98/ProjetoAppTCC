@@ -15,9 +15,9 @@ interface CadastroDao {
     fun getAll(): LiveData<List<CadastroEntity>>
     // retirar o Suspende caso erro
 
-    // Inserir um novo cadastro
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(cadastro: CadastroEntity)
+    suspend fun insert(cadastro: CadastroEntity): Long
 
     // Atualizar um cadastro existente
     @Update

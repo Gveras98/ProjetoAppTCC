@@ -4,6 +4,10 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.projetovital.databinding.ActivityMainBinding
+import com.example.projetovital.ui.projetovital.agenda.AgendaFragment
+import com.example.projetovital.ui.projetovital.cadastro.CadastroFragment
+import com.example.projetovital.ui.projetovital.dependente.DependenteFragment
+import com.example.projetovital.ui.projetovital.exames.ExamesFragment
 import com.google.android.material.appbar.MaterialToolbar
 
 class MainActivity : AppCompatActivity() {

@@ -1,4 +1,4 @@
-package com.example.projetovital
+package com.example.projetovital.ui.projetovital.medicamento
 
 import android.os.Bundle
 import android.view.LayoutInflater

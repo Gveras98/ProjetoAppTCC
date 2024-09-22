@@ -2,6 +2,8 @@ package com.example.projetovital.data.db.dao;
 
 import android.database.Cursor;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.lifecycle.LiveData;
 import androidx.room.CoroutinesRoom;
 import androidx.room.EntityDeletionOrUpdateAdapter;
 import androidx.room.EntityInsertionAdapter;
@@ -15,6 +17,7 @@ import com.example.projetovital.data.db.DateConverter;
 import com.example.projetovital.data.db.entity.ExamesEntity;
 import java.lang.Class;
 import java.lang.Exception;
+import java.lang.Long;
 import java.lang.Object;
 import java.lang.Override;
 import java.lang.String;
@@ -121,25 +124,25 @@ public final class ExamesDao_Impl implements ExamesDao {
   }
 
   @Override
-  public Object insert(final ExamesEntity exames, final Continuation<? super Unit> $completion) {
-    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
+  public Object insert(final ExamesEntity exames, final Continuation<? super Long> arg1) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Long>() {
       @Override
       @NonNull
-      public Unit call() throws Exception {
+      public Long call() throws Exception {
         __db.beginTransaction();
         try {
-          __insertionAdapterOfExamesEntity.insert(exames);
+          final Long _result = __insertionAdapterOfExamesEntity.insertAndReturnId(exames);
           __db.setTransactionSuccessful();
-          return Unit.INSTANCE;
+          return _result;
         } finally {
           __db.endTransaction();
         }
       }
-    }, $completion);
+    }, arg1);
   }
 
   @Override
-  public Object update(final ExamesEntity exames, final Continuation<? super Unit> $completion) {
+  public Object update(final ExamesEntity exames, final Continuation<? super Unit> arg1) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       @NonNull
@@ -153,11 +156,11 @@ public final class ExamesDao_Impl implements ExamesDao {
           __db.endTransaction();
         }
       }
-    }, $completion);
+    }, arg1);
   }
 
   @Override
-  public Object delete(final long id, final Continuation<? super Unit> $completion) {
+  public Object delete(final long id, final Continuation<? super Unit> arg1) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       @NonNull
@@ -178,60 +181,69 @@ public final class ExamesDao_Impl implements ExamesDao {
           __preparedStmtOfDelete.release(_stmt);
         }
       }
-    }, $completion);
+    }, arg1);
   }
 
   @Override
-  public List<ExamesEntity> getAll() {
+  public LiveData<List<ExamesEntity>> getAll() {
     final String _sql = "SELECT * FROM tblExames";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
-    __db.assertNotSuspendingTransaction();
-    final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
-    try {
-      final int _cursorIndexOfIdExame = CursorUtil.getColumnIndexOrThrow(_cursor, "idExame");
-      final int _cursorIndexOfEspecialidadeExame = CursorUtil.getColumnIndexOrThrow(_cursor, "especialidadeExame");
-      final int _cursorIndexOfDataExame = CursorUtil.getColumnIndexOrThrow(_cursor, "dataExame");
-      final int _cursorIndexOfLocalExame = CursorUtil.getColumnIndexOrThrow(_cursor, "localExame");
-      final int _cursorIndexOfProcedimentoExame = CursorUtil.getColumnIndexOrThrow(_cursor, "procedimentoExame");
-      final List<ExamesEntity> _result = new ArrayList<ExamesEntity>(_cursor.getCount());
-      while (_cursor.moveToNext()) {
-        final ExamesEntity _item;
-        final long _tmpIdExame;
-        _tmpIdExame = _cursor.getLong(_cursorIndexOfIdExame);
-        final String _tmpEspecialidadeExame;
-        if (_cursor.isNull(_cursorIndexOfEspecialidadeExame)) {
-          _tmpEspecialidadeExame = null;
-        } else {
-          _tmpEspecialidadeExame = _cursor.getString(_cursorIndexOfEspecialidadeExame);
+    return __db.getInvalidationTracker().createLiveData(new String[] {"tblExames"}, false, new Callable<List<ExamesEntity>>() {
+      @Override
+      @Nullable
+      public List<ExamesEntity> call() throws Exception {
+        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+        try {
+          final int _cursorIndexOfIdExame = CursorUtil.getColumnIndexOrThrow(_cursor, "idExame");
+          final int _cursorIndexOfEspecialidadeExame = CursorUtil.getColumnIndexOrThrow(_cursor, "especialidadeExame");
+          final int _cursorIndexOfDataExame = CursorUtil.getColumnIndexOrThrow(_cursor, "dataExame");
+          final int _cursorIndexOfLocalExame = CursorUtil.getColumnIndexOrThrow(_cursor, "localExame");
+          final int _cursorIndexOfProcedimentoExame = CursorUtil.getColumnIndexOrThrow(_cursor, "procedimentoExame");
+          final List<ExamesEntity> _result = new ArrayList<ExamesEntity>(_cursor.getCount());
+          while (_cursor.moveToNext()) {
+            final ExamesEntity _item;
+            final long _tmpIdExame;
+            _tmpIdExame = _cursor.getLong(_cursorIndexOfIdExame);
+            final String _tmpEspecialidadeExame;
+            if (_cursor.isNull(_cursorIndexOfEspecialidadeExame)) {
+              _tmpEspecialidadeExame = null;
+            } else {
+              _tmpEspecialidadeExame = _cursor.getString(_cursorIndexOfEspecialidadeExame);
+            }
+            final Date _tmpDataExame;
+            final String _tmp;
+            if (_cursor.isNull(_cursorIndexOfDataExame)) {
+              _tmp = null;
+            } else {
+              _tmp = _cursor.getString(_cursorIndexOfDataExame);
+            }
+            _tmpDataExame = __dateConverter.toDate(_tmp);
+            final String _tmpLocalExame;
+            if (_cursor.isNull(_cursorIndexOfLocalExame)) {
+              _tmpLocalExame = null;
+            } else {
+              _tmpLocalExame = _cursor.getString(_cursorIndexOfLocalExame);
+            }
+            final String _tmpProcedimentoExame;
+            if (_cursor.isNull(_cursorIndexOfProcedimentoExame)) {
+              _tmpProcedimentoExame = null;
+            } else {
+              _tmpProcedimentoExame = _cursor.getString(_cursorIndexOfProcedimentoExame);
+            }
+            _item = new ExamesEntity(_tmpIdExame,_tmpEspecialidadeExame,_tmpDataExame,_tmpLocalExame,_tmpProcedimentoExame);
+            _result.add(_item);
+          }
+          return _result;
+        } finally {
+          _cursor.close();
         }
-        final Date _tmpDataExame;
-        final String _tmp;
-        if (_cursor.isNull(_cursorIndexOfDataExame)) {
-          _tmp = null;
-        } else {
-          _tmp = _cursor.getString(_cursorIndexOfDataExame);
-        }
-        _tmpDataExame = __dateConverter.toDate(_tmp);
-        final String _tmpLocalExame;
-        if (_cursor.isNull(_cursorIndexOfLocalExame)) {
-          _tmpLocalExame = null;
-        } else {
-          _tmpLocalExame = _cursor.getString(_cursorIndexOfLocalExame);
-        }
-        final String _tmpProcedimentoExame;
-        if (_cursor.isNull(_cursorIndexOfProcedimentoExame)) {
-          _tmpProcedimentoExame = null;
-        } else {
-          _tmpProcedimentoExame = _cursor.getString(_cursorIndexOfProcedimentoExame);
-        }
-        _item = new ExamesEntity(_tmpIdExame,_tmpEspecialidadeExame,_tmpDataExame,_tmpLocalExame,_tmpProcedimentoExame);
-        _result.add(_item);
       }
-      return _result;
-    } finally {
-      _cursor.close();
-      _statement.release();
-    }
+
+      @Override
+      protected void finalize() {
+        _statement.release();
+      }
+    });
   }
 
   @NonNull

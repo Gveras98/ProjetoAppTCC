@@ -2,6 +2,8 @@ package com.example.projetovital.data.db.dao;
 
 import android.database.Cursor;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.lifecycle.LiveData;
 import androidx.room.CoroutinesRoom;
 import androidx.room.EntityDeletionOrUpdateAdapter;
 import androidx.room.EntityInsertionAdapter;
@@ -14,6 +16,7 @@ import androidx.sqlite.db.SupportSQLiteStatement;
 import com.example.projetovital.data.db.entity.MedicamentoEntity;
 import java.lang.Class;
 import java.lang.Exception;
+import java.lang.Long;
 import java.lang.Object;
 import java.lang.Override;
 import java.lang.String;
@@ -99,27 +102,25 @@ public final class MedicamentoDao_Impl implements MedicamentoDao {
   }
 
   @Override
-  public Object insert(final MedicamentoEntity medicamento,
-      final Continuation<? super Unit> $completion) {
-    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
+  public Object insert(final MedicamentoEntity medicamento, final Continuation<? super Long> arg1) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Long>() {
       @Override
       @NonNull
-      public Unit call() throws Exception {
+      public Long call() throws Exception {
         __db.beginTransaction();
         try {
-          __insertionAdapterOfMedicamentoEntity.insert(medicamento);
+          final Long _result = __insertionAdapterOfMedicamentoEntity.insertAndReturnId(medicamento);
           __db.setTransactionSuccessful();
-          return Unit.INSTANCE;
+          return _result;
         } finally {
           __db.endTransaction();
         }
       }
-    }, $completion);
+    }, arg1);
   }
 
   @Override
-  public Object update(final MedicamentoEntity medicamento,
-      final Continuation<? super Unit> $completion) {
+  public Object update(final MedicamentoEntity medicamento, final Continuation<? super Unit> arg1) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       @NonNull
@@ -133,11 +134,11 @@ public final class MedicamentoDao_Impl implements MedicamentoDao {
           __db.endTransaction();
         }
       }
-    }, $completion);
+    }, arg1);
   }
 
   @Override
-  public Object delete(final long id, final Continuation<? super Unit> $completion) {
+  public Object delete(final long id, final Continuation<? super Unit> arg1) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       @NonNull
@@ -158,50 +159,59 @@ public final class MedicamentoDao_Impl implements MedicamentoDao {
           __preparedStmtOfDelete.release(_stmt);
         }
       }
-    }, $completion);
+    }, arg1);
   }
 
   @Override
-  public List<MedicamentoEntity> getAll() {
+  public LiveData<List<MedicamentoEntity>> getAll() {
     final String _sql = "SELECT * FROM tblMedicamento";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
-    __db.assertNotSuspendingTransaction();
-    final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
-    try {
-      final int _cursorIndexOfIdMedicamento = CursorUtil.getColumnIndexOrThrow(_cursor, "idMedicamento");
-      final int _cursorIndexOfNomeMedicamento = CursorUtil.getColumnIndexOrThrow(_cursor, "nomeMedicamento");
-      final int _cursorIndexOfDoseMedicamento = CursorUtil.getColumnIndexOrThrow(_cursor, "doseMedicamento");
-      final int _cursorIndexOfDuracaoMedicamento = CursorUtil.getColumnIndexOrThrow(_cursor, "duracaoMedicamento");
-      final int _cursorIndexOfIntervaloMedicamento = CursorUtil.getColumnIndexOrThrow(_cursor, "intervaloMedicamento");
-      final List<MedicamentoEntity> _result = new ArrayList<MedicamentoEntity>(_cursor.getCount());
-      while (_cursor.moveToNext()) {
-        final MedicamentoEntity _item;
-        final long _tmpIdMedicamento;
-        _tmpIdMedicamento = _cursor.getLong(_cursorIndexOfIdMedicamento);
-        final String _tmpNomeMedicamento;
-        if (_cursor.isNull(_cursorIndexOfNomeMedicamento)) {
-          _tmpNomeMedicamento = null;
-        } else {
-          _tmpNomeMedicamento = _cursor.getString(_cursorIndexOfNomeMedicamento);
+    return __db.getInvalidationTracker().createLiveData(new String[] {"tblMedicamento"}, false, new Callable<List<MedicamentoEntity>>() {
+      @Override
+      @Nullable
+      public List<MedicamentoEntity> call() throws Exception {
+        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+        try {
+          final int _cursorIndexOfIdMedicamento = CursorUtil.getColumnIndexOrThrow(_cursor, "idMedicamento");
+          final int _cursorIndexOfNomeMedicamento = CursorUtil.getColumnIndexOrThrow(_cursor, "nomeMedicamento");
+          final int _cursorIndexOfDoseMedicamento = CursorUtil.getColumnIndexOrThrow(_cursor, "doseMedicamento");
+          final int _cursorIndexOfDuracaoMedicamento = CursorUtil.getColumnIndexOrThrow(_cursor, "duracaoMedicamento");
+          final int _cursorIndexOfIntervaloMedicamento = CursorUtil.getColumnIndexOrThrow(_cursor, "intervaloMedicamento");
+          final List<MedicamentoEntity> _result = new ArrayList<MedicamentoEntity>(_cursor.getCount());
+          while (_cursor.moveToNext()) {
+            final MedicamentoEntity _item;
+            final long _tmpIdMedicamento;
+            _tmpIdMedicamento = _cursor.getLong(_cursorIndexOfIdMedicamento);
+            final String _tmpNomeMedicamento;
+            if (_cursor.isNull(_cursorIndexOfNomeMedicamento)) {
+              _tmpNomeMedicamento = null;
+            } else {
+              _tmpNomeMedicamento = _cursor.getString(_cursorIndexOfNomeMedicamento);
+            }
+            final String _tmpDoseMedicamento;
+            if (_cursor.isNull(_cursorIndexOfDoseMedicamento)) {
+              _tmpDoseMedicamento = null;
+            } else {
+              _tmpDoseMedicamento = _cursor.getString(_cursorIndexOfDoseMedicamento);
+            }
+            final double _tmpDuracaoMedicamento;
+            _tmpDuracaoMedicamento = _cursor.getDouble(_cursorIndexOfDuracaoMedicamento);
+            final double _tmpIntervaloMedicamento;
+            _tmpIntervaloMedicamento = _cursor.getDouble(_cursorIndexOfIntervaloMedicamento);
+            _item = new MedicamentoEntity(_tmpIdMedicamento,_tmpNomeMedicamento,_tmpDoseMedicamento,_tmpDuracaoMedicamento,_tmpIntervaloMedicamento);
+            _result.add(_item);
+          }
+          return _result;
+        } finally {
+          _cursor.close();
         }
-        final String _tmpDoseMedicamento;
-        if (_cursor.isNull(_cursorIndexOfDoseMedicamento)) {
-          _tmpDoseMedicamento = null;
-        } else {
-          _tmpDoseMedicamento = _cursor.getString(_cursorIndexOfDoseMedicamento);
-        }
-        final double _tmpDuracaoMedicamento;
-        _tmpDuracaoMedicamento = _cursor.getDouble(_cursorIndexOfDuracaoMedicamento);
-        final double _tmpIntervaloMedicamento;
-        _tmpIntervaloMedicamento = _cursor.getDouble(_cursorIndexOfIntervaloMedicamento);
-        _item = new MedicamentoEntity(_tmpIdMedicamento,_tmpNomeMedicamento,_tmpDoseMedicamento,_tmpDuracaoMedicamento,_tmpIntervaloMedicamento);
-        _result.add(_item);
       }
-      return _result;
-    } finally {
-      _cursor.close();
-      _statement.release();
-    }
+
+      @Override
+      protected void finalize() {
+        _statement.release();
+      }
+    });
   }
 
   @NonNull

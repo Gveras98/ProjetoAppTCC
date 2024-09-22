@@ -2,8 +2,11 @@ package com.example.projetovital.data.db.dao;
 
 import android.database.Cursor;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.lifecycle.LiveData;
 import androidx.room.CoroutinesRoom;
 import androidx.room.EntityDeletionOrUpdateAdapter;
+import androidx.room.EntityInsertionAdapter;
 import androidx.room.RoomDatabase;
 import androidx.room.RoomSQLiteQuery;
 import androidx.room.SharedSQLiteStatement;
@@ -13,6 +16,7 @@ import androidx.sqlite.db.SupportSQLiteStatement;
 import com.example.projetovital.data.db.entity.AlergiaEntity;
 import java.lang.Class;
 import java.lang.Exception;
+import java.lang.Long;
 import java.lang.Object;
 import java.lang.Override;
 import java.lang.String;
@@ -28,12 +32,32 @@ import kotlin.coroutines.Continuation;
 public final class AlergiaDao_Impl implements AlergiaDao {
   private final RoomDatabase __db;
 
+  private final EntityInsertionAdapter<AlergiaEntity> __insertionAdapterOfAlergiaEntity;
+
   private final EntityDeletionOrUpdateAdapter<AlergiaEntity> __updateAdapterOfAlergiaEntity;
 
   private final SharedSQLiteStatement __preparedStmtOfDelete;
 
   public AlergiaDao_Impl(@NonNull final RoomDatabase __db) {
     this.__db = __db;
+    this.__insertionAdapterOfAlergiaEntity = new EntityInsertionAdapter<AlergiaEntity>(__db) {
+      @Override
+      @NonNull
+      protected String createQuery() {
+        return "INSERT OR REPLACE INTO `tblAlergia` (`idAlergia`,`nomeAlergia`) VALUES (nullif(?, 0),?)";
+      }
+
+      @Override
+      protected void bind(@NonNull final SupportSQLiteStatement statement,
+          @NonNull final AlergiaEntity entity) {
+        statement.bindLong(1, entity.getIdAlergia());
+        if (entity.getNomeAlergia() == null) {
+          statement.bindNull(2);
+        } else {
+          statement.bindString(2, entity.getNomeAlergia());
+        }
+      }
+    };
     this.__updateAdapterOfAlergiaEntity = new EntityDeletionOrUpdateAdapter<AlergiaEntity>(__db) {
       @Override
       @NonNull
@@ -64,7 +88,25 @@ public final class AlergiaDao_Impl implements AlergiaDao {
   }
 
   @Override
-  public Object update(final AlergiaEntity alergia, final Continuation<? super Unit> $completion) {
+  public Object insert(final AlergiaEntity alergia, final Continuation<? super Long> arg1) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Long>() {
+      @Override
+      @NonNull
+      public Long call() throws Exception {
+        __db.beginTransaction();
+        try {
+          final Long _result = __insertionAdapterOfAlergiaEntity.insertAndReturnId(alergia);
+          __db.setTransactionSuccessful();
+          return _result;
+        } finally {
+          __db.endTransaction();
+        }
+      }
+    }, arg1);
+  }
+
+  @Override
+  public Object update(final AlergiaEntity alergia, final Continuation<? super Unit> arg1) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       @NonNull
@@ -78,11 +120,11 @@ public final class AlergiaDao_Impl implements AlergiaDao {
           __db.endTransaction();
         }
       }
-    }, $completion);
+    }, arg1);
   }
 
   @Override
-  public Object delete(final long id, final Continuation<? super Unit> $completion) {
+  public Object delete(final long id, final Continuation<? super Unit> arg1) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       @NonNull
@@ -103,69 +145,46 @@ public final class AlergiaDao_Impl implements AlergiaDao {
           __preparedStmtOfDelete.release(_stmt);
         }
       }
-    }, $completion);
+    }, arg1);
   }
 
   @Override
-  public List<AlergiaEntity> getAll() {
+  public LiveData<List<AlergiaEntity>> getAll() {
     final String _sql = "SELECT * FROM tblAlergia";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
-    __db.assertNotSuspendingTransaction();
-    final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
-    try {
-      final int _cursorIndexOfIdAlergia = CursorUtil.getColumnIndexOrThrow(_cursor, "idAlergia");
-      final int _cursorIndexOfNomeAlergia = CursorUtil.getColumnIndexOrThrow(_cursor, "nomeAlergia");
-      final List<AlergiaEntity> _result = new ArrayList<AlergiaEntity>(_cursor.getCount());
-      while (_cursor.moveToNext()) {
-        final AlergiaEntity _item;
-        final long _tmpIdAlergia;
-        _tmpIdAlergia = _cursor.getLong(_cursorIndexOfIdAlergia);
-        final String _tmpNomeAlergia;
-        if (_cursor.isNull(_cursorIndexOfNomeAlergia)) {
-          _tmpNomeAlergia = null;
-        } else {
-          _tmpNomeAlergia = _cursor.getString(_cursorIndexOfNomeAlergia);
+    return __db.getInvalidationTracker().createLiveData(new String[] {"tblAlergia"}, false, new Callable<List<AlergiaEntity>>() {
+      @Override
+      @Nullable
+      public List<AlergiaEntity> call() throws Exception {
+        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+        try {
+          final int _cursorIndexOfIdAlergia = CursorUtil.getColumnIndexOrThrow(_cursor, "idAlergia");
+          final int _cursorIndexOfNomeAlergia = CursorUtil.getColumnIndexOrThrow(_cursor, "nomeAlergia");
+          final List<AlergiaEntity> _result = new ArrayList<AlergiaEntity>(_cursor.getCount());
+          while (_cursor.moveToNext()) {
+            final AlergiaEntity _item;
+            final long _tmpIdAlergia;
+            _tmpIdAlergia = _cursor.getLong(_cursorIndexOfIdAlergia);
+            final String _tmpNomeAlergia;
+            if (_cursor.isNull(_cursorIndexOfNomeAlergia)) {
+              _tmpNomeAlergia = null;
+            } else {
+              _tmpNomeAlergia = _cursor.getString(_cursorIndexOfNomeAlergia);
+            }
+            _item = new AlergiaEntity(_tmpIdAlergia,_tmpNomeAlergia);
+            _result.add(_item);
+          }
+          return _result;
+        } finally {
+          _cursor.close();
         }
-        _item = new AlergiaEntity(_tmpIdAlergia,_tmpNomeAlergia);
-        _result.add(_item);
       }
-      return _result;
-    } finally {
-      _cursor.close();
-      _statement.release();
-    }
-  }
 
-  @Override
-  public AlergiaEntity getById(final long id) {
-    final String _sql = "SELECT * FROM tblAlergia WHERE idAlergia = ?";
-    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
-    int _argIndex = 1;
-    _statement.bindLong(_argIndex, id);
-    __db.assertNotSuspendingTransaction();
-    final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
-    try {
-      final int _cursorIndexOfIdAlergia = CursorUtil.getColumnIndexOrThrow(_cursor, "idAlergia");
-      final int _cursorIndexOfNomeAlergia = CursorUtil.getColumnIndexOrThrow(_cursor, "nomeAlergia");
-      final AlergiaEntity _result;
-      if (_cursor.moveToFirst()) {
-        final long _tmpIdAlergia;
-        _tmpIdAlergia = _cursor.getLong(_cursorIndexOfIdAlergia);
-        final String _tmpNomeAlergia;
-        if (_cursor.isNull(_cursorIndexOfNomeAlergia)) {
-          _tmpNomeAlergia = null;
-        } else {
-          _tmpNomeAlergia = _cursor.getString(_cursorIndexOfNomeAlergia);
-        }
-        _result = new AlergiaEntity(_tmpIdAlergia,_tmpNomeAlergia);
-      } else {
-        _result = null;
+      @Override
+      protected void finalize() {
+        _statement.release();
       }
-      return _result;
-    } finally {
-      _cursor.close();
-      _statement.release();
-    }
+    });
   }
 
   @NonNull

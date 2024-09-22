@@ -1,10 +1,11 @@
-package com.example.projetovital
+package com.example.projetovital.ui.projetovital.exames
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.projetovital.MainActivity
 import com.example.projetovital.databinding.FragmentExamesBinding
 
 

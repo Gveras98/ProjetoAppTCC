@@ -1,5 +1,6 @@
 package com.example.projetovital.data.db.dao
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
@@ -12,11 +13,11 @@ interface ExamesDao {
 
     //Read
     @Query("SELECT * FROM tblExames")
-    fun getAll(): List<ExamesEntity>
+    fun getAll(): LiveData<List<ExamesEntity>>
 
     //Inserir
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(exames: ExamesEntity)
+    suspend fun insert(exames: ExamesEntity): Long
 
     //Update
     @Update

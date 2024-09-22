@@ -27,7 +27,7 @@ data class CadastroEntity(
     val enderecoUser: String,
 
     @ColumnInfo(name = "cepUser")
-    val cepUsuarioUser: String,
+    val cepUser: String,
 
     @ColumnInfo(name = "telefoneUser")
     val telefoneUser: String,

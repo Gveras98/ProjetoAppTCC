@@ -1,9 +1,9 @@
-package com.example.projetovital.datasource
+package com.example.projetovital.data.db.datasource
 
 import androidx.lifecycle.LiveData
 import com.example.projetovital.data.db.dao.MedicamentoDao
 import com.example.projetovital.data.db.entity.MedicamentoEntity
-import com.example.projetovital.repository.MedicamentoRepository
+import com.example.projetovital.data.db.repository.MedicamentoRepository
 
 class MedicamentoDataSource(private val medicamentoDao: MedicamentoDao) : MedicamentoRepository {
 
@@ -11,8 +11,8 @@ class MedicamentoDataSource(private val medicamentoDao: MedicamentoDao) : Medica
         return medicamentoDao.getAll()
     }
 
-    override suspend fun insertMedicamento(medicamento: MedicamentoEntity) {
-        medicamentoDao.insert(medicamento)
+    override suspend fun insertMedicamento(medicamento: MedicamentoEntity): Long {
+        return medicamentoDao.insert(medicamento)
     }
 
     override suspend fun updateMedicamento(medicamento: MedicamentoEntity) {

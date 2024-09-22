@@ -9,6 +9,7 @@ import java.util.Date
 @Entity(tableName = "tblAgenda")
 data class AgendaEntity(
 
+    @ColumnInfo(name = "idAgenda")
     @PrimaryKey(autoGenerate = true)
     val idAgenda: Long = 0,
 

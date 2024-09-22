@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FormCadastroFragment">
+    tools:context=".ui.projetovital.cadastro.FormCadastroFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -85,10 +85,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/CadNascimento"
-                android:inputType="datetime"
+                android:focusable="false"
+                android:inputType="none"
                 android:padding="16dp" />
         </com.google.android.material.textfield.TextInputLayout>
-
         <!-- CPF -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/inputEtUserCpf"
@@ -121,12 +121,12 @@
 
         <!-- CEP -->
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/inputEtUserCEP"
+            android:id="@+id/inputEtUserCep"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <EditText
-                android:id="@+id/EtUserCEP"
+                android:id="@+id/EtUserCep"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/CadCEP"

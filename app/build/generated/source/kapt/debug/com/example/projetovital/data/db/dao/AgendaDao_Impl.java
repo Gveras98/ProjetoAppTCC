@@ -2,6 +2,8 @@ package com.example.projetovital.data.db.dao;
 
 import android.database.Cursor;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.lifecycle.LiveData;
 import androidx.room.CoroutinesRoom;
 import androidx.room.EntityDeletionOrUpdateAdapter;
 import androidx.room.EntityInsertionAdapter;
@@ -15,6 +17,7 @@ import com.example.projetovital.data.db.DateConverter;
 import com.example.projetovital.data.db.entity.AgendaEntity;
 import java.lang.Class;
 import java.lang.Exception;
+import java.lang.Long;
 import java.lang.Object;
 import java.lang.Override;
 import java.lang.String;
@@ -131,25 +134,25 @@ public final class AgendaDao_Impl implements AgendaDao {
   }
 
   @Override
-  public Object insert(final AgendaEntity agenda, final Continuation<? super Unit> $completion) {
-    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
+  public Object insert(final AgendaEntity agenda, final Continuation<? super Long> arg1) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Long>() {
       @Override
       @NonNull
-      public Unit call() throws Exception {
+      public Long call() throws Exception {
         __db.beginTransaction();
         try {
-          __insertionAdapterOfAgendaEntity.insert(agenda);
+          final Long _result = __insertionAdapterOfAgendaEntity.insertAndReturnId(agenda);
           __db.setTransactionSuccessful();
-          return Unit.INSTANCE;
+          return _result;
         } finally {
           __db.endTransaction();
         }
       }
-    }, $completion);
+    }, arg1);
   }
 
   @Override
-  public Object update(final AgendaEntity agenda, final Continuation<? super Unit> $completion) {
+  public Object update(final AgendaEntity agenda, final Continuation<? super Unit> arg1) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       @NonNull
@@ -163,11 +166,11 @@ public final class AgendaDao_Impl implements AgendaDao {
           __db.endTransaction();
         }
       }
-    }, $completion);
+    }, arg1);
   }
 
   @Override
-  public Object delete(final long id, final Continuation<? super Unit> $completion) {
+  public Object delete(final long id, final Continuation<? super Unit> arg1) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       @NonNull
@@ -188,67 +191,76 @@ public final class AgendaDao_Impl implements AgendaDao {
           __preparedStmtOfDelete.release(_stmt);
         }
       }
-    }, $completion);
+    }, arg1);
   }
 
   @Override
-  public List<AgendaEntity> getAll() {
+  public LiveData<List<AgendaEntity>> getAll() {
     final String _sql = "SELECT * FROM tblAgenda";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
-    __db.assertNotSuspendingTransaction();
-    final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
-    try {
-      final int _cursorIndexOfIdAgenda = CursorUtil.getColumnIndexOrThrow(_cursor, "idAgenda");
-      final int _cursorIndexOfEspecialidadeAgenda = CursorUtil.getColumnIndexOrThrow(_cursor, "especialidadeAgenda");
-      final int _cursorIndexOfDataAgenda = CursorUtil.getColumnIndexOrThrow(_cursor, "dataAgenda");
-      final int _cursorIndexOfHoraAgenda = CursorUtil.getColumnIndexOrThrow(_cursor, "horaAgenda");
-      final int _cursorIndexOfLocalAgenda = CursorUtil.getColumnIndexOrThrow(_cursor, "localAgenda");
-      final int _cursorIndexOfProcedimentoAgenda = CursorUtil.getColumnIndexOrThrow(_cursor, "procedimentoAgenda");
-      final List<AgendaEntity> _result = new ArrayList<AgendaEntity>(_cursor.getCount());
-      while (_cursor.moveToNext()) {
-        final AgendaEntity _item;
-        final long _tmpIdAgenda;
-        _tmpIdAgenda = _cursor.getLong(_cursorIndexOfIdAgenda);
-        final String _tmpEspecialidadeAgenda;
-        if (_cursor.isNull(_cursorIndexOfEspecialidadeAgenda)) {
-          _tmpEspecialidadeAgenda = null;
-        } else {
-          _tmpEspecialidadeAgenda = _cursor.getString(_cursorIndexOfEspecialidadeAgenda);
+    return __db.getInvalidationTracker().createLiveData(new String[] {"tblAgenda"}, false, new Callable<List<AgendaEntity>>() {
+      @Override
+      @Nullable
+      public List<AgendaEntity> call() throws Exception {
+        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+        try {
+          final int _cursorIndexOfIdAgenda = CursorUtil.getColumnIndexOrThrow(_cursor, "idAgenda");
+          final int _cursorIndexOfEspecialidadeAgenda = CursorUtil.getColumnIndexOrThrow(_cursor, "especialidadeAgenda");
+          final int _cursorIndexOfDataAgenda = CursorUtil.getColumnIndexOrThrow(_cursor, "dataAgenda");
+          final int _cursorIndexOfHoraAgenda = CursorUtil.getColumnIndexOrThrow(_cursor, "horaAgenda");
+          final int _cursorIndexOfLocalAgenda = CursorUtil.getColumnIndexOrThrow(_cursor, "localAgenda");
+          final int _cursorIndexOfProcedimentoAgenda = CursorUtil.getColumnIndexOrThrow(_cursor, "procedimentoAgenda");
+          final List<AgendaEntity> _result = new ArrayList<AgendaEntity>(_cursor.getCount());
+          while (_cursor.moveToNext()) {
+            final AgendaEntity _item;
+            final long _tmpIdAgenda;
+            _tmpIdAgenda = _cursor.getLong(_cursorIndexOfIdAgenda);
+            final String _tmpEspecialidadeAgenda;
+            if (_cursor.isNull(_cursorIndexOfEspecialidadeAgenda)) {
+              _tmpEspecialidadeAgenda = null;
+            } else {
+              _tmpEspecialidadeAgenda = _cursor.getString(_cursorIndexOfEspecialidadeAgenda);
+            }
+            final Date _tmpDataAgenda;
+            final String _tmp;
+            if (_cursor.isNull(_cursorIndexOfDataAgenda)) {
+              _tmp = null;
+            } else {
+              _tmp = _cursor.getString(_cursorIndexOfDataAgenda);
+            }
+            _tmpDataAgenda = __dateConverter.toDate(_tmp);
+            final String _tmpHoraAgenda;
+            if (_cursor.isNull(_cursorIndexOfHoraAgenda)) {
+              _tmpHoraAgenda = null;
+            } else {
+              _tmpHoraAgenda = _cursor.getString(_cursorIndexOfHoraAgenda);
+            }
+            final String _tmpLocalAgenda;
+            if (_cursor.isNull(_cursorIndexOfLocalAgenda)) {
+              _tmpLocalAgenda = null;
+            } else {
+              _tmpLocalAgenda = _cursor.getString(_cursorIndexOfLocalAgenda);
+            }
+            final String _tmpProcedimentoAgenda;
+            if (_cursor.isNull(_cursorIndexOfProcedimentoAgenda)) {
+              _tmpProcedimentoAgenda = null;
+            } else {
+              _tmpProcedimentoAgenda = _cursor.getString(_cursorIndexOfProcedimentoAgenda);
+            }
+            _item = new AgendaEntity(_tmpIdAgenda,_tmpEspecialidadeAgenda,_tmpDataAgenda,_tmpHoraAgenda,_tmpLocalAgenda,_tmpProcedimentoAgenda);
+            _result.add(_item);
+          }
+          return _result;
+        } finally {
+          _cursor.close();
         }
-        final Date _tmpDataAgenda;
-        final String _tmp;
-        if (_cursor.isNull(_cursorIndexOfDataAgenda)) {
-          _tmp = null;
-        } else {
-          _tmp = _cursor.getString(_cursorIndexOfDataAgenda);
-        }
-        _tmpDataAgenda = __dateConverter.toDate(_tmp);
-        final String _tmpHoraAgenda;
-        if (_cursor.isNull(_cursorIndexOfHoraAgenda)) {
-          _tmpHoraAgenda = null;
-        } else {
-          _tmpHoraAgenda = _cursor.getString(_cursorIndexOfHoraAgenda);
-        }
-        final String _tmpLocalAgenda;
-        if (_cursor.isNull(_cursorIndexOfLocalAgenda)) {
-          _tmpLocalAgenda = null;
-        } else {
-          _tmpLocalAgenda = _cursor.getString(_cursorIndexOfLocalAgenda);
-        }
-        final String _tmpProcedimentoAgenda;
-        if (_cursor.isNull(_cursorIndexOfProcedimentoAgenda)) {
-          _tmpProcedimentoAgenda = null;
-        } else {
-          _tmpProcedimentoAgenda = _cursor.getString(_cursorIndexOfProcedimentoAgenda);
-        }
-        _item = new AgendaEntity(_tmpIdAgenda,_tmpEspecialidadeAgenda,_tmpDataAgenda,_tmpHoraAgenda,_tmpLocalAgenda,_tmpProcedimentoAgenda);
-        _result.add(_item);
       }
-      return _result;
-    } finally {
-      _cursor.close();
-      _statement.release();
-    }
+
+      @Override
+      protected void finalize() {
+        _statement.release();
+      }
+    });
   }
 
   @NonNull

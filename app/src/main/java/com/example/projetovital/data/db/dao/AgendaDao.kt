@@ -1,5 +1,6 @@
 package com.example.projetovital.data.db.dao
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
@@ -12,11 +13,12 @@ import com.example.projetovital.data.db.entity.AgendaEntity
 interface AgendaDao {
     //Read
     @Query("SELECT * FROM tblAgenda")
-    fun getAll(): List<AgendaEntity>
+    fun getAll(): LiveData<List<AgendaEntity>>
 
-    //Inserir
+    //Inserir - Replace para substituir em caso de conflito
+    //Caso retirar o OnConflict
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(agenda: AgendaEntity)
+    suspend fun insert(agenda: AgendaEntity): Long
 
     //Update
     @Update
