@@ -51,6 +51,13 @@ dependencies {
     implementation("androidx.activity:activity-ktx:1.9.2")
     implementation(libs.androidx.constraintlayout)
 
+    // Dependência para ViewModel e Lifecycle
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.5")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.8.5")
+
+    // Dependência para Fragment
+    implementation("androidx.fragment:fragment-ktx:1.8.3")
+
     //Google ML Kit
     implementation("com.google.android.gms:play-services-mlkit-document-scanner:16.0.0-beta1")
 
