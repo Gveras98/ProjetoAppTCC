@@ -6,9 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ScrollView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.projetovital.R;
@@ -27,19 +27,73 @@ public final class FragmentCadastroBinding implements ViewBinding {
   public final Button btnAtualizarCadastro;
 
   @NonNull
+  public final Button btnCadAtualizar;
+
+  @NonNull
   public final Button btnMedicamentos;
 
   @NonNull
-  public final RecyclerView recyclerCadastro;
+  public final TextView tvCadastroCEP;
+
+  @NonNull
+  public final TextView tvCadastroCPF;
+
+  @NonNull
+  public final TextView tvCadastroDataNascimento;
+
+  @NonNull
+  public final TextView tvCadastroEmail;
+
+  @NonNull
+  public final TextView tvCadastroEndereco;
+
+  @NonNull
+  public final TextView tvCadastroNome;
+
+  @NonNull
+  public final TextView tvCadastroNumeroPlanoSaude;
+
+  @NonNull
+  public final TextView tvCadastroNumeroSUS;
+
+  @NonNull
+  public final TextView tvCadastroPlanoSaude;
+
+  @NonNull
+  public final TextView tvCadastroSexo;
+
+  @NonNull
+  public final TextView tvCadastroTelefone;
+
+  @NonNull
+  public final TextView tvCadastroTipoSanguineo;
 
   private FragmentCadastroBinding(@NonNull ScrollView rootView, @NonNull Button btnAlergias,
-      @NonNull Button btnAtualizarCadastro, @NonNull Button btnMedicamentos,
-      @NonNull RecyclerView recyclerCadastro) {
+      @NonNull Button btnAtualizarCadastro, @NonNull Button btnCadAtualizar,
+      @NonNull Button btnMedicamentos, @NonNull TextView tvCadastroCEP,
+      @NonNull TextView tvCadastroCPF, @NonNull TextView tvCadastroDataNascimento,
+      @NonNull TextView tvCadastroEmail, @NonNull TextView tvCadastroEndereco,
+      @NonNull TextView tvCadastroNome, @NonNull TextView tvCadastroNumeroPlanoSaude,
+      @NonNull TextView tvCadastroNumeroSUS, @NonNull TextView tvCadastroPlanoSaude,
+      @NonNull TextView tvCadastroSexo, @NonNull TextView tvCadastroTelefone,
+      @NonNull TextView tvCadastroTipoSanguineo) {
     this.rootView = rootView;
     this.btnAlergias = btnAlergias;
     this.btnAtualizarCadastro = btnAtualizarCadastro;
+    this.btnCadAtualizar = btnCadAtualizar;
     this.btnMedicamentos = btnMedicamentos;
-    this.recyclerCadastro = recyclerCadastro;
+    this.tvCadastroCEP = tvCadastroCEP;
+    this.tvCadastroCPF = tvCadastroCPF;
+    this.tvCadastroDataNascimento = tvCadastroDataNascimento;
+    this.tvCadastroEmail = tvCadastroEmail;
+    this.tvCadastroEndereco = tvCadastroEndereco;
+    this.tvCadastroNome = tvCadastroNome;
+    this.tvCadastroNumeroPlanoSaude = tvCadastroNumeroPlanoSaude;
+    this.tvCadastroNumeroSUS = tvCadastroNumeroSUS;
+    this.tvCadastroPlanoSaude = tvCadastroPlanoSaude;
+    this.tvCadastroSexo = tvCadastroSexo;
+    this.tvCadastroTelefone = tvCadastroTelefone;
+    this.tvCadastroTipoSanguineo = tvCadastroTipoSanguineo;
   }
 
   @Override
@@ -81,20 +135,95 @@ public final class FragmentCadastroBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.btnCadAtualizar;
+      Button btnCadAtualizar = ViewBindings.findChildViewById(rootView, id);
+      if (btnCadAtualizar == null) {
+        break missingId;
+      }
+
       id = R.id.btn_Medicamentos;
       Button btnMedicamentos = ViewBindings.findChildViewById(rootView, id);
       if (btnMedicamentos == null) {
         break missingId;
       }
 
-      id = R.id.recyclerCadastro;
-      RecyclerView recyclerCadastro = ViewBindings.findChildViewById(rootView, id);
-      if (recyclerCadastro == null) {
+      id = R.id.tvCadastroCEP;
+      TextView tvCadastroCEP = ViewBindings.findChildViewById(rootView, id);
+      if (tvCadastroCEP == null) {
+        break missingId;
+      }
+
+      id = R.id.tvCadastroCPF;
+      TextView tvCadastroCPF = ViewBindings.findChildViewById(rootView, id);
+      if (tvCadastroCPF == null) {
+        break missingId;
+      }
+
+      id = R.id.tvCadastroDataNascimento;
+      TextView tvCadastroDataNascimento = ViewBindings.findChildViewById(rootView, id);
+      if (tvCadastroDataNascimento == null) {
+        break missingId;
+      }
+
+      id = R.id.tvCadastroEmail;
+      TextView tvCadastroEmail = ViewBindings.findChildViewById(rootView, id);
+      if (tvCadastroEmail == null) {
+        break missingId;
+      }
+
+      id = R.id.tvCadastroEndereco;
+      TextView tvCadastroEndereco = ViewBindings.findChildViewById(rootView, id);
+      if (tvCadastroEndereco == null) {
+        break missingId;
+      }
+
+      id = R.id.tvCadastroNome;
+      TextView tvCadastroNome = ViewBindings.findChildViewById(rootView, id);
+      if (tvCadastroNome == null) {
+        break missingId;
+      }
+
+      id = R.id.tvCadastroNumeroPlanoSaude;
+      TextView tvCadastroNumeroPlanoSaude = ViewBindings.findChildViewById(rootView, id);
+      if (tvCadastroNumeroPlanoSaude == null) {
+        break missingId;
+      }
+
+      id = R.id.tvCadastroNumeroSUS;
+      TextView tvCadastroNumeroSUS = ViewBindings.findChildViewById(rootView, id);
+      if (tvCadastroNumeroSUS == null) {
+        break missingId;
+      }
+
+      id = R.id.tvCadastroPlanoSaude;
+      TextView tvCadastroPlanoSaude = ViewBindings.findChildViewById(rootView, id);
+      if (tvCadastroPlanoSaude == null) {
+        break missingId;
+      }
+
+      id = R.id.tvCadastroSexo;
+      TextView tvCadastroSexo = ViewBindings.findChildViewById(rootView, id);
+      if (tvCadastroSexo == null) {
+        break missingId;
+      }
+
+      id = R.id.tvCadastroTelefone;
+      TextView tvCadastroTelefone = ViewBindings.findChildViewById(rootView, id);
+      if (tvCadastroTelefone == null) {
+        break missingId;
+      }
+
+      id = R.id.tvCadastroTipoSanguineo;
+      TextView tvCadastroTipoSanguineo = ViewBindings.findChildViewById(rootView, id);
+      if (tvCadastroTipoSanguineo == null) {
         break missingId;
       }
 
       return new FragmentCadastroBinding((ScrollView) rootView, btnAlergias, btnAtualizarCadastro,
-          btnMedicamentos, recyclerCadastro);
+          btnCadAtualizar, btnMedicamentos, tvCadastroCEP, tvCadastroCPF, tvCadastroDataNascimento,
+          tvCadastroEmail, tvCadastroEndereco, tvCadastroNome, tvCadastroNumeroPlanoSaude,
+          tvCadastroNumeroSUS, tvCadastroPlanoSaude, tvCadastroSexo, tvCadastroTelefone,
+          tvCadastroTipoSanguineo);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

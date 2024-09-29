@@ -3257,7 +3257,9 @@ id btnAlergiaDelete
 id btnAlergiaEditar
 id btnAlergiaSalvar
 id btnCadAgendamento
+id btnCadAtualizar
 id btnCadSalvar
+id btnExameAnexo
 id btnExameDelete
 id btnExameEditar
 id btnExamesSalvar
@@ -3586,7 +3588,6 @@ id rbMasculino
 id rectangles
 id recyclerAgenda
 id recyclerAlergias
-id recyclerCadastro
 id recyclerExames
 id recyclerMedicamento
 id report_drawn
@@ -3729,7 +3730,6 @@ id tvCadastroPlanoSaude
 id tvCadastroSexo
 id tvCadastroTelefone
 id tvCadastroTipoSanguineo
-id tvExameAnexo
 id tvExameData
 id tvExameEspecialidade
 id tvExameLocal
@@ -3910,7 +3910,6 @@ layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
 layout item_agenda
 layout item_alergia
-layout item_cadastro
 layout item_dependente
 layout item_exames
 layout item_medicamento
@@ -4034,6 +4033,7 @@ string alergias
 string androidx_startup
 string app_name
 string appbar_scrolling_view_behavior
+string atualizar
 string atualizar_cadastro
 string bottom_sheet_behavior
 string bottomsheet_action_collapse

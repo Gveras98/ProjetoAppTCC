@@ -36,7 +36,6 @@ class ExamesViewModel(
             _messageEventData.value = R.string.msg_erro
             Log.e(TAG, ex.toString())
         }
-
     }
 
     sealed class ExamesState {

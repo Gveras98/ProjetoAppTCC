@@ -3256,7 +3256,9 @@ int id btnAlergiaDelete 0x7f09026f
 int id btnAlergiaEditar 0x7f090270
 int id btnAlergiaSalvar 0x7f09006d
 int id btnCadAgendamento 0x7f09006e
+int id btnCadAtualizar 0x7f090298
 int id btnCadSalvar 0x7f09006f
+int id btnExameAnexo 0x7f090297
 int id btnExameDelete 0x7f090271
 int id btnExameEditar 0x7f090272
 int id btnExamesSalvar 0x7f090266
@@ -3585,7 +3587,6 @@ int id rbMasculino 0x7f0901ab
 int id rectangles 0x7f0901ac
 int id recyclerAgenda 0x7f090275
 int id recyclerAlergias 0x7f090276
-int id recyclerCadastro 0x7f090249
 int id recyclerExames 0x7f090295
 int id recyclerMedicamento 0x7f090294
 int id report_drawn 0x7f0901ad
@@ -3728,7 +3729,6 @@ int id tvCadastroPlanoSaude 0x7f090280
 int id tvCadastroSexo 0x7f090281
 int id tvCadastroTelefone 0x7f090282
 int id tvCadastroTipoSanguineo 0x7f090283
-int id tvExameAnexo 0x7f090296
 int id tvExameData 0x7f090284
 int id tvExameEspecialidade 0x7f090285
 int id tvExameLocal 0x7f090287
@@ -3909,7 +3909,6 @@ int layout ime_base_split_test_activity 0x7f0c003a
 int layout ime_secondary_split_test_activity 0x7f0c003b
 int layout item_agenda 0x7f0c007a
 int layout item_alergia 0x7f0c007b
-int layout item_cadastro 0x7f0c0079
 int layout item_dependente 0x7f0c007d
 int layout item_exames 0x7f0c007c
 int layout item_medicamento 0x7f0c007e
@@ -4033,6 +4032,7 @@ int string alergias 0x7f110033
 int string androidx_startup 0x7f110034
 int string app_name 0x7f110035
 int string appbar_scrolling_view_behavior 0x7f110036
+int string atualizar 0x7f1100ea
 int string atualizar_cadastro 0x7f110037
 int string bottom_sheet_behavior 0x7f110038
 int string bottomsheet_action_collapse 0x7f110039

@@ -39,6 +39,7 @@ class FormExamesFragment : Fragment() {
 
     private lateinit var binding: FragmentFormExamesBinding
 
+
     //Referente ao ViewModel
     private val viewModel: ExamesViewModel by viewModels {
         object : ViewModelProvider.Factory {
@@ -189,21 +190,14 @@ class FormExamesFragment : Fragment() {
         result.pdf?.let { pdf ->
             pdf.uri.let { pdfUri ->
                 try {
-                    // Defina o nome do arquivo PDF =
-                    // Vai receber o ID gerado automaticamente de acordo com o BD
-                    val fileName = "DocumentoDigitalizado.pdf"
 
-                    // Cria o acesso á pasta do PDF
+                    val fileName = "DocumentoDigitalizado_${System.currentTimeMillis()}.pdf"
                     val values = ContentValues().apply {
                         put(MediaStore.Files.FileColumns.DISPLAY_NAME, fileName)
                         put(MediaStore.Files.FileColumns.MIME_TYPE, "application/pdf")
-                        put(
-                            MediaStore.Files.FileColumns.RELATIVE_PATH,
-                            "Documents/Vital+"
-                        ) // Caminho no armazenamento acessível
+                        put(MediaStore.Files.FileColumns.RELATIVE_PATH, "Documents/Vital+")
                     }
 
-                    // Insere o PDF no MediaStore e obtém o URI do novo PDF
                     val newPdfUri =
                         contentResolver.insert(MediaStore.Files.getContentUri("external"), values)
 
@@ -213,12 +207,18 @@ class FormExamesFragment : Fragment() {
                                 inputStream.copyTo(outputStream)
                             }
                         }
-                    } ?: run {
-                        // Lidar com a falha ao obter o URI
-                        Log.e("SavePDF", "Falha ao obter o URI para salvar o PDF.")
+
+                        // Atualizar o exame com o URI do PDF
+                        val exames = ExamesEntity(
+                            especialidadeExame = binding.etExamesEspecialidade.text.toString(),
+                            dataExame = Date(), // Aqui você deve usar a data real
+                            localExame = binding.etExamesLocal.text.toString(),
+                            procedimentoExame = binding.etExamesProcedimento.text.toString(),
+                            anexoExame = uri.toString() // Armazenar o URI do PDF
+                        )
+                        viewModel.inserirExames(exames)
                     }
                 } catch (e: Exception) {
-                    // Lidar com possíveis exceções
                     Log.e("SavePDF", "Erro ao salvar o PDF", e)
                 }
             }

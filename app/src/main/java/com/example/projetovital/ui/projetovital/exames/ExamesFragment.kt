@@ -1,9 +1,14 @@
 package com.example.projetovital.ui.projetovital.exames
 
+import android.content.ActivityNotFoundException
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModel
@@ -60,12 +65,36 @@ class ExamesFragment : Fragment() {
 
     private fun observerViewModelEventsExames() {
         viewModel.exibirExames.observe(viewLifecycleOwner) { exames ->
-            val examesListAdapter = ExamesListAdapter(exames)
+            val examesListAdapter = ExamesListAdapter(exames) { anexo ->
+                abrirPDF(anexo) // Chama a função para abrir o PDF
+            }
 
             with(recyclerExames) {
                 setHasFixedSize(true)
                 adapter = examesListAdapter
             }
+        }
+    }
+
+    // Função para abrir o PDF
+    private fun abrirPDF(anexo: String) {
+        val pdfUri = Uri.parse(anexo) // Converta a string do anexo para um URI
+
+        val openPdfIntent = Intent(Intent.ACTION_VIEW).apply {
+            setDataAndType(pdfUri, "application/pdf")
+            addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+        }
+
+        try {
+            startActivity(openPdfIntent)
+        } catch (e: ActivityNotFoundException) {
+            Toast.makeText(
+                requireContext(),
+                "Nenhum aplicativo encontrado para abrir PDFs",
+                Toast.LENGTH_SHORT
+            ).show()
+        } catch (e: Exception) {
+            Log.e("PDF_VIEW", "Erro ao abrir PDF: ${e.message}")
         }
     }
 }

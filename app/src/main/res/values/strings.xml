@@ -15,6 +15,7 @@
     <string name="salvar">Salvar</string>
     <string name="deletar">Deletar</string>
     <string name="editar">Editar</string>
+    <string name="atualizar">Atualizar</string>
 
     //Strings do Exames
     <string name="cadastrar_exame"> Novo Exame </string>

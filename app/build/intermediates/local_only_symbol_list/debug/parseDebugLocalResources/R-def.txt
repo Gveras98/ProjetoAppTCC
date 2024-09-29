@@ -27,7 +27,9 @@ id btnAlergiaDelete
 id btnAlergiaEditar
 id btnAlergiaSalvar
 id btnCadAgendamento
+id btnCadAtualizar
 id btnCadSalvar
+id btnExameAnexo
 id btnExameDelete
 id btnExameEditar
 id btnExamesSalvar
@@ -92,7 +94,6 @@ id rbFeminino
 id rbMasculino
 id recyclerAgenda
 id recyclerAlergias
-id recyclerCadastro
 id recyclerExames
 id recyclerMedicamento
 id spinnerEtDuracaoMed
@@ -117,7 +118,6 @@ id tvCadastroPlanoSaude
 id tvCadastroSexo
 id tvCadastroTelefone
 id tvCadastroTipoSanguineo
-id tvExameAnexo
 id tvExameData
 id tvExameEspecialidade
 id tvExameLocal
@@ -141,7 +141,6 @@ layout fragment_form_medicamento
 layout fragment_medicamento
 layout item_agenda
 layout item_alergia
-layout item_cadastro
 layout item_dependente
 layout item_exames
 layout item_medicamento
@@ -174,6 +173,7 @@ string alergia.novo
 string alergia.salvar
 string alergias
 string app_name
+string atualizar
 string atualizar_cadastro
 string cadastrar_agendamento
 string cadastrar_exame

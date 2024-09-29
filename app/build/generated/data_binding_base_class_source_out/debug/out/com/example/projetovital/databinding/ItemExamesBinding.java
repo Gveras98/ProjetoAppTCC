@@ -21,13 +21,13 @@ public final class ItemExamesBinding implements ViewBinding {
   private final CardView rootView;
 
   @NonNull
+  public final Button btnExameAnexo;
+
+  @NonNull
   public final Button btnExameDelete;
 
   @NonNull
   public final Button btnExameEditar;
-
-  @NonNull
-  public final TextView tvExameAnexo;
 
   @NonNull
   public final TextView tvExameData;
@@ -41,14 +41,14 @@ public final class ItemExamesBinding implements ViewBinding {
   @NonNull
   public final TextView tvExameProcedimento;
 
-  private ItemExamesBinding(@NonNull CardView rootView, @NonNull Button btnExameDelete,
-      @NonNull Button btnExameEditar, @NonNull TextView tvExameAnexo, @NonNull TextView tvExameData,
+  private ItemExamesBinding(@NonNull CardView rootView, @NonNull Button btnExameAnexo,
+      @NonNull Button btnExameDelete, @NonNull Button btnExameEditar, @NonNull TextView tvExameData,
       @NonNull TextView tvExameEspecialidade, @NonNull TextView tvExameLocal,
       @NonNull TextView tvExameProcedimento) {
     this.rootView = rootView;
+    this.btnExameAnexo = btnExameAnexo;
     this.btnExameDelete = btnExameDelete;
     this.btnExameEditar = btnExameEditar;
-    this.tvExameAnexo = tvExameAnexo;
     this.tvExameData = tvExameData;
     this.tvExameEspecialidade = tvExameEspecialidade;
     this.tvExameLocal = tvExameLocal;
@@ -82,6 +82,12 @@ public final class ItemExamesBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btnExameAnexo;
+      Button btnExameAnexo = ViewBindings.findChildViewById(rootView, id);
+      if (btnExameAnexo == null) {
+        break missingId;
+      }
+
       id = R.id.btnExameDelete;
       Button btnExameDelete = ViewBindings.findChildViewById(rootView, id);
       if (btnExameDelete == null) {
@@ -91,12 +97,6 @@ public final class ItemExamesBinding implements ViewBinding {
       id = R.id.btnExameEditar;
       Button btnExameEditar = ViewBindings.findChildViewById(rootView, id);
       if (btnExameEditar == null) {
-        break missingId;
-      }
-
-      id = R.id.tvExameAnexo;
-      TextView tvExameAnexo = ViewBindings.findChildViewById(rootView, id);
-      if (tvExameAnexo == null) {
         break missingId;
       }
 
@@ -124,8 +124,8 @@ public final class ItemExamesBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ItemExamesBinding((CardView) rootView, btnExameDelete, btnExameEditar,
-          tvExameAnexo, tvExameData, tvExameEspecialidade, tvExameLocal, tvExameProcedimento);
+      return new ItemExamesBinding((CardView) rootView, btnExameAnexo, btnExameDelete,
+          btnExameEditar, tvExameData, tvExameEspecialidade, tvExameLocal, tvExameProcedimento);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

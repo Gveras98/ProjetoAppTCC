@@ -85,13 +85,14 @@
             android:text="@string/f.anexo"
             android:textSize="18sp"
             android:textStyle="bold"/>
-        <TextView
-            android:id="@+id/tvExameAnexo"
+        <!-- Campo do anexo do PDF -->
+        <Button
+            android:id="@+id/btnExameAnexo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
             android:padding="4dp"
-            tools:text="Hospital São Paulo" />
+            android:textSize="18sp"
+            android:text="Abrir Anexo" />
 
         <!-- Botões lado a lado com espaçamento -->
         <LinearLayout

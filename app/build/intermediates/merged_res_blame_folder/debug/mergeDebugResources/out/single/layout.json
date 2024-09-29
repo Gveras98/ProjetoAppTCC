@@ -8,10 +8,6 @@
         "source": "C:\\Users\\Gabriel Veras\\.gradle\\daemon\\8.7\\com.example.projetovital.app-main-46:\\layout\\fragment_form_exames.xml"
     },
     {
-        "merged": "com.example.projetovital.app-mergeDebugResources-43:/layout/item_exames.xml",
-        "source": "com.example.projetovital.app-main-46:/layout/item_exames.xml"
-    },
-    {
         "merged": "C:\\Users\\Gabriel Veras\\.gradle\\daemon\\8.7\\com.example.projetovital.app-mergeDebugResources-43:\\layout\\fragment_agenda.xml",
         "source": "C:\\Users\\Gabriel Veras\\.gradle\\daemon\\8.7\\com.example.projetovital.app-main-46:\\layout\\fragment_agenda.xml"
     },
@@ -60,10 +56,6 @@
         "source": "C:\\Users\\Gabriel Veras\\.gradle\\daemon\\8.7\\com.example.projetovital.app-main-46:\\layout\\fragment_cadastro_list.xml"
     },
     {
-        "merged": "com.example.projetovital.app-mergeDebugResources-43:/layout/fragment_exames.xml",
-        "source": "com.example.projetovital.app-main-46:/layout/fragment_exames.xml"
-    },
-    {
         "merged": "C:\\Users\\Gabriel Veras\\.gradle\\daemon\\8.7\\com.example.projetovital.app-mergeDebugResources-43:\\layout\\fragment_form_dependente.xml",
         "source": "C:\\Users\\Gabriel Veras\\.gradle\\daemon\\8.7\\com.example.projetovital.app-main-46:\\layout\\fragment_form_dependente.xml"
     },
@@ -76,6 +68,10 @@
         "source": "C:\\Users\\Gabriel Veras\\.gradle\\daemon\\8.7\\com.example.projetovital.app-main-46:\\layout\\fragment_cadastro.xml"
     },
     {
+        "merged": "com.example.projetovital.app-mergeDebugResources-43:/layout/fragment_cadastro.xml",
+        "source": "com.example.projetovital.app-main-46:/layout/fragment_cadastro.xml"
+    },
+    {
         "merged": "C:\\Users\\Gabriel Veras\\.gradle\\daemon\\8.7\\com.example.projetovital.app-mergeDebugResources-43:\\layout\\fragment_form_agenda.xml",
         "source": "C:\\Users\\Gabriel Veras\\.gradle\\daemon\\8.7\\com.example.projetovital.app-main-46:\\layout\\fragment_form_agenda.xml"
     },
@@ -86,9 +82,5 @@
     {
         "merged": "C:\\Users\\Gabriel Veras\\.gradle\\daemon\\8.7\\com.example.projetovital.app-mergeDebugResources-43:\\layout\\item_alergia.xml",
         "source": "C:\\Users\\Gabriel Veras\\.gradle\\daemon\\8.7\\com.example.projetovital.app-main-46:\\layout\\item_alergia.xml"
-    },
-    {
-        "merged": "com.example.projetovital.app-mergeDebugResources-43:/layout/fragment_form_exames.xml",
-        "source": "com.example.projetovital.app-main-46:/layout/fragment_form_exames.xml"
     }
 ]
