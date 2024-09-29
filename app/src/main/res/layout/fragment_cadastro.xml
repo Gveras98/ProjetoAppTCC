@@ -95,7 +95,7 @@
                     android:layout_height="wrap_content"
                     android:padding="4dp"
                     android:textSize="18sp"
-                    tools:text="Gabriel Veras Sousa de Carvalho" />
+                    tools:text="João" />
 
                 <!-- Nascimento -->
                 <TextView
@@ -112,7 +112,7 @@
                     android:layout_height="wrap_content"
                     android:padding="4dp"
                     android:textSize="18sp"
-                    tools:text="08/12/1998" />
+                    tools:text="01/01/2000" />
 
                 <!-- CPF -->
                 <TextView
@@ -129,7 +129,7 @@
                     android:layout_height="wrap_content"
                     android:padding="4dp"
                     android:textSize="18sp"
-                    tools:text="396.426.938-79 " />
+                    tools:text="111.111.111-01 " />
 
                 <!-- Endereço -->
                 <TextView
@@ -146,7 +146,7 @@
                     android:layout_height="wrap_content"
                     android:padding="4dp"
                     android:textSize="18sp"
-                    tools:text="Rua Leopoldo Figueireido, 39 " />
+                    tools:text="Rua, 42 " />
 
                 <!-- CEP -->
                 <TextView
@@ -163,7 +163,7 @@
                     android:layout_height="wrap_content"
                     android:padding="4dp"
                     android:textSize="18sp"
-                    tools:text="04223-070" />
+                    tools:text="00000-000" />
 
                 <!-- Telefone -->
                 <TextView
@@ -180,7 +180,7 @@
                     android:layout_height="wrap_content"
                     android:padding="4dp"
                     android:textSize="18sp"
-                    tools:text="(11) 98509-5610" />
+                    tools:text="(11) 94002-8922" />
 
                 <!-- Email -->
                 <TextView
