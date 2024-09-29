@@ -53,10 +53,10 @@ public final class AppDatabase_Impl extends AppDatabase {
         db.execSQL("CREATE TABLE IF NOT EXISTS `tblAgenda` (`idAgenda` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `especialidadeAgenda` TEXT NOT NULL, `dataAgenda` TEXT NOT NULL, `horaAgenda` TEXT NOT NULL, `localAgenda` TEXT NOT NULL, `procedimentoAgenda` TEXT NOT NULL)");
         db.execSQL("CREATE TABLE IF NOT EXISTS `tblAlergia` (`idAlergia` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nomeAlergia` TEXT NOT NULL)");
         db.execSQL("CREATE TABLE IF NOT EXISTS `tblCadastro` (`idUser` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nomeUser` TEXT NOT NULL, `sexoUser` INTEGER NOT NULL, `dataNascimentoUser` TEXT NOT NULL, `cpfUser` TEXT NOT NULL, `enderecoUser` TEXT NOT NULL, `cepUser` TEXT NOT NULL, `telefoneUser` TEXT NOT NULL, `emailUser` TEXT NOT NULL, `numSusUser` TEXT NOT NULL, `planoSaudeUser` TEXT NOT NULL, `numPlanoSaudeUser` TEXT NOT NULL, `tipoSanguineoUser` TEXT NOT NULL)");
-        db.execSQL("CREATE TABLE IF NOT EXISTS `tblExames` (`idExame` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `especialidadeExame` TEXT NOT NULL, `dataExame` TEXT NOT NULL, `localExame` TEXT NOT NULL, `procedimentoExame` TEXT NOT NULL)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `tblExames` (`idExame` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `especialidadeExame` TEXT NOT NULL, `dataExame` TEXT NOT NULL, `localExame` TEXT NOT NULL, `procedimentoExame` TEXT NOT NULL, `anexoExame` TEXT)");
         db.execSQL("CREATE TABLE IF NOT EXISTS `tblMedicamento` (`idMedicamento` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nomeMedicamento` TEXT NOT NULL, `doseMedicamento` TEXT NOT NULL, `duracaoMedicamento` TEXT NOT NULL, `intervaloMedicamento` TEXT NOT NULL)");
         db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'a7af5726e27c7329c1b45d6696a4bb93')");
+        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '83063c2e0f35128470b8d7ced17496f6')");
       }
 
       @Override
@@ -160,12 +160,13 @@ public final class AppDatabase_Impl extends AppDatabase {
                   + " Expected:\n" + _infoTblCadastro + "\n"
                   + " Found:\n" + _existingTblCadastro);
         }
-        final HashMap<String, TableInfo.Column> _columnsTblExames = new HashMap<String, TableInfo.Column>(5);
+        final HashMap<String, TableInfo.Column> _columnsTblExames = new HashMap<String, TableInfo.Column>(6);
         _columnsTblExames.put("idExame", new TableInfo.Column("idExame", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsTblExames.put("especialidadeExame", new TableInfo.Column("especialidadeExame", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsTblExames.put("dataExame", new TableInfo.Column("dataExame", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsTblExames.put("localExame", new TableInfo.Column("localExame", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsTblExames.put("procedimentoExame", new TableInfo.Column("procedimentoExame", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsTblExames.put("anexoExame", new TableInfo.Column("anexoExame", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         final HashSet<TableInfo.ForeignKey> _foreignKeysTblExames = new HashSet<TableInfo.ForeignKey>(0);
         final HashSet<TableInfo.Index> _indicesTblExames = new HashSet<TableInfo.Index>(0);
         final TableInfo _infoTblExames = new TableInfo("tblExames", _columnsTblExames, _foreignKeysTblExames, _indicesTblExames);
@@ -192,7 +193,7 @@ public final class AppDatabase_Impl extends AppDatabase {
         }
         return new RoomOpenHelper.ValidationResult(true, null);
       }
-    }, "a7af5726e27c7329c1b45d6696a4bb93", "674d51d5afc3624ba05c1bae8dee4ea7");
+    }, "83063c2e0f35128470b8d7ced17496f6", "9a81ae12b8892296dcbe8270f6b45f80");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(config.context).name(config.name).callback(_openCallback).build();
     final SupportSQLiteOpenHelper _helper = config.sqliteOpenHelperFactory.create(_sqliteConfig);
     return _helper;

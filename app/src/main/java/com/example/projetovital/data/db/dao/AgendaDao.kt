@@ -16,7 +16,6 @@ interface AgendaDao {
     fun getAll(): LiveData<List<AgendaEntity>>
 
     //Inserir - Replace para substituir em caso de conflito
-    //Caso retirar o OnConflict
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(agenda: AgendaEntity): Long
 

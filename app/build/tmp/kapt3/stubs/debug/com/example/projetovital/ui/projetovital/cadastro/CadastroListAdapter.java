@@ -27,30 +27,32 @@ public final class CadastroListAdapter extends androidx.recyclerview.widget.Recy
         return 0;
     }
     
-    @kotlin.Metadata(mv = {1, 9, 0}, k = 1, xi = 48, d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\u0018\u00002\u00020\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u00a2\u0006\u0002\u0010\u0004J\u000e\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u0014R\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0006X\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\u0006X\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\u0006X\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u0006X\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\u0006X\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\u0006X\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u0006X\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u0006X\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0006X\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0006X\u0082\u0004\u00a2\u0006\u0002\n\u0000\u00a8\u0006\u0015"}, d2 = {"Lcom/example/projetovital/ui/projetovital/cadastro/CadastroListAdapter$CadastroViewHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "itemView", "Landroid/view/View;", "(Landroid/view/View;)V", "textViewCadastroCEP", "Landroid/widget/TextView;", "textViewCadastroCPF", "textViewCadastroDataNascimento", "textViewCadastroEmail", "textViewCadastroEndereco", "textViewCadastroNome", "textViewCadastroNumeroPlanoSaude", "textViewCadastroNumeroSUS", "textViewCadastroPlanoSaude", "textViewCadastroTelefone", "textViewCadastroTipoSanguineo", "bindView", "", "cadastro", "Lcom/example/projetovital/data/db/entity/CadastroEntity;", "app_debug"})
+    @kotlin.Metadata(mv = {1, 9, 0}, k = 1, xi = 48, d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\u0018\u00002\u00020\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u00a2\u0006\u0002\u0010\u0004J\u000e\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u0015R\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0006X\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\u0006X\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\u0006X\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u0006X\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\u0006X\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\u0006X\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u0006X\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u0006X\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0006X\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0006X\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0006X\u0082\u0004\u00a2\u0006\u0002\n\u0000\u00a8\u0006\u0016"}, d2 = {"Lcom/example/projetovital/ui/projetovital/cadastro/CadastroListAdapter$CadastroViewHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "itemView", "Landroid/view/View;", "(Landroid/view/View;)V", "tvCadastroCEP", "Landroid/widget/TextView;", "tvCadastroCPF", "tvCadastroDataNascimento", "tvCadastroEmail", "tvCadastroEndereco", "tvCadastroNome", "tvCadastroNumeroPlanoSaude", "tvCadastroNumeroSUS", "tvCadastroPlanoSaude", "tvCadastroSexo", "tvCadastroTelefone", "tvCadastroTipoSanguineo", "bindView", "", "cadastro", "Lcom/example/projetovital/data/db/entity/CadastroEntity;", "app_debug"})
     public static final class CadastroViewHolder extends androidx.recyclerview.widget.RecyclerView.ViewHolder {
         @org.jetbrains.annotations.NotNull
-        private final android.widget.TextView textViewCadastroNome = null;
+        private final android.widget.TextView tvCadastroNome = null;
         @org.jetbrains.annotations.NotNull
-        private final android.widget.TextView textViewCadastroDataNascimento = null;
+        private final android.widget.TextView tvCadastroSexo = null;
         @org.jetbrains.annotations.NotNull
-        private final android.widget.TextView textViewCadastroCPF = null;
+        private final android.widget.TextView tvCadastroDataNascimento = null;
         @org.jetbrains.annotations.NotNull
-        private final android.widget.TextView textViewCadastroEndereco = null;
+        private final android.widget.TextView tvCadastroCPF = null;
         @org.jetbrains.annotations.NotNull
-        private final android.widget.TextView textViewCadastroCEP = null;
+        private final android.widget.TextView tvCadastroEndereco = null;
         @org.jetbrains.annotations.NotNull
-        private final android.widget.TextView textViewCadastroTelefone = null;
+        private final android.widget.TextView tvCadastroCEP = null;
         @org.jetbrains.annotations.NotNull
-        private final android.widget.TextView textViewCadastroEmail = null;
+        private final android.widget.TextView tvCadastroTelefone = null;
         @org.jetbrains.annotations.NotNull
-        private final android.widget.TextView textViewCadastroNumeroSUS = null;
+        private final android.widget.TextView tvCadastroEmail = null;
         @org.jetbrains.annotations.NotNull
-        private final android.widget.TextView textViewCadastroPlanoSaude = null;
+        private final android.widget.TextView tvCadastroNumeroSUS = null;
         @org.jetbrains.annotations.NotNull
-        private final android.widget.TextView textViewCadastroNumeroPlanoSaude = null;
+        private final android.widget.TextView tvCadastroPlanoSaude = null;
         @org.jetbrains.annotations.NotNull
-        private final android.widget.TextView textViewCadastroTipoSanguineo = null;
+        private final android.widget.TextView tvCadastroNumeroPlanoSaude = null;
+        @org.jetbrains.annotations.NotNull
+        private final android.widget.TextView tvCadastroTipoSanguineo = null;
         
         public CadastroViewHolder(@org.jetbrains.annotations.NotNull
         android.view.View itemView) {

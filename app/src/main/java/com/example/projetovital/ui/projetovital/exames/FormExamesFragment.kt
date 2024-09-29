@@ -39,23 +39,6 @@ class FormExamesFragment : Fragment() {
 
     private lateinit var binding: FragmentFormExamesBinding
 
-    //Referente ao Scanner
-    private val scannerLauncher =
-        registerForActivityResult(ActivityResultContracts.StartIntentSenderForResult()) { result ->
-            if (result.resultCode == RESULT_OK) {
-                val result = GmsDocumentScanningResult.fromActivityResultIntent(result.data)
-                if (result != null) {
-                    processResult(result)
-                } else {
-                    Toast.makeText(
-                        requireContext(),
-                        "Erro ao obter resultado da digitalização",
-                        Toast.LENGTH_LONG
-                    ).show()
-                }
-            }
-        }
-
     //Referente ao ViewModel
     private val viewModel: ExamesViewModel by viewModels {
         object : ViewModelProvider.Factory {
@@ -150,6 +133,23 @@ class FormExamesFragment : Fragment() {
         binding.etExamesLocal.text?.clear()
         binding.etExamesProcedimento.text?.clear()
     }
+
+    //Referente ao Scanner
+    private val scannerLauncher =
+        registerForActivityResult(ActivityResultContracts.StartIntentSenderForResult()) { result ->
+            if (result.resultCode == RESULT_OK) {
+                val result = GmsDocumentScanningResult.fromActivityResultIntent(result.data)
+                if (result != null) {
+                    processResult(result)
+                } else {
+                    Toast.makeText(
+                        requireContext(),
+                        "Erro ao obter resultado da digitalização",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+            }
+        }
 
     //Função de Scanner
     private fun startScanning(activity: Activity?) {

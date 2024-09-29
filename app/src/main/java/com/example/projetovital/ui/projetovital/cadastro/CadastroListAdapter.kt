@@ -11,12 +11,12 @@ import java.text.SimpleDateFormat
 import java.util.Locale
 
 class CadastroListAdapter(
-    private val cadastroList: List<CadastroEntity>
-) : RecyclerView.Adapter<CadastroListAdapter.CadastroViewHolder>() {
+    private val cadastroList: List<CadastroEntity>)
+    : RecyclerView.Adapter<CadastroListAdapter.CadastroViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CadastroViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_cadastro, parent, false) // Corrija o layout aqui
+                .inflate(R.layout.item_cadastro, parent, false)
         return CadastroViewHolder(view)
     }
 
@@ -27,44 +27,34 @@ class CadastroListAdapter(
     override fun getItemCount() = cadastroList.size
 
     class CadastroViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val textViewCadastroNome: TextView =
-            itemView.findViewById(R.id.textViewCadastroNome)
-        private val textViewCadastroDataNascimento: TextView =
-            itemView.findViewById(R.id.textViewCadastroDataNascimento)
-        private val textViewCadastroCPF: TextView = itemView.findViewById(R.id.textViewCadastroCPF)
-        private val textViewCadastroEndereco: TextView =
-            itemView.findViewById(R.id.textViewCadastroEndereco)
-        private val textViewCadastroCEP: TextView = itemView.findViewById(R.id.textViewCadastroCEP)
-        private val textViewCadastroTelefone: TextView =
-            itemView.findViewById(R.id.textViewCadastroTelefone)
-        private val textViewCadastroEmail: TextView =
-            itemView.findViewById(R.id.textViewCadastroEmail)
-        private val textViewCadastroNumeroSUS: TextView =
-            itemView.findViewById(R.id.textViewCadastroNumeroSUS)
-        private val textViewCadastroPlanoSaude: TextView =
-            itemView.findViewById(R.id.textViewCadastroPlanoSaude)
-        private val textViewCadastroNumeroPlanoSaude: TextView =
-            itemView.findViewById(R.id.textViewCadastroNumeroPlanoSaude)
-        private val textViewCadastroTipoSanguineo: TextView =
-            itemView.findViewById(R.id.textViewCadastroTipoSanguineo)
+        private val tvCadastroNome: TextView = itemView.findViewById(R.id.tvCadastroNome)
+        private val tvCadastroSexo: TextView = itemView.findViewById(R.id.tvCadastroSexo)
+        private val tvCadastroDataNascimento: TextView = itemView.findViewById(R.id.tvCadastroDataNascimento)
+        private val tvCadastroCPF: TextView = itemView.findViewById(R.id.tvCadastroCPF)
+        private val tvCadastroEndereco: TextView = itemView.findViewById(R.id.tvCadastroEndereco)
+        private val tvCadastroCEP: TextView = itemView.findViewById(R.id.tvCadastroCEP)
+        private val tvCadastroTelefone: TextView = itemView.findViewById(R.id.tvCadastroTelefone)
+        private val tvCadastroEmail: TextView = itemView.findViewById(R.id.tvCadastroEmail)
+        private val tvCadastroNumeroSUS: TextView = itemView.findViewById(R.id.tvCadastroNumeroSUS)
+        private val tvCadastroPlanoSaude: TextView = itemView.findViewById(R.id.tvCadastroPlanoSaude)
+        private val tvCadastroNumeroPlanoSaude: TextView = itemView.findViewById(R.id.tvCadastroNumeroPlanoSaude)
+        private val tvCadastroTipoSanguineo: TextView = itemView.findViewById(R.id.tvCadastroTipoSanguineo)
 
         fun bindView(cadastro: CadastroEntity) {
-            textViewCadastroNome.text = cadastro.nomeUser
-            textViewCadastroDataNascimento.text = cadastro.dataNascimentoUser.let {
+            tvCadastroNome.text = cadastro.nomeUser
+            tvCadastroSexo.text = cadastro.sexoUser.toString()
+            tvCadastroDataNascimento.text = cadastro.dataNascimentoUser.let {
                 SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(it)
             } ?: "Data não disponível"
-            textViewCadastroCPF.text = cadastro.cpfUser
-            textViewCadastroEndereco.text = cadastro.enderecoUser
-            textViewCadastroCEP.text = cadastro.cepUser
-            textViewCadastroTelefone.text = cadastro.telefoneUser
-            textViewCadastroEmail.text = cadastro.emailUser
-            textViewCadastroNumeroSUS.text = cadastro.numSusUser
-            textViewCadastroPlanoSaude.text =
-                cadastro.planoSaudeUser
-            textViewCadastroNumeroPlanoSaude.text =
-                cadastro.numPlanoSaudeUser
-            textViewCadastroTipoSanguineo.text =
-                cadastro.tipoSanguineoUser
+            tvCadastroCPF.text = cadastro.cpfUser
+            tvCadastroEndereco.text = cadastro.enderecoUser
+            tvCadastroCEP.text = cadastro.cepUser
+            tvCadastroTelefone.text = cadastro.telefoneUser
+            tvCadastroEmail.text = cadastro.emailUser
+            tvCadastroNumeroSUS.text = cadastro.numSusUser
+            tvCadastroPlanoSaude.text = cadastro.planoSaudeUser
+            tvCadastroNumeroPlanoSaude.text = cadastro.numPlanoSaudeUser
+            tvCadastroTipoSanguineo.text = cadastro.tipoSanguineoUser
         }
     }
 }

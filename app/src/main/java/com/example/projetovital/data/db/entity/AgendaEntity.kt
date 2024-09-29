@@ -27,5 +27,6 @@ data class AgendaEntity(
     val localAgenda: String,
 
     @ColumnInfo(name = "procedimentoAgenda")
-    val procedimentoAgenda: String
+    val procedimentoAgenda: String,
+
 )

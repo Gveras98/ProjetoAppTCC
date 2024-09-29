@@ -65,7 +65,6 @@ class FormAlergiaFragment : Fragment() {
             viewModel.inserirAlergia(
                 alergia
             )
-            viewModel.inserirAlergia(alergia)
         }
     }
 

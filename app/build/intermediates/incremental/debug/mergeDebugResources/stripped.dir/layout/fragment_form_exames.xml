@@ -45,8 +45,8 @@
                 android:id="@+id/etExamesData"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/f.data"
                 android:focusable="false"
+                android:hint="@string/f.data"
                 android:inputType="none"
                 android:padding="16dp" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -93,15 +93,13 @@
             android:id="@+id/btnScanner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp"
             android:text="Scanner"
-            android:textSize="16sp"/>
+            android:textSize="16sp" />
 
         <Button
             android:id="@+id/btnExamesSalvar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp"
             android:text="Salvar"
             android:textSize="18sp"
             android:textStyle="bold" />

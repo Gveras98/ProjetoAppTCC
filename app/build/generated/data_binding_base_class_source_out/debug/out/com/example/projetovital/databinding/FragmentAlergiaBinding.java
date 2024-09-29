@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.ScrollView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.projetovital.R;
@@ -22,9 +23,14 @@ public final class FragmentAlergiaBinding implements ViewBinding {
   @NonNull
   public final Button btnNovoAlergia;
 
-  private FragmentAlergiaBinding(@NonNull ScrollView rootView, @NonNull Button btnNovoAlergia) {
+  @NonNull
+  public final RecyclerView recyclerAlergias;
+
+  private FragmentAlergiaBinding(@NonNull ScrollView rootView, @NonNull Button btnNovoAlergia,
+      @NonNull RecyclerView recyclerAlergias) {
     this.rootView = rootView;
     this.btnNovoAlergia = btnNovoAlergia;
+    this.recyclerAlergias = recyclerAlergias;
   }
 
   @Override
@@ -60,7 +66,13 @@ public final class FragmentAlergiaBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentAlergiaBinding((ScrollView) rootView, btnNovoAlergia);
+      id = R.id.recyclerAlergias;
+      RecyclerView recyclerAlergias = ViewBindings.findChildViewById(rootView, id);
+      if (recyclerAlergias == null) {
+        break missingId;
+      }
+
+      return new FragmentAlergiaBinding((ScrollView) rootView, btnNovoAlergia, recyclerAlergias);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

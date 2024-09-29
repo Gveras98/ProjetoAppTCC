@@ -19,7 +19,7 @@ class AgendaViewModel(
     val agendaStateEventData: LiveData<AgendaState>
         get() = _agendaStateEventData
 
-    // Mudança para `messageEventData` como no `CadastroViewModel`
+
     private val _agendaMessageEventData = MutableLiveData<Int>()
     val messageEventData: LiveData<Int>
         get() = _agendaMessageEventData

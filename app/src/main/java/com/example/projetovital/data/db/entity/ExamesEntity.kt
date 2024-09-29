@@ -21,7 +21,9 @@ data class ExamesEntity(
     val localExame: String,
 
     @ColumnInfo(name = "procedimentoExame")
-    val procedimentoExame: String
+    val procedimentoExame: String,
 
     //Adicionar os anexos em pdf
+    @ColumnInfo(name = "anexoExame")
+    val anexoExame: String? = null
 )

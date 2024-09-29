@@ -20,56 +20,61 @@ public final class ItemCadastroBinding implements ViewBinding {
   private final CardView rootView;
 
   @NonNull
-  public final TextView textViewCadastroCEP;
+  public final TextView tvCadastroCEP;
 
   @NonNull
-  public final TextView textViewCadastroCPF;
+  public final TextView tvCadastroCPF;
 
   @NonNull
-  public final TextView textViewCadastroDataNascimento;
+  public final TextView tvCadastroDataNascimento;
 
   @NonNull
-  public final TextView textViewCadastroEmail;
+  public final TextView tvCadastroEmail;
 
   @NonNull
-  public final TextView textViewCadastroEndereco;
+  public final TextView tvCadastroEndereco;
 
   @NonNull
-  public final TextView textViewCadastroNome;
+  public final TextView tvCadastroNome;
 
   @NonNull
-  public final TextView textViewCadastroNumeroPlanoSaude;
+  public final TextView tvCadastroNumeroPlanoSaude;
 
   @NonNull
-  public final TextView textViewCadastroNumeroSUS;
+  public final TextView tvCadastroNumeroSUS;
 
   @NonNull
-  public final TextView textViewCadastroPlanoSaude;
+  public final TextView tvCadastroPlanoSaude;
 
   @NonNull
-  public final TextView textViewCadastroTelefone;
+  public final TextView tvCadastroSexo;
 
   @NonNull
-  public final TextView textViewCadastroTipoSanguineo;
+  public final TextView tvCadastroTelefone;
 
-  private ItemCadastroBinding(@NonNull CardView rootView, @NonNull TextView textViewCadastroCEP,
-      @NonNull TextView textViewCadastroCPF, @NonNull TextView textViewCadastroDataNascimento,
-      @NonNull TextView textViewCadastroEmail, @NonNull TextView textViewCadastroEndereco,
-      @NonNull TextView textViewCadastroNome, @NonNull TextView textViewCadastroNumeroPlanoSaude,
-      @NonNull TextView textViewCadastroNumeroSUS, @NonNull TextView textViewCadastroPlanoSaude,
-      @NonNull TextView textViewCadastroTelefone, @NonNull TextView textViewCadastroTipoSanguineo) {
+  @NonNull
+  public final TextView tvCadastroTipoSanguineo;
+
+  private ItemCadastroBinding(@NonNull CardView rootView, @NonNull TextView tvCadastroCEP,
+      @NonNull TextView tvCadastroCPF, @NonNull TextView tvCadastroDataNascimento,
+      @NonNull TextView tvCadastroEmail, @NonNull TextView tvCadastroEndereco,
+      @NonNull TextView tvCadastroNome, @NonNull TextView tvCadastroNumeroPlanoSaude,
+      @NonNull TextView tvCadastroNumeroSUS, @NonNull TextView tvCadastroPlanoSaude,
+      @NonNull TextView tvCadastroSexo, @NonNull TextView tvCadastroTelefone,
+      @NonNull TextView tvCadastroTipoSanguineo) {
     this.rootView = rootView;
-    this.textViewCadastroCEP = textViewCadastroCEP;
-    this.textViewCadastroCPF = textViewCadastroCPF;
-    this.textViewCadastroDataNascimento = textViewCadastroDataNascimento;
-    this.textViewCadastroEmail = textViewCadastroEmail;
-    this.textViewCadastroEndereco = textViewCadastroEndereco;
-    this.textViewCadastroNome = textViewCadastroNome;
-    this.textViewCadastroNumeroPlanoSaude = textViewCadastroNumeroPlanoSaude;
-    this.textViewCadastroNumeroSUS = textViewCadastroNumeroSUS;
-    this.textViewCadastroPlanoSaude = textViewCadastroPlanoSaude;
-    this.textViewCadastroTelefone = textViewCadastroTelefone;
-    this.textViewCadastroTipoSanguineo = textViewCadastroTipoSanguineo;
+    this.tvCadastroCEP = tvCadastroCEP;
+    this.tvCadastroCPF = tvCadastroCPF;
+    this.tvCadastroDataNascimento = tvCadastroDataNascimento;
+    this.tvCadastroEmail = tvCadastroEmail;
+    this.tvCadastroEndereco = tvCadastroEndereco;
+    this.tvCadastroNome = tvCadastroNome;
+    this.tvCadastroNumeroPlanoSaude = tvCadastroNumeroPlanoSaude;
+    this.tvCadastroNumeroSUS = tvCadastroNumeroSUS;
+    this.tvCadastroPlanoSaude = tvCadastroPlanoSaude;
+    this.tvCadastroSexo = tvCadastroSexo;
+    this.tvCadastroTelefone = tvCadastroTelefone;
+    this.tvCadastroTipoSanguineo = tvCadastroTipoSanguineo;
   }
 
   @Override
@@ -99,76 +104,82 @@ public final class ItemCadastroBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.textViewCadastroCEP;
-      TextView textViewCadastroCEP = ViewBindings.findChildViewById(rootView, id);
-      if (textViewCadastroCEP == null) {
+      id = R.id.tvCadastroCEP;
+      TextView tvCadastroCEP = ViewBindings.findChildViewById(rootView, id);
+      if (tvCadastroCEP == null) {
         break missingId;
       }
 
-      id = R.id.textViewCadastroCPF;
-      TextView textViewCadastroCPF = ViewBindings.findChildViewById(rootView, id);
-      if (textViewCadastroCPF == null) {
+      id = R.id.tvCadastroCPF;
+      TextView tvCadastroCPF = ViewBindings.findChildViewById(rootView, id);
+      if (tvCadastroCPF == null) {
         break missingId;
       }
 
-      id = R.id.textViewCadastroDataNascimento;
-      TextView textViewCadastroDataNascimento = ViewBindings.findChildViewById(rootView, id);
-      if (textViewCadastroDataNascimento == null) {
+      id = R.id.tvCadastroDataNascimento;
+      TextView tvCadastroDataNascimento = ViewBindings.findChildViewById(rootView, id);
+      if (tvCadastroDataNascimento == null) {
         break missingId;
       }
 
-      id = R.id.textViewCadastroEmail;
-      TextView textViewCadastroEmail = ViewBindings.findChildViewById(rootView, id);
-      if (textViewCadastroEmail == null) {
+      id = R.id.tvCadastroEmail;
+      TextView tvCadastroEmail = ViewBindings.findChildViewById(rootView, id);
+      if (tvCadastroEmail == null) {
         break missingId;
       }
 
-      id = R.id.textViewCadastroEndereco;
-      TextView textViewCadastroEndereco = ViewBindings.findChildViewById(rootView, id);
-      if (textViewCadastroEndereco == null) {
+      id = R.id.tvCadastroEndereco;
+      TextView tvCadastroEndereco = ViewBindings.findChildViewById(rootView, id);
+      if (tvCadastroEndereco == null) {
         break missingId;
       }
 
-      id = R.id.textViewCadastroNome;
-      TextView textViewCadastroNome = ViewBindings.findChildViewById(rootView, id);
-      if (textViewCadastroNome == null) {
+      id = R.id.tvCadastroNome;
+      TextView tvCadastroNome = ViewBindings.findChildViewById(rootView, id);
+      if (tvCadastroNome == null) {
         break missingId;
       }
 
-      id = R.id.textViewCadastroNumeroPlanoSaude;
-      TextView textViewCadastroNumeroPlanoSaude = ViewBindings.findChildViewById(rootView, id);
-      if (textViewCadastroNumeroPlanoSaude == null) {
+      id = R.id.tvCadastroNumeroPlanoSaude;
+      TextView tvCadastroNumeroPlanoSaude = ViewBindings.findChildViewById(rootView, id);
+      if (tvCadastroNumeroPlanoSaude == null) {
         break missingId;
       }
 
-      id = R.id.textViewCadastroNumeroSUS;
-      TextView textViewCadastroNumeroSUS = ViewBindings.findChildViewById(rootView, id);
-      if (textViewCadastroNumeroSUS == null) {
+      id = R.id.tvCadastroNumeroSUS;
+      TextView tvCadastroNumeroSUS = ViewBindings.findChildViewById(rootView, id);
+      if (tvCadastroNumeroSUS == null) {
         break missingId;
       }
 
-      id = R.id.textViewCadastroPlanoSaude;
-      TextView textViewCadastroPlanoSaude = ViewBindings.findChildViewById(rootView, id);
-      if (textViewCadastroPlanoSaude == null) {
+      id = R.id.tvCadastroPlanoSaude;
+      TextView tvCadastroPlanoSaude = ViewBindings.findChildViewById(rootView, id);
+      if (tvCadastroPlanoSaude == null) {
         break missingId;
       }
 
-      id = R.id.textViewCadastroTelefone;
-      TextView textViewCadastroTelefone = ViewBindings.findChildViewById(rootView, id);
-      if (textViewCadastroTelefone == null) {
+      id = R.id.tvCadastroSexo;
+      TextView tvCadastroSexo = ViewBindings.findChildViewById(rootView, id);
+      if (tvCadastroSexo == null) {
         break missingId;
       }
 
-      id = R.id.textViewCadastroTipoSanguineo;
-      TextView textViewCadastroTipoSanguineo = ViewBindings.findChildViewById(rootView, id);
-      if (textViewCadastroTipoSanguineo == null) {
+      id = R.id.tvCadastroTelefone;
+      TextView tvCadastroTelefone = ViewBindings.findChildViewById(rootView, id);
+      if (tvCadastroTelefone == null) {
         break missingId;
       }
 
-      return new ItemCadastroBinding((CardView) rootView, textViewCadastroCEP, textViewCadastroCPF,
-          textViewCadastroDataNascimento, textViewCadastroEmail, textViewCadastroEndereco,
-          textViewCadastroNome, textViewCadastroNumeroPlanoSaude, textViewCadastroNumeroSUS,
-          textViewCadastroPlanoSaude, textViewCadastroTelefone, textViewCadastroTipoSanguineo);
+      id = R.id.tvCadastroTipoSanguineo;
+      TextView tvCadastroTipoSanguineo = ViewBindings.findChildViewById(rootView, id);
+      if (tvCadastroTipoSanguineo == null) {
+        break missingId;
+      }
+
+      return new ItemCadastroBinding((CardView) rootView, tvCadastroCEP, tvCadastroCPF,
+          tvCadastroDataNascimento, tvCadastroEmail, tvCadastroEndereco, tvCadastroNome,
+          tvCadastroNumeroPlanoSaude, tvCadastroNumeroSUS, tvCadastroPlanoSaude, tvCadastroSexo,
+          tvCadastroTelefone, tvCadastroTipoSanguineo);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

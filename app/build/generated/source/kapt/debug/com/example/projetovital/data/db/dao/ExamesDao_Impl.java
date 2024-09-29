@@ -48,7 +48,7 @@ public final class ExamesDao_Impl implements ExamesDao {
       @Override
       @NonNull
       protected String createQuery() {
-        return "INSERT OR REPLACE INTO `tblExames` (`idExame`,`especialidadeExame`,`dataExame`,`localExame`,`procedimentoExame`) VALUES (nullif(?, 0),?,?,?,?)";
+        return "INSERT OR REPLACE INTO `tblExames` (`idExame`,`especialidadeExame`,`dataExame`,`localExame`,`procedimentoExame`,`anexoExame`) VALUES (nullif(?, 0),?,?,?,?,?)";
       }
 
       @Override
@@ -75,6 +75,11 @@ public final class ExamesDao_Impl implements ExamesDao {
           statement.bindNull(5);
         } else {
           statement.bindString(5, entity.getProcedimentoExame());
+        }
+        if (entity.getAnexoExame() == null) {
+          statement.bindNull(6);
+        } else {
+          statement.bindString(6, entity.getAnexoExame());
         }
       }
     };
@@ -82,7 +87,7 @@ public final class ExamesDao_Impl implements ExamesDao {
       @Override
       @NonNull
       protected String createQuery() {
-        return "UPDATE OR ABORT `tblExames` SET `idExame` = ?,`especialidadeExame` = ?,`dataExame` = ?,`localExame` = ?,`procedimentoExame` = ? WHERE `idExame` = ?";
+        return "UPDATE OR ABORT `tblExames` SET `idExame` = ?,`especialidadeExame` = ?,`dataExame` = ?,`localExame` = ?,`procedimentoExame` = ?,`anexoExame` = ? WHERE `idExame` = ?";
       }
 
       @Override
@@ -110,7 +115,12 @@ public final class ExamesDao_Impl implements ExamesDao {
         } else {
           statement.bindString(5, entity.getProcedimentoExame());
         }
-        statement.bindLong(6, entity.getIdExame());
+        if (entity.getAnexoExame() == null) {
+          statement.bindNull(6);
+        } else {
+          statement.bindString(6, entity.getAnexoExame());
+        }
+        statement.bindLong(7, entity.getIdExame());
       }
     };
     this.__preparedStmtOfDelete = new SharedSQLiteStatement(__db) {
@@ -124,7 +134,7 @@ public final class ExamesDao_Impl implements ExamesDao {
   }
 
   @Override
-  public Object insert(final ExamesEntity exames, final Continuation<? super Long> arg1) {
+  public Object insert(final ExamesEntity exames, final Continuation<? super Long> $completion) {
     return CoroutinesRoom.execute(__db, true, new Callable<Long>() {
       @Override
       @NonNull
@@ -138,11 +148,11 @@ public final class ExamesDao_Impl implements ExamesDao {
           __db.endTransaction();
         }
       }
-    }, arg1);
+    }, $completion);
   }
 
   @Override
-  public Object update(final ExamesEntity exames, final Continuation<? super Unit> arg1) {
+  public Object update(final ExamesEntity exames, final Continuation<? super Unit> $completion) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       @NonNull
@@ -156,11 +166,11 @@ public final class ExamesDao_Impl implements ExamesDao {
           __db.endTransaction();
         }
       }
-    }, arg1);
+    }, $completion);
   }
 
   @Override
-  public Object delete(final long id, final Continuation<? super Unit> arg1) {
+  public Object delete(final long id, final Continuation<? super Unit> $completion) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       @NonNull
@@ -181,7 +191,7 @@ public final class ExamesDao_Impl implements ExamesDao {
           __preparedStmtOfDelete.release(_stmt);
         }
       }
-    }, arg1);
+    }, $completion);
   }
 
   @Override
@@ -199,6 +209,7 @@ public final class ExamesDao_Impl implements ExamesDao {
           final int _cursorIndexOfDataExame = CursorUtil.getColumnIndexOrThrow(_cursor, "dataExame");
           final int _cursorIndexOfLocalExame = CursorUtil.getColumnIndexOrThrow(_cursor, "localExame");
           final int _cursorIndexOfProcedimentoExame = CursorUtil.getColumnIndexOrThrow(_cursor, "procedimentoExame");
+          final int _cursorIndexOfAnexoExame = CursorUtil.getColumnIndexOrThrow(_cursor, "anexoExame");
           final List<ExamesEntity> _result = new ArrayList<ExamesEntity>(_cursor.getCount());
           while (_cursor.moveToNext()) {
             final ExamesEntity _item;
@@ -230,7 +241,13 @@ public final class ExamesDao_Impl implements ExamesDao {
             } else {
               _tmpProcedimentoExame = _cursor.getString(_cursorIndexOfProcedimentoExame);
             }
-            _item = new ExamesEntity(_tmpIdExame,_tmpEspecialidadeExame,_tmpDataExame,_tmpLocalExame,_tmpProcedimentoExame);
+            final String _tmpAnexoExame;
+            if (_cursor.isNull(_cursorIndexOfAnexoExame)) {
+              _tmpAnexoExame = null;
+            } else {
+              _tmpAnexoExame = _cursor.getString(_cursorIndexOfAnexoExame);
+            }
+            _item = new ExamesEntity(_tmpIdExame,_tmpEspecialidadeExame,_tmpDataExame,_tmpLocalExame,_tmpProcedimentoExame,_tmpAnexoExame);
             _result.add(_item);
           }
           return _result;

@@ -118,8 +118,7 @@ public final class MedicamentoDao_Impl implements MedicamentoDao {
   }
 
   @Override
-  public Object insert(final MedicamentoEntity medicamento,
-      final Continuation<? super Long> $completion) {
+  public Object insert(final MedicamentoEntity medicamento, final Continuation<? super Long> arg1) {
     return CoroutinesRoom.execute(__db, true, new Callable<Long>() {
       @Override
       @NonNull
@@ -133,12 +132,11 @@ public final class MedicamentoDao_Impl implements MedicamentoDao {
           __db.endTransaction();
         }
       }
-    }, $completion);
+    }, arg1);
   }
 
   @Override
-  public Object update(final MedicamentoEntity medicamento,
-      final Continuation<? super Unit> $completion) {
+  public Object update(final MedicamentoEntity medicamento, final Continuation<? super Unit> arg1) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       @NonNull
@@ -152,11 +150,11 @@ public final class MedicamentoDao_Impl implements MedicamentoDao {
           __db.endTransaction();
         }
       }
-    }, $completion);
+    }, arg1);
   }
 
   @Override
-  public Object delete(final long id, final Continuation<? super Unit> $completion) {
+  public Object delete(final long id, final Continuation<? super Unit> arg1) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       @NonNull
@@ -177,7 +175,7 @@ public final class MedicamentoDao_Impl implements MedicamentoDao {
           __preparedStmtOfDelete.release(_stmt);
         }
       }
-    }, $completion);
+    }, arg1);
   }
 
   @Override

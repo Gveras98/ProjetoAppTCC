@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.ScrollView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.projetovital.R;
@@ -22,10 +23,14 @@ public final class FragmentMedicamentoBinding implements ViewBinding {
   @NonNull
   public final Button btnNovoMedicamento;
 
+  @NonNull
+  public final RecyclerView recyclerMedicamento;
+
   private FragmentMedicamentoBinding(@NonNull ScrollView rootView,
-      @NonNull Button btnNovoMedicamento) {
+      @NonNull Button btnNovoMedicamento, @NonNull RecyclerView recyclerMedicamento) {
     this.rootView = rootView;
     this.btnNovoMedicamento = btnNovoMedicamento;
+    this.recyclerMedicamento = recyclerMedicamento;
   }
 
   @Override
@@ -61,7 +66,14 @@ public final class FragmentMedicamentoBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentMedicamentoBinding((ScrollView) rootView, btnNovoMedicamento);
+      id = R.id.recyclerMedicamento;
+      RecyclerView recyclerMedicamento = ViewBindings.findChildViewById(rootView, id);
+      if (recyclerMedicamento == null) {
+        break missingId;
+      }
+
+      return new FragmentMedicamentoBinding((ScrollView) rootView, btnNovoMedicamento,
+          recyclerMedicamento);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

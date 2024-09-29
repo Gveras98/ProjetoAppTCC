@@ -68,7 +68,9 @@
     <string name="cadastrar_agendamento"> Novo Agendamento </string>
     <string name="cadastrar_exame"> Novo Exame </string>
     <string name="cadastro"> Cadastro </string>
+    <string name="deletar">Deletar</string>
     <string name="dependente">Dependentes </string>
+    <string name="editar">Editar</string>
     <string name="exame"> Exames </string>
     <string name="f.anexo"> Anexo: </string>
     <string name="f.data"> Data: </string>
@@ -84,6 +86,7 @@
     <string name="medicamentos"> Medicamentos </string>
     <string name="msg.erro"> Erro no Cadastro! </string>
     <string name="msg.sucesso"> Cadastrado com Sucesso! </string>
+    <string name="salvar">Salvar</string>
     <string name="teste"> Cadastro </string>
     <style name="Base.Theme.ProjetoVital" parent="Theme.Material3.DayNight.NoActionBar">
         

@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.ScrollView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.projetovital.R;
@@ -22,9 +23,14 @@ public final class FragmentAgendaBinding implements ViewBinding {
   @NonNull
   public final Button btnCadAgendamento;
 
-  private FragmentAgendaBinding(@NonNull ScrollView rootView, @NonNull Button btnCadAgendamento) {
+  @NonNull
+  public final RecyclerView recyclerAgenda;
+
+  private FragmentAgendaBinding(@NonNull ScrollView rootView, @NonNull Button btnCadAgendamento,
+      @NonNull RecyclerView recyclerAgenda) {
     this.rootView = rootView;
     this.btnCadAgendamento = btnCadAgendamento;
+    this.recyclerAgenda = recyclerAgenda;
   }
 
   @Override
@@ -60,7 +66,13 @@ public final class FragmentAgendaBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentAgendaBinding((ScrollView) rootView, btnCadAgendamento);
+      id = R.id.recyclerAgenda;
+      RecyclerView recyclerAgenda = ViewBindings.findChildViewById(rootView, id);
+      if (recyclerAgenda == null) {
+        break missingId;
+      }
+
+      return new FragmentAgendaBinding((ScrollView) rootView, btnCadAgendamento, recyclerAgenda);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

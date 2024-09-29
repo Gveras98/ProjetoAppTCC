@@ -11,6 +11,11 @@
     <string name="cadastro"> Cadastro </string>
     <string name="dependente">Dependentes </string>
 
+    //String Crud
+    <string name="salvar">Salvar</string>
+    <string name="deletar">Deletar</string>
+    <string name="editar">Editar</string>
+
     //Strings do Exames
     <string name="cadastrar_exame"> Novo Exame </string>
 

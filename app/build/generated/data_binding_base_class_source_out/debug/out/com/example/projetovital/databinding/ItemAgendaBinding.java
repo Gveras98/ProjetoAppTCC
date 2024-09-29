@@ -4,25 +4,60 @@ package com.example.projetovital.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import com.example.projetovital.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
+import java.lang.String;
 
 public final class ItemAgendaBinding implements ViewBinding {
   @NonNull
-  private final ConstraintLayout rootView;
+  private final CardView rootView;
 
-  private ItemAgendaBinding(@NonNull ConstraintLayout rootView) {
+  @NonNull
+  public final Button btnAgendaDelete;
+
+  @NonNull
+  public final Button btnAgendaEditar;
+
+  @NonNull
+  public final TextView tvAgendaData;
+
+  @NonNull
+  public final TextView tvAgendaEspecialidade;
+
+  @NonNull
+  public final TextView tvAgendaHora;
+
+  @NonNull
+  public final TextView tvAgendaLocal;
+
+  @NonNull
+  public final TextView tvAgendaProcedimento;
+
+  private ItemAgendaBinding(@NonNull CardView rootView, @NonNull Button btnAgendaDelete,
+      @NonNull Button btnAgendaEditar, @NonNull TextView tvAgendaData,
+      @NonNull TextView tvAgendaEspecialidade, @NonNull TextView tvAgendaHora,
+      @NonNull TextView tvAgendaLocal, @NonNull TextView tvAgendaProcedimento) {
     this.rootView = rootView;
+    this.btnAgendaDelete = btnAgendaDelete;
+    this.btnAgendaEditar = btnAgendaEditar;
+    this.tvAgendaData = tvAgendaData;
+    this.tvAgendaEspecialidade = tvAgendaEspecialidade;
+    this.tvAgendaHora = tvAgendaHora;
+    this.tvAgendaLocal = tvAgendaLocal;
+    this.tvAgendaProcedimento = tvAgendaProcedimento;
   }
 
   @Override
   @NonNull
-  public ConstraintLayout getRoot() {
+  public CardView getRoot() {
     return rootView;
   }
 
@@ -43,10 +78,56 @@ public final class ItemAgendaBinding implements ViewBinding {
 
   @NonNull
   public static ItemAgendaBinding bind(@NonNull View rootView) {
-    if (rootView == null) {
-      throw new NullPointerException("rootView");
-    }
+    // The body of this method is generated in a way you would not otherwise write.
+    // This is done to optimize the compiled bytecode for size and performance.
+    int id;
+    missingId: {
+      id = R.id.btnAgendaDelete;
+      Button btnAgendaDelete = ViewBindings.findChildViewById(rootView, id);
+      if (btnAgendaDelete == null) {
+        break missingId;
+      }
 
-    return new ItemAgendaBinding((ConstraintLayout) rootView);
+      id = R.id.btnAgendaEditar;
+      Button btnAgendaEditar = ViewBindings.findChildViewById(rootView, id);
+      if (btnAgendaEditar == null) {
+        break missingId;
+      }
+
+      id = R.id.tvAgendaData;
+      TextView tvAgendaData = ViewBindings.findChildViewById(rootView, id);
+      if (tvAgendaData == null) {
+        break missingId;
+      }
+
+      id = R.id.tvAgendaEspecialidade;
+      TextView tvAgendaEspecialidade = ViewBindings.findChildViewById(rootView, id);
+      if (tvAgendaEspecialidade == null) {
+        break missingId;
+      }
+
+      id = R.id.tvAgendaHora;
+      TextView tvAgendaHora = ViewBindings.findChildViewById(rootView, id);
+      if (tvAgendaHora == null) {
+        break missingId;
+      }
+
+      id = R.id.tvAgendaLocal;
+      TextView tvAgendaLocal = ViewBindings.findChildViewById(rootView, id);
+      if (tvAgendaLocal == null) {
+        break missingId;
+      }
+
+      id = R.id.tvAgendaProcedimento;
+      TextView tvAgendaProcedimento = ViewBindings.findChildViewById(rootView, id);
+      if (tvAgendaProcedimento == null) {
+        break missingId;
+      }
+
+      return new ItemAgendaBinding((CardView) rootView, btnAgendaDelete, btnAgendaEditar,
+          tvAgendaData, tvAgendaEspecialidade, tvAgendaHora, tvAgendaLocal, tvAgendaProcedimento);
+    }
+    String missingId = rootView.getResources().getResourceName(id);
+    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }

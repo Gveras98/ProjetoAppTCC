@@ -4,9 +4,9 @@ package com.example.projetovital.ui.projetovital.exames;
 public final class FormExamesFragment extends androidx.fragment.app.Fragment {
     private com.example.projetovital.databinding.FragmentFormExamesBinding binding;
     @org.jetbrains.annotations.NotNull
-    private final androidx.activity.result.ActivityResultLauncher<androidx.activity.result.IntentSenderRequest> scannerLauncher = null;
-    @org.jetbrains.annotations.NotNull
     private final kotlin.Lazy viewModel$delegate = null;
+    @org.jetbrains.annotations.NotNull
+    private final androidx.activity.result.ActivityResultLauncher<androidx.activity.result.IntentSenderRequest> scannerLauncher = null;
     
     public FormExamesFragment() {
         super();

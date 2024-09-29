@@ -4,25 +4,60 @@ package com.example.projetovital.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import com.example.projetovital.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
+import java.lang.String;
 
 public final class ItemExamesBinding implements ViewBinding {
   @NonNull
-  private final ConstraintLayout rootView;
+  private final CardView rootView;
 
-  private ItemExamesBinding(@NonNull ConstraintLayout rootView) {
+  @NonNull
+  public final Button btnExameDelete;
+
+  @NonNull
+  public final Button btnExameEditar;
+
+  @NonNull
+  public final TextView tvExameAnexo;
+
+  @NonNull
+  public final TextView tvExameData;
+
+  @NonNull
+  public final TextView tvExameEspecialidade;
+
+  @NonNull
+  public final TextView tvExameLocal;
+
+  @NonNull
+  public final TextView tvExameProcedimento;
+
+  private ItemExamesBinding(@NonNull CardView rootView, @NonNull Button btnExameDelete,
+      @NonNull Button btnExameEditar, @NonNull TextView tvExameAnexo, @NonNull TextView tvExameData,
+      @NonNull TextView tvExameEspecialidade, @NonNull TextView tvExameLocal,
+      @NonNull TextView tvExameProcedimento) {
     this.rootView = rootView;
+    this.btnExameDelete = btnExameDelete;
+    this.btnExameEditar = btnExameEditar;
+    this.tvExameAnexo = tvExameAnexo;
+    this.tvExameData = tvExameData;
+    this.tvExameEspecialidade = tvExameEspecialidade;
+    this.tvExameLocal = tvExameLocal;
+    this.tvExameProcedimento = tvExameProcedimento;
   }
 
   @Override
   @NonNull
-  public ConstraintLayout getRoot() {
+  public CardView getRoot() {
     return rootView;
   }
 
@@ -43,10 +78,56 @@ public final class ItemExamesBinding implements ViewBinding {
 
   @NonNull
   public static ItemExamesBinding bind(@NonNull View rootView) {
-    if (rootView == null) {
-      throw new NullPointerException("rootView");
-    }
+    // The body of this method is generated in a way you would not otherwise write.
+    // This is done to optimize the compiled bytecode for size and performance.
+    int id;
+    missingId: {
+      id = R.id.btnExameDelete;
+      Button btnExameDelete = ViewBindings.findChildViewById(rootView, id);
+      if (btnExameDelete == null) {
+        break missingId;
+      }
 
-    return new ItemExamesBinding((ConstraintLayout) rootView);
+      id = R.id.btnExameEditar;
+      Button btnExameEditar = ViewBindings.findChildViewById(rootView, id);
+      if (btnExameEditar == null) {
+        break missingId;
+      }
+
+      id = R.id.tvExameAnexo;
+      TextView tvExameAnexo = ViewBindings.findChildViewById(rootView, id);
+      if (tvExameAnexo == null) {
+        break missingId;
+      }
+
+      id = R.id.tvExameData;
+      TextView tvExameData = ViewBindings.findChildViewById(rootView, id);
+      if (tvExameData == null) {
+        break missingId;
+      }
+
+      id = R.id.tvExameEspecialidade;
+      TextView tvExameEspecialidade = ViewBindings.findChildViewById(rootView, id);
+      if (tvExameEspecialidade == null) {
+        break missingId;
+      }
+
+      id = R.id.tvExameLocal;
+      TextView tvExameLocal = ViewBindings.findChildViewById(rootView, id);
+      if (tvExameLocal == null) {
+        break missingId;
+      }
+
+      id = R.id.tvExameProcedimento;
+      TextView tvExameProcedimento = ViewBindings.findChildViewById(rootView, id);
+      if (tvExameProcedimento == null) {
+        break missingId;
+      }
+
+      return new ItemExamesBinding((CardView) rootView, btnExameDelete, btnExameEditar,
+          tvExameAnexo, tvExameData, tvExameEspecialidade, tvExameLocal, tvExameProcedimento);
+    }
+    String missingId = rootView.getResources().getResourceName(id);
+    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }

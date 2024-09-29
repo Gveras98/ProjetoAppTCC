@@ -47,7 +47,7 @@ class CadastroFragment : Fragment() {
         recyclerCadastro = binding.recyclerCadastro
 
         //Ponto de entrada do APP (ViewModel)
-        observerViewModelEvents()
+        observerViewModelEventsCadastro()
 
         // Define os botões de navegação
         binding.btnAtualizarCadastro.setOnClickListener {
@@ -64,7 +64,8 @@ class CadastroFragment : Fragment() {
         return binding.root
     }
 
-    private fun observerViewModelEvents() {
+    // Função para observar os eventos do ViewModel
+    private fun observerViewModelEventsCadastro() {
         viewModel.exibirCadastro.observe(viewLifecycleOwner) { exibirCadastro ->
             val cadastroListAdapter = CadastroListAdapter(exibirCadastro)
 
