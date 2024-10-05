@@ -11576,7 +11576,7 @@
         <item>90 Dias</item>
         <item>Continuo</item>
         <item>Não Determinado</item>
-    </string-array><string name="salvar">Salvar</string><string name="editar">Editar</string><string name="deletar">Deletar</string><string name="atualizar">Atualizar</string></file><file path="C:\Users\Gabriel Veras\Documents\AndroidStudio\ProjetoVital\app\src\main\res\values\style.xml" qualifiers=""><style name="Theme.ProjetoVital.NoActionBar">
+    </string-array><string name="salvar">Salvar</string><string name="editar">Editar</string><string name="deletar">Deletar</string><string name="atualizar">Atualizar</string><string name="delete_sucesso"> Deletado com Sucesso! </string><string name="delete_erro"> Erro ao deletar! </string></file><file path="C:\Users\Gabriel Veras\Documents\AndroidStudio\ProjetoVital\app\src\main\res\values\style.xml" qualifiers=""><style name="Theme.ProjetoVital.NoActionBar">
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
 

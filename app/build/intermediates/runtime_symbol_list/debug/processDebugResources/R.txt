@@ -4072,6 +4072,8 @@ int string common_open_on_phone 0x7f11005b
 int string common_signin_button_text 0x7f11005c
 int string common_signin_button_text_long 0x7f11005d
 int string deletar 0x7f1100e7
+int string delete_erro 0x7f1100eb
+int string delete_sucesso 0x7f1100ec
 int string dependente 0x7f11005e
 int string editar 0x7f1100e8
 int string error_a11y_label 0x7f11005f

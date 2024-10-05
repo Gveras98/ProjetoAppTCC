@@ -4073,6 +4073,8 @@ string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
 string deletar
+string delete_erro
+string delete_sucesso
 string dependente
 string editar
 string error_a11y_label

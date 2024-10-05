@@ -178,6 +178,8 @@ string cadastrar_agendamento
 string cadastrar_exame
 string cadastro
 string deletar
+string delete_erro
+string delete_sucesso
 string dependente
 string editar
 string exame

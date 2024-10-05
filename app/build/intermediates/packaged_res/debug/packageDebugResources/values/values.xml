@@ -70,6 +70,8 @@
     <string name="cadastrar_exame"> Novo Exame </string>
     <string name="cadastro"> Cadastro </string>
     <string name="deletar">Deletar</string>
+    <string name="delete_erro"> Erro ao deletar! </string>
+    <string name="delete_sucesso"> Deletado com Sucesso! </string>
     <string name="dependente">Dependentes </string>
     <string name="editar">Editar</string>
     <string name="exame"> Exames </string>
