@@ -65,7 +65,7 @@ class ExamesFragment : Fragment() {
 
     private fun observerViewModelEventsExames() {
         viewModel.exibirExames.observe(viewLifecycleOwner) { exames ->
-            val examesListAdapter = ExamesListAdapter(exames) { anexo ->
+            val examesListAdapter = ExamesListAdapter(exames, viewModel) { anexo ->
                 abrirPDF(anexo) // Chama a função para abrir o PDF
             }
 

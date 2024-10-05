@@ -24,6 +24,7 @@ class AgendaViewModel(
     val messageEventData: LiveData<Int>
         get() = _agendaMessageEventData
 
+    //Inserir
     fun inserirAgenda(agenda: AgendaEntity) = viewModelScope.launch {
         try {
             val idAgenda = repository.insertAgenda(agenda)
@@ -47,4 +48,15 @@ class AgendaViewModel(
 
     // Exibição
     val exibirAgenda = repository.getAllAgendas()
+
+    //Delete
+    fun deleteAgenda(agenda: AgendaEntity) = viewModelScope.launch {
+        try {
+            repository.deleteAgenda(agenda)
+            _agendaMessageEventData.value = R.string.delete_sucesso
+        } catch (ex: Exception) {
+            _agendaMessageEventData.value = R.string.delete_erro
+            Log.e(TAG, ex.toString())
+        }
+    }
 }

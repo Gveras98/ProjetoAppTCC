@@ -19,9 +19,9 @@ class ExamesViewModel(
     val examesStateEventData: LiveData<ExamesState>
         get() = _examesStateEventData
 
-    private val _messageEventData = MutableLiveData<Int>()
+    private val _examesMessageEventData = MutableLiveData<Int>()
     val messageEventData: LiveData<Int>
-        get() = _messageEventData
+        get() = _examesMessageEventData
 
     // Função Inserir
     fun inserirExames(exames: ExamesEntity) = viewModelScope.launch {
@@ -29,11 +29,11 @@ class ExamesViewModel(
             val idExames = repository.insertExames(exames)
             if (idExames > 0) {
                 _examesStateEventData.value = ExamesState.Inserido
-                _messageEventData.value = R.string.msg_sucesso
+                _examesMessageEventData.value = R.string.msg_sucesso
 
             }
         } catch (ex: Exception) {
-            _messageEventData.value = R.string.msg_erro
+            _examesMessageEventData.value = R.string.msg_erro
             Log.e(TAG, ex.toString())
         }
     }
@@ -49,4 +49,14 @@ class ExamesViewModel(
     //Exibição
     val exibirExames = repository.getAllExames()
 
+    //Delete
+    fun deleteExames(exames: ExamesEntity) = viewModelScope.launch {
+        try {
+            repository.deleteExames(exames)
+            _examesMessageEventData.value = R.string.delete_sucesso
+        } catch (ex: Exception) {
+            _examesMessageEventData.value = R.string.delete_erro
+            Log.e(TAG, ex.toString())
+        }
+    }
 }

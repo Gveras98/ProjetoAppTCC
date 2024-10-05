@@ -47,4 +47,15 @@ class AlergiaViewModel(
 
     // Exibição
     val exibirAlergia = repository.getAllAlergias()
+
+    // Delete
+    fun deleteAlergia(alergia: AlergiaEntity) = viewModelScope.launch {
+        try {
+            repository.deleteAlergia(alergia) // Chama o repositório para excluir
+            _alergiaMessageEventData.value = R.string.delete_sucesso
+        } catch (ex: Exception) {
+            _alergiaMessageEventData.value = R.string.delete_erro
+            Log.e(TAG, ex.toString())
+        }
+    }
 }

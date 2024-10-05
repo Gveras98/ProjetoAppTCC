@@ -49,4 +49,14 @@ class MedicamentoViewModel(
     //Exibição
     val exibirMedicamento = repository.getAllMedicamentos()
 
+    //Delete
+    fun deleteMedicamento(medicamento: MedicamentoEntity) = viewModelScope.launch {
+        try {
+            repository.deleteMedicamento(medicamento)
+            _medicamentoMessageEventData.value = R.string.delete_sucesso
+        } catch (ex: Exception) {
+            _medicamentoMessageEventData.value = R.string.delete_erro
+            Log.e(TAG, ex.toString())
+        }
+    }
 }

@@ -1,8 +1,10 @@
 package com.example.projetovital.ui.projetovital.agenda
 
+import android.app.AlertDialog
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projetovital.R
@@ -13,7 +15,8 @@ import java.time.format.DateTimeFormatter
 import java.util.Locale
 
 class AgendaListAdapter(
-    private val agendaList: List<AgendaEntity>
+    private val agendaList: List<AgendaEntity>,
+    private val viewModel: AgendaViewModel
 ) : RecyclerView.Adapter<AgendaListAdapter.AgendaViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AgendaViewHolder {
@@ -22,8 +25,24 @@ class AgendaListAdapter(
         return AgendaViewHolder(view)
     }
 
+
     override fun onBindViewHolder(holder: AgendaViewHolder, position: Int) {
         holder.bindView(agendaList[position])
+
+        // Botão de deletar
+        holder.itemView.findViewById<Button>(R.id.btnAgendaDelete).setOnClickListener {
+            val agenda = agendaList[position]
+
+            // Confirmação para exclusão
+            AlertDialog.Builder(holder.itemView.context)
+                .setTitle("Confirmação")
+                .setMessage("Tem certeza que deseja excluir este agendamento?")
+                .setPositiveButton("Sim") { _, _ ->
+                    viewModel.deleteAgenda(agenda) // Chama o ViewModel para deletar
+                }
+                .setNegativeButton("Não", null)
+                .show()
+        }
     }
 
     override fun getItemCount() = agendaList.size

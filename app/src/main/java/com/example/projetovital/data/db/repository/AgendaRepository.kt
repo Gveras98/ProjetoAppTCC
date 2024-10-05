@@ -8,7 +8,8 @@ interface AgendaRepository {
 
     suspend fun insertAgenda(agenda: AgendaEntity): Long
 
-    //Caso erro na função tentar relacionar o :Long
+
     suspend fun updateAgenda(agenda: AgendaEntity)
+
     suspend fun deleteAgenda(agenda: AgendaEntity)
 }

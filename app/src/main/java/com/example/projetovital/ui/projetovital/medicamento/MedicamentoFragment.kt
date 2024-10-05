@@ -56,7 +56,7 @@ class MedicamentoFragment : Fragment() {
 
     private fun observerViewModelEventsMedicamento() {
         viewModel.exibirMedicamento.observe(viewLifecycleOwner) { medicamentoList ->
-            val medicamentoAdapter = MedicamentoListAdapter(medicamentoList)
+            val medicamentoAdapter = MedicamentoListAdapter(medicamentoList, viewModel)
 
             with(recyclerMedicamento) {
                 setHasFixedSize(true)

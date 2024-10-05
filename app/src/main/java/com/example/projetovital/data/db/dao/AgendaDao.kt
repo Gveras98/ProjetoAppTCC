@@ -26,5 +26,4 @@ interface AgendaDao {
     //Delete
     @Query("DELETE FROM tblAgenda WHERE idAgenda = :id")
     suspend fun delete(id: Long)
-
 }

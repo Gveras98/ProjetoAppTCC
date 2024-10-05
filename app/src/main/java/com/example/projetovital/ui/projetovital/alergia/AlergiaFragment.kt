@@ -56,7 +56,7 @@ class AlergiaFragment : Fragment() {
 
     private fun observerViewModelEventsAlergia() {
         viewModel.exibirAlergia.observe(viewLifecycleOwner) { exibirAlergia ->
-            val alergiaListAdapter = AlergiaListAdapter(exibirAlergia)
+            val alergiaListAdapter = AlergiaListAdapter(exibirAlergia, viewModel)
 
             with(recyclerAlergias) {
                 setHasFixedSize(true)

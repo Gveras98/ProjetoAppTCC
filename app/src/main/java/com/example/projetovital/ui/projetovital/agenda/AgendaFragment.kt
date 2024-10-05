@@ -58,7 +58,7 @@ class AgendaFragment : Fragment() {
 
     private fun observerViewModelEventsAgenda() {
         viewModel.exibirAgenda.observe(viewLifecycleOwner) { exibirAgenda ->
-            val agendaListAdapter = AgendaListAdapter(exibirAgenda)
+            val agendaListAdapter = AgendaListAdapter(exibirAgenda, viewModel)
 
             with(recyclerAgenda) {
                 setHasFixedSize(true)

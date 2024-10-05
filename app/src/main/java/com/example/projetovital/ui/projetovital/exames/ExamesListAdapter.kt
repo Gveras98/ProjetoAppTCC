@@ -1,5 +1,6 @@
 package com.example.projetovital.ui.projetovital.exames
 
+import android.app.AlertDialog
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,7 +14,8 @@ import java.util.Locale
 
 class ExamesListAdapter(
     private val examesList: List<ExamesEntity>,
-    private val onAnexoClick: (String) -> Unit // Recebe a ação ao clicar no botão
+    private val viewModel: ExamesViewModel,
+    private val onAnexoClick: (String) -> Unit
 ) : RecyclerView.Adapter<ExamesListAdapter.ExamesViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExamesViewHolder {
@@ -23,7 +25,23 @@ class ExamesListAdapter(
     }
 
     override fun onBindViewHolder(holder: ExamesViewHolder, position: Int) {
-        holder.bindView(examesList[position], onAnexoClick) // Passa a função de clique
+        holder.bindView(examesList[position], onAnexoClick)
+
+        //Botão Delete
+        holder.itemView.findViewById<Button>(R.id.btnExameDelete).setOnClickListener {
+            val exames = examesList[position]
+
+            // Confirmação para exclusão
+            AlertDialog.Builder(holder.itemView.context)
+                .setTitle("Confirmação")
+                .setMessage("Tem certeza que deseja excluir este exame?")
+                .setPositiveButton("Sim") { _, _ ->
+                    viewModel.deleteExames(exames) // Chama o ViewModel para deletar
+                }
+                .setNegativeButton("Não", null)
+                .show()
+        }
+
     }
 
     override fun getItemCount() = examesList.size
