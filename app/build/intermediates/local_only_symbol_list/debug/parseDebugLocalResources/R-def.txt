@@ -88,7 +88,6 @@ id inputSpinnerTipoSanguineo
 id main
 id menu_agendamento
 id menu_cadastro
-id menu_dependente
 id menu_exame
 id rbFeminino
 id rbMasculino

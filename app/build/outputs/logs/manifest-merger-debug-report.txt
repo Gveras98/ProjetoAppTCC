@@ -89,7 +89,7 @@ ADDED from C:\Users\Gabriel Veras\Documents\AndroidStudio\ProjetoVital\app\src\m
 	android:name
 		ADDED from C:\Users\Gabriel Veras\Documents\AndroidStudio\ProjetoVital\app\src\main\AndroidManifest.xml:11:22-62
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from C:\Users\Gabriel Veras\Documents\AndroidStudio\ProjetoVital\app\src\main\AndroidManifest.xml:12:5-80
+ADDED from C:\Users\Gabriel Veras\Documents\AndroidStudio\ProjetoVital\app\src\main\AndroidManifest.xml:12:5-81
 	android:name
 		ADDED from C:\Users\Gabriel Veras\Documents\AndroidStudio\ProjetoVital\app\src\main\AndroidManifest.xml:12:22-78
 uses-permission#android.permission.READ_EXTERNAL_STORAGE

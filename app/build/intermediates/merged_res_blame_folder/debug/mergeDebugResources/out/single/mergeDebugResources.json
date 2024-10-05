@@ -72,6 +72,10 @@
         "source": "C:\\Users\\Gabriel Veras\\.gradle\\daemon\\8.7\\com.example.projetovital.app-main-46:\\mipmap-anydpi\\ic_launcher.xml"
     },
     {
+        "merged": "com.example.projetovital.app-debug-44:/layout_item_exames.xml.flat",
+        "source": "com.example.projetovital.app-main-46:/layout/item_exames.xml"
+    },
+    {
         "merged": "C:\\Users\\Gabriel Veras\\.gradle\\daemon\\8.7\\com.example.projetovital.app-debug-44:\\mipmap-xxhdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\Gabriel Veras\\.gradle\\daemon\\8.7\\com.example.projetovital.app-main-46:\\mipmap-xxhdpi\\ic_launcher.webp"
     },
@@ -98,6 +102,10 @@
     {
         "merged": "C:\\Users\\Gabriel Veras\\.gradle\\daemon\\8.7\\com.example.projetovital.app-debug-44:\\layout_fragment_form_cadastro.xml.flat",
         "source": "C:\\Users\\Gabriel Veras\\.gradle\\daemon\\8.7\\com.example.projetovital.app-main-46:\\layout\\fragment_form_cadastro.xml"
+    },
+    {
+        "merged": "com.example.projetovital.app-debug-44:/menu_bottom_nav.xml.flat",
+        "source": "com.example.projetovital.app-main-46:/menu/bottom_nav.xml"
     },
     {
         "merged": "C:\\Users\\Gabriel Veras\\.gradle\\daemon\\8.7\\com.example.projetovital.app-debug-44:\\layout_fragment_exames.xml.flat",
