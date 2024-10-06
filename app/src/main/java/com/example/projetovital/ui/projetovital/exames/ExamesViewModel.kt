@@ -59,4 +59,15 @@ class ExamesViewModel(
             Log.e(TAG, ex.toString())
         }
     }
+
+    //Atualizar
+    fun updateExames(exames: ExamesEntity) = viewModelScope.launch {
+        try {
+            repository.updateExames(exames)
+            _examesMessageEventData.value = R.string.update_sucesso
+        } catch (ex: Exception) {
+            _examesMessageEventData.value = R.string.update_erro
+            Log.e(TAG, ex.toString())
+        }
+    }
 }

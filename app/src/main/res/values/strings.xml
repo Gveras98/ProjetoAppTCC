@@ -126,5 +126,8 @@
     <string name="delete_sucesso"> Deletado com Sucesso! </string>
     <string name="delete_erro"> Erro ao deletar! </string>
 
+    <string name="update_sucesso"> Atualizado com Sucesso! </string>
+    <string name="update_erro"> Erro ao atualizar! </string>
+
 
 </resources>

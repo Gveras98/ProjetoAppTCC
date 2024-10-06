@@ -3,6 +3,7 @@ package com.example.projetovital.data.db.entity
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.io.Serializable
 import java.util.Date
 
 @Entity(tableName = "tblCadastro")
@@ -46,4 +47,4 @@ data class CadastroEntity(
 
     @ColumnInfo(name = "tipoSanguineoUser")
     val tipoSanguineoUser: String
-)
+) : Serializable

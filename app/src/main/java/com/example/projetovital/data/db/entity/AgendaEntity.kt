@@ -3,6 +3,7 @@ package com.example.projetovital.data.db.entity
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.io.Serializable
 import java.time.LocalTime
 import java.util.Date
 
@@ -28,5 +29,4 @@ data class AgendaEntity(
 
     @ColumnInfo(name = "procedimentoAgenda")
     val procedimentoAgenda: String,
-
-)
+) : Serializable

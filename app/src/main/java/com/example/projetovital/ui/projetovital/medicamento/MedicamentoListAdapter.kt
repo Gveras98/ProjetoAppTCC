@@ -1,11 +1,13 @@
 package com.example.projetovital.ui.projetovital.medicamento
 
 import android.app.AlertDialog
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projetovital.R
 import com.example.projetovital.data.db.entity.MedicamentoEntity
@@ -38,6 +40,28 @@ class MedicamentoListAdapter(
                 .setNegativeButton("Não", null)
                 .show()
         }
+
+        holder.itemView.findViewById<Button>(R.id.btnMedEditar).setOnClickListener {
+            val medicamento = medicamentoList[position]
+            // Confirmação para edição
+            AlertDialog.Builder(holder.itemView.context)
+                .setTitle("Confirmação")
+                .setMessage("Tem Certeza Que Deseja Editar Este Medicamento?")
+                .setPositiveButton("Sim") { _, _ ->
+                    val fragment = FormMedicamentoFragment().apply {
+                        arguments = Bundle().apply {
+                            putSerializable("medicamento", medicamento)
+                        }
+                    }
+                    (holder.itemView.context as AppCompatActivity).supportFragmentManager.beginTransaction()
+                        .replace(R.id.frame_layout, fragment)
+                        .addToBackStack(null)
+                        .commit()
+                }
+                .setNegativeButton("Não", null)
+                .show()
+        }
+
 
     }
 

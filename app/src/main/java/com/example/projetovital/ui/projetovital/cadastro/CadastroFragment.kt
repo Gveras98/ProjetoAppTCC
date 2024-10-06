@@ -1,5 +1,6 @@
 package com.example.projetovital.ui.projetovital.cadastro
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -43,7 +44,7 @@ class CadastroFragment : Fragment() {
         binding = FragmentCadastroBinding.inflate(inflater, container, false)
 
         // Define os botões de navegação
-        binding.btnAtualizarCadastro.setOnClickListener {
+        binding.btnCadastro.setOnClickListener {
             (activity as? MainActivity)?.replaceFragment(FormCadastroFragment())
         }
         binding.btnMedicamentos.setOnClickListener {
@@ -56,7 +57,6 @@ class CadastroFragment : Fragment() {
         // Observe os dados de cadastro
         viewModel.exibirCadastro.observe(viewLifecycleOwner) { cadastroList ->
             // Preenche os TextViews com os dados do primeiro cadastro da lista
-            // Aqui você pode ajustar para exibir o cadastro desejado, por exemplo, o mais recente ou o que precisa ser editado
             cadastroList.firstOrNull()?.let { cadastro ->
                 binding.tvCadastroNome.text = cadastro.nomeUser
                 binding.tvCadastroSexo.text = cadastro.sexoUser.toString()
@@ -73,6 +73,27 @@ class CadastroFragment : Fragment() {
                 binding.tvCadastroNumeroPlanoSaude.text = cadastro.numPlanoSaudeUser
                 binding.tvCadastroTipoSanguineo.text = cadastro.tipoSanguineoUser
             }
+        }
+
+        binding.btnCadastroEditar.setOnClickListener {
+            val cadastro = viewModel.exibirCadastro.value?.firstOrNull()
+
+            AlertDialog.Builder(context)
+                .setTitle("Editar Cadastro")
+                .setMessage("Deseja editar o cadastro?")
+                .setPositiveButton("Sim") { _, _ ->
+                    cadastro?.let {
+                        val bundle = Bundle().apply {
+                            putSerializable("cadastro", it) // Passa o objeto CadastroEntity
+                        }
+                        val formCadastroFragment = FormCadastroFragment().apply {
+                            arguments = bundle
+                        }
+                        (activity as? MainActivity)?.replaceFragment(formCadastroFragment)
+                    }
+                }
+                .setNegativeButton("Não", null)
+                .show()
         }
 
         // Retorna a view raiz do binding

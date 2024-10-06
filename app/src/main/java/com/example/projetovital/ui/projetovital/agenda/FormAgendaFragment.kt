@@ -43,16 +43,39 @@ class FormAgendaFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentFormAgendaBinding.inflate(inflater, container, false)
+
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        inserirAgenda()
+
+        @Suppress("DEPRECATION")
+        val agenda = arguments?.getSerializable("agenda") as? AgendaEntity
+        agenda?.let {
+            preencherCamposAgenda(it)
+        }
+
+        inserirAgenda(agenda)
         observeEvents()
     }
 
-    private fun inserirAgenda() {
+    private fun preencherCamposAgenda(agenda: AgendaEntity) {
+        binding.etAgendaEspecialidade.setText(agenda.especialidadeAgenda)
+
+        val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+        val dataFormatada = agenda.dataAgenda.let { dateFormat.format(it) }
+        binding.etAgendaData.setText(dataFormatada)
+
+        val horaFormatada =
+            agenda.horaAgenda.let { it.format(DateTimeFormatter.ofPattern("HH:mm")) }
+        binding.etAgendaHora.setText(horaFormatada)
+
+        binding.etAgendaLocal.setText(agenda.localAgenda)
+        binding.etAgendaProcedimento.setText(agenda.procedimentoAgenda)
+    }
+
+    private fun inserirAgenda(agenda: AgendaEntity?) {
         // Listener para seleção de data
         binding.etAgendaData.setOnClickListener {
             val calendar = Calendar.getInstance()
@@ -85,30 +108,26 @@ class FormAgendaFragment : Fragment() {
             val local = binding.etAgendaLocal.text.toString()
             val procedimento = binding.etAgendaProcedimento.text.toString()
 
-            // Conversão de String para Date
             val dateFormat = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault())
-            val dataAgenda: Date? = if (dataString.isNotEmpty()) {
-                try {
-                    dateFormat.parse(dataString)
-                } catch (e: Exception) {
-                    null
-                }
-            } else {
+            val dataAgenda: Date? = try {
+                dateFormat.parse(dataString)
+            } catch (e: Exception) {
                 null
             }
 
-            // Conversão de String para LocalTime
-            val horaAgenda: LocalTime? = if (horaString.isNotEmpty()) {
-                try {
-                    LocalTime.parse(horaString, DateTimeFormatter.ISO_LOCAL_TIME)
-                } catch (e: Exception) {
-                    null
-                }
-            } else {
+            val horaAgenda: LocalTime? = try {
+                LocalTime.parse(horaString, DateTimeFormatter.ISO_LOCAL_TIME)
+            } catch (e: Exception) {
                 null
             }
 
-            val agenda = AgendaEntity(
+            val novaAgenda = agenda?.copy(
+                especialidadeAgenda = especialidade,
+                dataAgenda = dataAgenda ?: Date(),
+                horaAgenda = horaAgenda ?: LocalTime.now(),
+                localAgenda = local,
+                procedimentoAgenda = procedimento
+            ) ?: AgendaEntity(
                 especialidadeAgenda = especialidade,
                 dataAgenda = dataAgenda ?: Date(),
                 horaAgenda = horaAgenda ?: LocalTime.now(),
@@ -116,7 +135,11 @@ class FormAgendaFragment : Fragment() {
                 procedimentoAgenda = procedimento
             )
 
-            viewModel.inserirAgenda(agenda)
+            if (agenda != null) {
+                viewModel.updateAgenda(novaAgenda) // Atualizar
+            } else {
+                viewModel.inserirAgenda(novaAgenda) // Inserir
+            }
         }
     }
 
@@ -125,7 +148,6 @@ class FormAgendaFragment : Fragment() {
             when (agendastate) {
                 is AgendaViewModel.AgendaState.Inserido -> {
                     limparCampos()
-
                 }
             }
         }

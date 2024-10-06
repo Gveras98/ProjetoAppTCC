@@ -69,11 +69,29 @@ class FormExamesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        @Suppress("DEPRECATION")
+        val exames = arguments?.getSerializable("exames") as? ExamesEntity
+        exames?.let {
+            preencherCamposExames(it)
+        }
+
         observeEvents()
-        inserirExames()
+        inserirExames(exames)
     }
 
-    private fun inserirExames() {
+    private fun preencherCamposExames(exames: ExamesEntity) {
+        binding.etExamesEspecialidade.setText(exames.especialidadeExame)
+
+        val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+        val dataFormatada = dateFormat.format(exames.dataExame)
+        binding.etExamesData.setText(dataFormatada)
+        binding.etExamesLocal.setText(exames.localExame)
+        binding.etExamesProcedimento.setText(exames.procedimentoExame)
+
+    }
+
+    private fun inserirExames(exames: ExamesEntity?) {
         binding.etExamesData.setOnClickListener {
             val calendar = Calendar.getInstance()
             val ano = calendar.get(Calendar.YEAR)
@@ -105,13 +123,22 @@ class FormExamesFragment : Fragment() {
                 null
             }
 
-            val exames = ExamesEntity(
+            val Novoexames = exames?.copy(
+                especialidadeExame = especialidade,
+                dataExame = dataExame ?: Date(),
+                localExame = local,
+                procedimentoExame = procedimento
+            ) ?: ExamesEntity(
                 especialidadeExame = especialidade,
                 dataExame = dataExame ?: Date(),
                 localExame = local,
                 procedimentoExame = procedimento
             )
-            viewModel.inserirExames(exames)
+            if (exames != null) {
+                viewModel.updateExames(Novoexames)
+            } else {
+                viewModel.inserirExames(Novoexames)
+            }
         }
     }
 

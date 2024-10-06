@@ -3,6 +3,7 @@ package com.example.projetovital.data.db.entity
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.io.Serializable
 import java.util.Date
 
 @Entity(tableName = "tblExames")
@@ -26,4 +27,4 @@ data class ExamesEntity(
     //Adicionar os anexos em pdf
     @ColumnInfo(name = "anexoExame")
     val anexoExame: String? = null
-)
+) : Serializable

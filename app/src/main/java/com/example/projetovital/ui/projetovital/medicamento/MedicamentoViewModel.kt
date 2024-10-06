@@ -59,4 +59,15 @@ class MedicamentoViewModel(
             Log.e(TAG, ex.toString())
         }
     }
+
+    //Update
+    fun updateMedicamento(medicamento: MedicamentoEntity) = viewModelScope.launch {
+        try {
+            repository.updateMedicamento(medicamento)
+            _medicamentoMessageEventData.value = R.string.update_sucesso
+        } catch (ex: Exception) {
+            _medicamentoMessageEventData.value = R.string.update_erro
+            Log.e(TAG, ex.toString())
+        }
+    }
 }

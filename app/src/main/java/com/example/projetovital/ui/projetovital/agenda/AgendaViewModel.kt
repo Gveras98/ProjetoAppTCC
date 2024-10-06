@@ -19,7 +19,6 @@ class AgendaViewModel(
     val agendaStateEventData: LiveData<AgendaState>
         get() = _agendaStateEventData
 
-
     private val _agendaMessageEventData = MutableLiveData<Int>()
     val messageEventData: LiveData<Int>
         get() = _agendaMessageEventData
@@ -56,6 +55,17 @@ class AgendaViewModel(
             _agendaMessageEventData.value = R.string.delete_sucesso
         } catch (ex: Exception) {
             _agendaMessageEventData.value = R.string.delete_erro
+            Log.e(TAG, ex.toString())
+        }
+    }
+
+    // Update
+    fun updateAgenda(agenda: AgendaEntity) = viewModelScope.launch {
+        try {
+            repository.updateAgenda(agenda)
+            _agendaMessageEventData.value = R.string.update_sucesso
+        } catch (ex: Exception) {
+            _agendaMessageEventData.value = R.string.update_erro
             Log.e(TAG, ex.toString())
         }
     }

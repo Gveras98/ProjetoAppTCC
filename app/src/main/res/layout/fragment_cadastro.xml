@@ -23,7 +23,7 @@
 
         <!-- Botão Provisorio Para testes de Cadastro -->
         <Button
-            android:id="@+id/btn_Atualizar_Cadastro"
+            android:id="@+id/btn_Cadastro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/teste"
@@ -268,7 +268,7 @@
                     tools:text="Tipo Sanguineo: " />
 
                 <Button
-                    android:id="@+id/btnCadAtualizar"
+                    android:id="@+id/btnCadastroEditar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"

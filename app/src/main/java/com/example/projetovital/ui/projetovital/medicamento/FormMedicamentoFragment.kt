@@ -64,12 +64,23 @@ class FormMedicamentoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        inserirMedicamento()
+        @Suppress("DEPRECATION")
+        val medicamento = arguments?.getSerializable("medicamento") as? MedicamentoEntity
+        medicamento?.let {
+            preencherCamposMedicamento(it)
+        }
+
+        inserirMedicamento(medicamento)
         observerEvents()
 
     }
 
-    private fun inserirMedicamento() {
+    private fun preencherCamposMedicamento(medicamento: MedicamentoEntity) {
+        binding.etMedNome.setText(medicamento.nomeMedicamento)
+        binding.etMedDose.setText(medicamento.doseMedicamento)
+    }
+
+    private fun inserirMedicamento(medicamento: MedicamentoEntity?) {
         binding.btnMedSalvar.setOnClickListener {
             //Coleta os dados do formulário
             var nomeMedicamento = binding.etMedNome.text.toString()
@@ -77,13 +88,23 @@ class FormMedicamentoFragment : Fragment() {
             var duracaoMedicamento = binding.spinnerEtDuracaoMed.selectedItem.toString()
             var intervaloMedicamento = binding.spinnerEtIntercaloMed.selectedItem.toString()
 
-            val medicamento = MedicamentoEntity(
+            val novomedicamento = medicamento?.copy(
+                nomeMedicamento = nomeMedicamento,
+                doseMedicamento = doseMedicamento,
+                duracaoMedicamento = duracaoMedicamento,
+                intervaloMedicamento = intervaloMedicamento
+            ) ?: MedicamentoEntity(
                 nomeMedicamento = nomeMedicamento,
                 doseMedicamento = doseMedicamento,
                 duracaoMedicamento = duracaoMedicamento,
                 intervaloMedicamento = intervaloMedicamento
             )
-            viewModel.inserirMedicamento(medicamento)
+
+            if (medicamento != null) {
+                viewModel.updateMedicamento(novomedicamento) // Atualizar
+            } else {
+                viewModel.inserirMedicamento(novomedicamento) // Inserir
+            }
         }
     }
 

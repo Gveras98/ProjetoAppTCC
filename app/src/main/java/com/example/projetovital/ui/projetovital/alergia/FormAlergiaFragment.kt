@@ -46,28 +46,41 @@ class FormAlergiaFragment : Fragment() {
     //Configuração campos formulario
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        inserirAlergia()
+
+        @Suppress("DEPRECATION")
+        val alergia = arguments?.getSerializable("alergia") as? AlergiaEntity
+        alergia?.let {
+            preencherCamposAlergia(it)
+        }
+
+
+        inserirAlergia(alergia)
         observerEvents()
 
     }
 
-    //Salvar Alergia
-
-    private fun inserirAlergia() {
-        binding.btnAlergiaSalvar.setOnClickListener {
-
-            val nomeAlergia = binding.etAlergiaNome.text.toString()
-
-            val alergia = AlergiaEntity(
-                nomeAlergia = nomeAlergia
-            )
-
-            viewModel.inserirAlergia(
-                alergia
-            )
-        }
+    private fun preencherCamposAlergia(alergia: AlergiaEntity) {
+        binding.etAlergiaNome.setText(alergia.nomeAlergia)
     }
 
+
+    //Salvar Alergia
+    private fun inserirAlergia(alergia: AlergiaEntity?) {
+        binding.btnAlergiaSalvar.setOnClickListener {
+            val nomeAlergia = binding.etAlergiaNome.text.toString()
+
+            // Cria uma nova instância de AlergiaEntity ou atualiza a existente
+            val novaAlergia =
+                alergia?.copy(nomeAlergia = nomeAlergia) ?: AlergiaEntity(nomeAlergia = nomeAlergia)
+
+            // Verifica se é uma atualização ou uma inserção
+            if (alergia != null) {
+                viewModel.updateAlergia(novaAlergia) // Atualiza a alergia
+            } else {
+                viewModel.inserirAlergia(novaAlergia) // Insere uma nova alergia
+            }
+        }
+    }
 
     private fun observerEvents() {
         viewModel.alergiaStateEventData.observe(viewLifecycleOwner) { alergiaState ->

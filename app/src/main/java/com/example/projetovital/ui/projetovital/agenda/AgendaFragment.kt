@@ -50,7 +50,6 @@ class AgendaFragment : Fragment() {
             // Chama a função replaceFragment da MainActivity
             (activity as? MainActivity)?.replaceFragment(FormAgendaFragment())
         }
-        // Adicionar as Funções para Medicamentos e Alergias
 
         // Retorna a view raiz do binding
         return binding.root

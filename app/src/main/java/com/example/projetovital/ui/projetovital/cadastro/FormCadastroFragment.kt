@@ -68,11 +68,38 @@ class FormCadastroFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        inserirListeners()
+        @Suppress("DEPRECATION")
+        val cadastro = arguments?.getSerializable("cadastro") as? CadastroEntity
+        cadastro?.let {
+            preencherCamposCadastro(it)
+        }
+
+        inserirCadastro(cadastro)
         observeEvents()
     }
 
-    private fun inserirListeners() {
+    private fun preencherCamposCadastro(cadastro: CadastroEntity) {
+        binding.etUserNome.setText(cadastro.nomeUser)
+        binding.etUserSexo.check(
+            if (cadastro.sexoUser == 'M') R.id.rbMasculino else R.id.rbFeminino
+        )
+        val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+        val dataFormatada = cadastro.dataNascimentoUser.let { dateFormat.format(it) }
+        binding.etUserNascimento.setText(dataFormatada)
+        binding.etUserCpf.setText(cadastro.cpfUser)
+        binding.EtUserEndereco.setText(cadastro.enderecoUser)
+        binding.EtUserCep.setText(cadastro.cepUser)
+        binding.EtUserTelefone.setText(cadastro.telefoneUser)
+        binding.EtUserEmail.setText(cadastro.emailUser)
+        binding.EtUserSus.setText(cadastro.numSusUser)
+        binding.EtUserPlanoSaude.setText(cadastro.planoSaudeUser)
+        binding.EtUserNumPlanoSaude.setText(cadastro.numPlanoSaudeUser)
+        binding.spinnerTipoSanguineo.setSelection(
+            resources.getStringArray(R.array.tipos_sanguineos).indexOf(cadastro.tipoSanguineoUser)
+        )
+    }
+
+    private fun inserirCadastro(cadastro: CadastroEntity?) {
 
         // Configurar DatePickerDialog para o campo de nascimento
         binding.etUserNascimento.setOnClickListener {
@@ -127,7 +154,20 @@ class FormCadastroFragment : Fragment() {
             val tipoSanguineo = binding.spinnerTipoSanguineo.selectedItem.toString()
 
             // Criação da instância do CadastroEntity
-            val cadastro = CadastroEntity(
+            val novocadastro = cadastro?.copy(
+                nomeUser = nome,
+                sexoUser = sexo.firstOrNull() ?: ' ',
+                dataNascimentoUser = nascimento ?: Date(),
+                cpfUser = cpf,
+                enderecoUser = endereco,
+                cepUser = cep,
+                telefoneUser = telefone,
+                emailUser = email,
+                numSusUser = sus,
+                planoSaudeUser = planoSaude,
+                numPlanoSaudeUser = numPlanoSaude,
+                tipoSanguineoUser = tipoSanguineo
+            ) ?: CadastroEntity(
                 nomeUser = nome,
                 sexoUser = sexo.firstOrNull() ?: ' ',
                 dataNascimentoUser = nascimento ?: Date(),
@@ -141,9 +181,12 @@ class FormCadastroFragment : Fragment() {
                 numPlanoSaudeUser = numPlanoSaude,
                 tipoSanguineoUser = tipoSanguineo
             )
-
             // Chama o método do ViewModel para inserir o cadastro
-            viewModel.inserirCadastro(cadastro)
+            if (cadastro != null) {
+                viewModel.updateCadastro(novocadastro)
+            } else {
+                viewModel.inserirCadastro(novocadastro)
+            }
         }
     }
 

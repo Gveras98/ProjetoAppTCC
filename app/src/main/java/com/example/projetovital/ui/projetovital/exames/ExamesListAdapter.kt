@@ -1,11 +1,13 @@
 package com.example.projetovital.ui.projetovital.exames
 
 import android.app.AlertDialog
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projetovital.R
 import com.example.projetovital.data.db.entity.ExamesEntity
@@ -42,6 +44,27 @@ class ExamesListAdapter(
                 .show()
         }
 
+        // Botão de update
+        holder.itemView.findViewById<Button>(R.id.btnExameEditar).setOnClickListener {
+            val exames = examesList[position]
+            // Confirmação para edição
+            AlertDialog.Builder(holder.itemView.context)
+                .setTitle("Confirmação")
+                .setMessage("Tem Certeza Que Deseja Editar Este Exame?")
+                .setPositiveButton("Sim") { _, _ ->
+                    val fragment = FormExamesFragment().apply {
+                        arguments = Bundle().apply {
+                            putSerializable("exames", exames)
+                        }
+                    }
+                    (holder.itemView.context as AppCompatActivity).supportFragmentManager.beginTransaction()
+                        .replace(R.id.frame_layout, fragment)
+                        .addToBackStack(null)
+                        .commit()
+                }
+                .setNegativeButton("Não", null)
+                .show()
+        }
     }
 
     override fun getItemCount() = examesList.size

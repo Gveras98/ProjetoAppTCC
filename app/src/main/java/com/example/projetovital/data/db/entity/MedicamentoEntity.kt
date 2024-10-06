@@ -3,6 +3,7 @@ package com.example.projetovital.data.db.entity
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.io.Serializable
 
 @Entity(tableName = "tblMedicamento")
 data class MedicamentoEntity(
@@ -21,5 +22,4 @@ data class MedicamentoEntity(
     
     @ColumnInfo(name = "intervaloMedicamento")
     val intervaloMedicamento: String
-
-)
+) : Serializable

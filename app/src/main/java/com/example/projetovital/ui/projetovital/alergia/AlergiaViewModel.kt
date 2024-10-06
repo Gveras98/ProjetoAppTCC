@@ -58,4 +58,15 @@ class AlergiaViewModel(
             Log.e(TAG, ex.toString())
         }
     }
+
+    //Update
+    fun updateAlergia(alergia: AlergiaEntity) = viewModelScope.launch {
+        try {
+            repository.updateAlergia(alergia) // Chama o repositório para atualizar
+            _alergiaMessageEventData.value = R.string.update_sucesso
+        } catch (ex: Exception) {
+            _alergiaMessageEventData.value = R.string.update_erro
+            Log.e(TAG, ex.toString())
+        }
+    }
 }

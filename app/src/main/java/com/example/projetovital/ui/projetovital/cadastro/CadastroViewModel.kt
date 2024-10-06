@@ -45,9 +45,18 @@ class CadastroViewModel(
     companion object {
         private val TAG = CadastroViewModel::class.java.simpleName
     }
-    // Fim Cadastro
 
     //Exibição
     val exibirCadastro = repository.getAllCadastros()
+
+    fun updateCadastro(cadastro: CadastroEntity) = viewModelScope.launch {
+        try {
+            repository.updateCadastro(cadastro)
+            _messageEventData.value = R.string.msg_sucesso
+        } catch (ex: Exception) {
+            _messageEventData.value = R.string.msg_erro
+            Log.e(TAG, ex.toString())
+        }
+    }
 }
 

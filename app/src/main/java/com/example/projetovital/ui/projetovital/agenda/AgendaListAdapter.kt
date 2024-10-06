@@ -1,11 +1,13 @@
 package com.example.projetovital.ui.projetovital.agenda
 
 import android.app.AlertDialog
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projetovital.R
 import com.example.projetovital.data.db.entity.AgendaEntity
@@ -16,7 +18,7 @@ import java.util.Locale
 
 class AgendaListAdapter(
     private val agendaList: List<AgendaEntity>,
-    private val viewModel: AgendaViewModel
+    private val viewModel: AgendaViewModel,
 ) : RecyclerView.Adapter<AgendaListAdapter.AgendaViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AgendaViewHolder {
@@ -32,17 +34,39 @@ class AgendaListAdapter(
         // Botão de deletar
         holder.itemView.findViewById<Button>(R.id.btnAgendaDelete).setOnClickListener {
             val agenda = agendaList[position]
-
             // Confirmação para exclusão
             AlertDialog.Builder(holder.itemView.context)
                 .setTitle("Confirmação")
-                .setMessage("Tem certeza que deseja excluir este agendamento?")
+                .setMessage("Tem Certeza Que Deseja Excluir Este Agendamento?")
                 .setPositiveButton("Sim") { _, _ ->
                     viewModel.deleteAgenda(agenda) // Chama o ViewModel para deletar
                 }
                 .setNegativeButton("Não", null)
                 .show()
         }
+
+        // Botão de update
+        holder.itemView.findViewById<Button>(R.id.btnAgendaEditar).setOnClickListener {
+            val agenda = agendaList[position]
+            // Confirmação para edição
+            AlertDialog.Builder(holder.itemView.context)
+                .setTitle("Confirmação")
+                .setMessage("Tem Certeza Que Deseja Editar Este Agendamento?")
+                .setPositiveButton("Sim") { _, _ ->
+                    val fragment = FormAgendaFragment().apply {
+                        arguments = Bundle().apply {
+                            putSerializable("agenda", agenda)
+                        }
+                    }
+                    (holder.itemView.context as AppCompatActivity).supportFragmentManager.beginTransaction()
+                        .replace(R.id.frame_layout, fragment)
+                        .addToBackStack(null)
+                        .commit()
+                }
+                .setNegativeButton("Não", null)
+                .show()
+        }
+
     }
 
     override fun getItemCount() = agendaList.size
@@ -80,5 +104,3 @@ class AgendaListAdapter(
         }
     }
 }
-
-
