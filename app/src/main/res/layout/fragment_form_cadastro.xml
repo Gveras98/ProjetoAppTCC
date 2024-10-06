@@ -101,6 +101,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/CadCPF"
                 android:inputType="number"
+                android:maxLength="14"
                 android:padding="16dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -131,6 +132,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/CadCEP"
                 android:inputType="number"
+                android:maxLength="9"
                 android:padding="16dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -146,6 +148,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/CadTelefone"
                 android:inputType="phone"
+                android:maxLength="15"
                 android:padding="16dp" />
         </com.google.android.material.textfield.TextInputLayout>
 

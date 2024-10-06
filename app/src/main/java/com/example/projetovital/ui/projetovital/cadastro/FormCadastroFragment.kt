@@ -18,6 +18,7 @@ import com.example.projetovital.data.db.datasource.CadastroDataSource
 import com.example.projetovital.data.db.entity.CadastroEntity
 import com.example.projetovital.data.db.repository.CadastroRepository
 import com.example.projetovital.databinding.FragmentFormCadastroBinding
+import com.example.projetovital.ui.projetovital.Mask
 import com.google.android.material.snackbar.Snackbar
 import java.text.SimpleDateFormat
 import java.util.Calendar
@@ -28,6 +29,7 @@ import java.util.Locale
 class FormCadastroFragment : Fragment() {
 
     private lateinit var binding: FragmentFormCadastroBinding
+    private val mask = Mask() // Instancia a classe Mask
 
     private val viewModel: CadastroViewModel by viewModels {
         object : ViewModelProvider.Factory {
@@ -40,12 +42,11 @@ class FormCadastroFragment : Fragment() {
         }
     }
 
-    //Configuração do layout
+    // Configuração do layout
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        // Cria o layout usando ViewBinding
         binding = FragmentFormCadastroBinding.inflate(inflater, container, false)
 
         // Define a configuração do ARRAY de Tipo Sanguíneo
@@ -56,17 +57,19 @@ class FormCadastroFragment : Fragment() {
         ).apply {
             setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         }
-        // Aplica o adapter ao Spinner
         binding.spinnerTipoSanguineo.adapter = adapter
 
-        // Retorna a view raiz do binding
         return binding.root
     }
 
-
-    //Configuração dos campos do formulário
+    // Configuração dos campos do formulário
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        // Aplica as máscaras
+        mask.cpfMask(binding.etUserCpf)           // Aplica a máscara para CPF
+        mask.telefoneMask(binding.EtUserTelefone) // Aplica a máscara para Telefone
+        mask.cepMask(binding.EtUserCep)           // Aplica a máscara para CEP
 
         @Suppress("DEPRECATION")
         val cadastro = arguments?.getSerializable("cadastro") as? CadastroEntity
