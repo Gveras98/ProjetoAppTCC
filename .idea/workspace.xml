@@ -595,7 +595,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728237331807</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="ProjetoInicial">
+      <option name="closed" value="true" />
+      <created>1728251171588</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1728251171588</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="UpdateCopyrightCheckinHandler">
