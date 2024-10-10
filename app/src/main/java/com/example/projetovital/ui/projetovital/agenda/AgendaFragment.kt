@@ -1,5 +1,6 @@
 package com.example.projetovital.ui.projetovital.agenda
 
+import android.graphics.Rect
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -43,6 +44,9 @@ class AgendaFragment : Fragment() {
         // Inicializa a RecyclerView e o adapter
         recyclerAgenda = binding.recyclerAgenda
 
+        // Adiciona espaçamento entre os itens da RecyclerView
+        recyclerAgenda.addItemDecoration(SpacingItemDecoration(16))  //16dp
+
         // Ponto de entrada do APP (ViewModel)
         observerViewModelEventsAgenda()
 
@@ -65,4 +69,17 @@ class AgendaFragment : Fragment() {
             }
         }
     }
+
+    //Definir o espaçamento entre os itens
+    class SpacingItemDecoration(private val spaceHeight: Int) : RecyclerView.ItemDecoration() {
+        override fun getItemOffsets(
+            outRect: Rect,
+            view: View,
+            parent: RecyclerView,
+            state: RecyclerView.State
+        ) {
+            outRect.bottom = spaceHeight  // Define o espaçamento entre os itens
+        }
+    }
 }
+

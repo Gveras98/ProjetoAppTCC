@@ -2,6 +2,7 @@ package com.example.projetovital.ui.projetovital.exames
 
 import android.content.ActivityNotFoundException
 import android.content.Intent
+import android.graphics.Rect
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
@@ -50,6 +51,9 @@ class ExamesFragment : Fragment() {
         // Inicializa a RecyclerView e o adapter
         recyclerExames = binding.recyclerExames
 
+        //Adiciona Espaçamento
+        recyclerExames.addItemDecoration(SpacingItemDecoration(16))
+
         //Ponto de entrada do APP (ViewModel)
         observerViewModelEventsExames()
 
@@ -95,6 +99,17 @@ class ExamesFragment : Fragment() {
             ).show()
         } catch (e: Exception) {
             Log.e("PDF_VIEW", "Erro ao abrir PDF: ${e.message}")
+        }
+    }
+    //Definir o espaçamento entre os itens
+    class SpacingItemDecoration(private val spaceHeight: Int) : RecyclerView.ItemDecoration() {
+        override fun getItemOffsets(
+            outRect: Rect,
+            view: View,
+            parent: RecyclerView,
+            state: RecyclerView.State
+        ) {
+            outRect.bottom = spaceHeight  // Define o espaçamento entre os itens
         }
     }
 }

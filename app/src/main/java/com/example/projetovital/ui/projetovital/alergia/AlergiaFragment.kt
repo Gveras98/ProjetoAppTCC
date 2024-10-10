@@ -1,5 +1,6 @@
 package com.example.projetovital.ui.projetovital.alergia
 
+import android.graphics.Rect
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -42,6 +43,9 @@ class AlergiaFragment : Fragment() {
         // Inicializa a RecyclerView
         recyclerAlergias = binding.recyclerAlergias
 
+        // Adiciona espaçamento entre os itens da RecyclerView
+        recyclerAlergias.addItemDecoration(SpaceItemDecoration(16))
+
         // Observa eventos do ViewModel
         observerViewModelEventsAlergia()
 
@@ -62,6 +66,16 @@ class AlergiaFragment : Fragment() {
                 setHasFixedSize(true)
                 adapter = alergiaListAdapter
             }
+        }
+    }
+    class SpaceItemDecoration(private val spaceHeight: Int) : RecyclerView.ItemDecoration() {
+        override fun getItemOffsets(
+            outRect: Rect,
+            view: View,
+            parent: RecyclerView,
+            state: RecyclerView.State
+        ) {
+            outRect.bottom = spaceHeight  // Define o espaçamento entre os itens
         }
     }
 }

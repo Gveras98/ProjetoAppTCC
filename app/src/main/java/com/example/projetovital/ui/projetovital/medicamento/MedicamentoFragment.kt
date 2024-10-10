@@ -1,5 +1,6 @@
 package com.example.projetovital.ui.projetovital.medicamento
 
+import android.graphics.Rect
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -43,6 +44,8 @@ class MedicamentoFragment : Fragment() {
         //Inicializa a recyclerView e o adapter
         recyclerMedicamento = binding.recyclerMedicamento
 
+        recyclerMedicamento.addItemDecoration(SpacingItemDecoration(16))
+
         observerViewModelEventsMedicamento()
 
         binding.btnNovoMedicamento.setOnClickListener {
@@ -62,6 +65,17 @@ class MedicamentoFragment : Fragment() {
                 setHasFixedSize(true)
                 adapter = medicamentoAdapter
             }
+        }
+    }
+    //Definir o espaçamento entre os itens
+    class SpacingItemDecoration(private val spaceHeight: Int) : RecyclerView.ItemDecoration() {
+        override fun getItemOffsets(
+            outRect: Rect,
+            view: View,
+            parent: RecyclerView,
+            state: RecyclerView.State
+        ) {
+            outRect.bottom = spaceHeight  // Define o espaçamento entre os itens
         }
     }
 }
