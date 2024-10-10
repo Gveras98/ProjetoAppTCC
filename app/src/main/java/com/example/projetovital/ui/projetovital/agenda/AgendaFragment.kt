@@ -66,5 +66,3 @@ class AgendaFragment : Fragment() {
         }
     }
 }
-
-
