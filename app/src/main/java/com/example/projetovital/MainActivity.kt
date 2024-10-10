@@ -41,6 +41,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+
     //função para trocar de fragment
     fun replaceFragment(fragment: Fragment) {
         val fragmentManager = supportFragmentManager
