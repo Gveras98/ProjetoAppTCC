@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
             true
         }
     }
-
+    //Teste Git
 
     //função para trocar de fragment
     fun replaceFragment(fragment: Fragment) {
