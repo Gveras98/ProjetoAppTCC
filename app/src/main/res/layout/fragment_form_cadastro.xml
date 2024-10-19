@@ -233,6 +233,21 @@
                 android:padding="16dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!-- Senha -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputEtUserSenha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/EtUserSenha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/CadSenha"
+                android:inputType="number"
+                android:padding="16dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
         <Button
             android:id="@+id/btnCadSalvar"
             android:layout_width="match_parent"

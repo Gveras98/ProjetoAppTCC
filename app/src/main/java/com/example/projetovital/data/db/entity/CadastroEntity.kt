@@ -36,6 +36,9 @@ data class CadastroEntity(
     @ColumnInfo(name = "emailUser")
     val emailUser: String,
 
+    @ColumnInfo(name = "senhaUser")
+    val senhaUser: String,
+
     @ColumnInfo(name = "numSusUser")
     val numSusUser: String,
 

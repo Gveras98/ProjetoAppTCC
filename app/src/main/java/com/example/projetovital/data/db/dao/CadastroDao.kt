@@ -15,11 +15,14 @@ interface CadastroDao {
     fun getAll(): LiveData<List<CadastroEntity>>
     // retirar o Suspende caso erro
 
-
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(cadastro: CadastroEntity): Long
 
     // Atualizar um cadastro existente
     @Update
     suspend fun update(cadastro: CadastroEntity)
+
+    @Query("SELECT * FROM tblCadastro WHERE emailUser = :email")
+    suspend fun getUserByEmail(email: String): CadastroEntity?
+
 }

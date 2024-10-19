@@ -52,11 +52,11 @@ public final class AppDatabase_Impl extends AppDatabase {
       public void createAllTables(@NonNull final SupportSQLiteDatabase db) {
         db.execSQL("CREATE TABLE IF NOT EXISTS `tblAgenda` (`idAgenda` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `especialidadeAgenda` TEXT NOT NULL, `dataAgenda` TEXT NOT NULL, `horaAgenda` TEXT NOT NULL, `localAgenda` TEXT NOT NULL, `procedimentoAgenda` TEXT NOT NULL)");
         db.execSQL("CREATE TABLE IF NOT EXISTS `tblAlergia` (`idAlergia` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nomeAlergia` TEXT NOT NULL)");
-        db.execSQL("CREATE TABLE IF NOT EXISTS `tblCadastro` (`idUser` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nomeUser` TEXT NOT NULL, `sexoUser` INTEGER NOT NULL, `dataNascimentoUser` TEXT NOT NULL, `cpfUser` TEXT NOT NULL, `enderecoUser` TEXT NOT NULL, `cepUser` TEXT NOT NULL, `telefoneUser` TEXT NOT NULL, `emailUser` TEXT NOT NULL, `numSusUser` TEXT NOT NULL, `planoSaudeUser` TEXT NOT NULL, `numPlanoSaudeUser` TEXT NOT NULL, `tipoSanguineoUser` TEXT NOT NULL)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `tblCadastro` (`idUser` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nomeUser` TEXT NOT NULL, `sexoUser` INTEGER NOT NULL, `dataNascimentoUser` TEXT NOT NULL, `cpfUser` TEXT NOT NULL, `enderecoUser` TEXT NOT NULL, `cepUser` TEXT NOT NULL, `telefoneUser` TEXT NOT NULL, `emailUser` TEXT NOT NULL, `senhaUser` TEXT NOT NULL, `numSusUser` TEXT NOT NULL, `planoSaudeUser` TEXT NOT NULL, `numPlanoSaudeUser` TEXT NOT NULL, `tipoSanguineoUser` TEXT NOT NULL)");
         db.execSQL("CREATE TABLE IF NOT EXISTS `tblExames` (`idExame` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `especialidadeExame` TEXT NOT NULL, `dataExame` TEXT NOT NULL, `localExame` TEXT NOT NULL, `procedimentoExame` TEXT NOT NULL, `anexoExame` TEXT)");
         db.execSQL("CREATE TABLE IF NOT EXISTS `tblMedicamento` (`idMedicamento` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nomeMedicamento` TEXT NOT NULL, `doseMedicamento` TEXT NOT NULL, `duracaoMedicamento` TEXT NOT NULL, `intervaloMedicamento` TEXT NOT NULL)");
         db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '83063c2e0f35128470b8d7ced17496f6')");
+        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'e8256d1ccbfb6bc53745eac7ee2c2ce6')");
       }
 
       @Override
@@ -137,7 +137,7 @@ public final class AppDatabase_Impl extends AppDatabase {
                   + " Expected:\n" + _infoTblAlergia + "\n"
                   + " Found:\n" + _existingTblAlergia);
         }
-        final HashMap<String, TableInfo.Column> _columnsTblCadastro = new HashMap<String, TableInfo.Column>(13);
+        final HashMap<String, TableInfo.Column> _columnsTblCadastro = new HashMap<String, TableInfo.Column>(14);
         _columnsTblCadastro.put("idUser", new TableInfo.Column("idUser", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsTblCadastro.put("nomeUser", new TableInfo.Column("nomeUser", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsTblCadastro.put("sexoUser", new TableInfo.Column("sexoUser", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
@@ -147,6 +147,7 @@ public final class AppDatabase_Impl extends AppDatabase {
         _columnsTblCadastro.put("cepUser", new TableInfo.Column("cepUser", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsTblCadastro.put("telefoneUser", new TableInfo.Column("telefoneUser", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsTblCadastro.put("emailUser", new TableInfo.Column("emailUser", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsTblCadastro.put("senhaUser", new TableInfo.Column("senhaUser", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsTblCadastro.put("numSusUser", new TableInfo.Column("numSusUser", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsTblCadastro.put("planoSaudeUser", new TableInfo.Column("planoSaudeUser", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsTblCadastro.put("numPlanoSaudeUser", new TableInfo.Column("numPlanoSaudeUser", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
@@ -193,7 +194,7 @@ public final class AppDatabase_Impl extends AppDatabase {
         }
         return new RoomOpenHelper.ValidationResult(true, null);
       }
-    }, "83063c2e0f35128470b8d7ced17496f6", "9a81ae12b8892296dcbe8270f6b45f80");
+    }, "e8256d1ccbfb6bc53745eac7ee2c2ce6", "f8ba01c5df182d705a36f4cc4d98aa17");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(config.context).name(config.name).callback(_openCallback).build();
     final SupportSQLiteOpenHelper _helper = config.sqliteOpenHelperFactory.create(_sqliteConfig);
     return _helper;

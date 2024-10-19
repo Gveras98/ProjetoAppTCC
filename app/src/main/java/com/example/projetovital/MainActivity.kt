@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import com.example.projetovital.databinding.ActivityMainBinding
 import com.example.projetovital.ui.projetovital.agenda.AgendaFragment
 import com.example.projetovital.ui.projetovital.cadastro.CadastroFragment
+import com.example.projetovital.ui.projetovital.cadastro.FormCadastroFragment
 import com.example.projetovital.ui.projetovital.exames.ExamesFragment
 import com.google.android.material.appbar.MaterialToolbar
 
@@ -24,10 +25,15 @@ class MainActivity : AppCompatActivity() {
         val toolbar = findViewById<MaterialToolbar>(R.id.topAppBar)
         setSupportActionBar(toolbar)
 
-        //Chama a função para trocar de fragment(Tela)
-        replaceFragment(ExamesFragment())
+        // Verifica se o intent tem o sinalizador para abrir o FormCadastro
+        if (intent.getBooleanExtra("openFormCadastro", false)) {
+            replaceFragment(FormCadastroFragment()) // Abre o FormCadastro diretamente
+        } else {
+            // Chama a função para mostrar a tela inicial (ex.: ExamesFragment)
+            replaceFragment(ExamesFragment())
+        }
 
-        //Define a exibição do fragment inicial e a navegação entre os fragments
+        // Define a exibição do fragment inicial e a navegação entre os fragments
         binding.bottomNavigationView.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.menu_exame -> replaceFragment(ExamesFragment())
@@ -40,9 +46,8 @@ class MainActivity : AppCompatActivity() {
             true
         }
     }
-    //Teste Git 2
 
-    //função para trocar de fragment
+    // Função para trocar de fragment
     fun replaceFragment(fragment: Fragment) {
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
@@ -51,3 +56,6 @@ class MainActivity : AppCompatActivity() {
         fragmentTransaction.commit()
     }
 }
+
+
+

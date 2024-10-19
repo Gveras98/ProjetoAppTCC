@@ -15,7 +15,7 @@ class CadastroViewModel(
     private val repository: CadastroRepository
 ) : ViewModel() {
 
-    //Inserir Cadastro
+    // Estados de cadastro
     private val _cadastroStateEventData = MutableLiveData<CadastroState>()
     val cadastroStateEventData: LiveData<CadastroState>
         get() = _cadastroStateEventData
@@ -24,7 +24,15 @@ class CadastroViewModel(
     val messageEventData: LiveData<Int>
         get() = _messageEventData
 
-    //Função Inserir
+    // Estados de autenticação
+    private val _authState = MutableLiveData<AuthState>()
+    val authState: LiveData<AuthState>
+        get() = _authState
+
+    // Exibição de cadastros
+    val exibirCadastro = repository.getAllCadastros()
+
+    // Função para inserir um cadastro
     fun inserirCadastro(cadastro: CadastroEntity) = viewModelScope.launch {
         try {
             val idUser = repository.insertCadastro(cadastro)
@@ -38,17 +46,7 @@ class CadastroViewModel(
         }
     }
 
-    sealed class CadastroState {
-        object Inserido : CadastroState()
-    }
-
-    companion object {
-        private val TAG = CadastroViewModel::class.java.simpleName
-    }
-
-    //Exibição
-    val exibirCadastro = repository.getAllCadastros()
-
+    // Função para atualizar um cadastro
     fun updateCadastro(cadastro: CadastroEntity) = viewModelScope.launch {
         try {
             repository.updateCadastro(cadastro)
@@ -57,6 +55,36 @@ class CadastroViewModel(
             _messageEventData.value = R.string.msg_erro
             Log.e(TAG, ex.toString())
         }
+    }
+
+    // Função para verificar login
+    fun verificarLogin(email: String, senha: String) = viewModelScope.launch {
+        try {
+            val cadastro = repository.getCadastroByEmail(email)
+            if (cadastro != null && cadastro.senhaUser == senha) {
+                _authState.value = AuthState.Autenticado
+            } else {
+                _authState.value = AuthState.ErroAutenticacao
+            }
+        } catch (ex: Exception) {
+            _authState.value = AuthState.ErroAutenticacao
+            Log.e(TAG, ex.toString())
+        }
+    }
+
+    // Estados para inserção de cadastro
+    sealed class CadastroState {
+        object Inserido : CadastroState()
+    }
+
+    // Estados para autenticação de login
+    sealed class AuthState {
+        object Autenticado : AuthState()  // Autenticação bem-sucedida
+        object ErroAutenticacao : AuthState()  // Falha na autenticação
+    }
+
+    companion object {
+        private val TAG = CadastroViewModel::class.java.simpleName
     }
 }
 

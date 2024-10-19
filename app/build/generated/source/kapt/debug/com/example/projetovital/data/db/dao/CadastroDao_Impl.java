@@ -1,6 +1,7 @@
 package com.example.projetovital.data.db.dao;
 
 import android.database.Cursor;
+import android.os.CancellationSignal;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.lifecycle.LiveData;
@@ -45,7 +46,7 @@ public final class CadastroDao_Impl implements CadastroDao {
       @Override
       @NonNull
       protected String createQuery() {
-        return "INSERT OR REPLACE INTO `tblCadastro` (`idUser`,`nomeUser`,`sexoUser`,`dataNascimentoUser`,`cpfUser`,`enderecoUser`,`cepUser`,`telefoneUser`,`emailUser`,`numSusUser`,`planoSaudeUser`,`numPlanoSaudeUser`,`tipoSanguineoUser`) VALUES (nullif(?, 0),?,?,?,?,?,?,?,?,?,?,?,?)";
+        return "INSERT OR REPLACE INTO `tblCadastro` (`idUser`,`nomeUser`,`sexoUser`,`dataNascimentoUser`,`cpfUser`,`enderecoUser`,`cepUser`,`telefoneUser`,`emailUser`,`senhaUser`,`numSusUser`,`planoSaudeUser`,`numPlanoSaudeUser`,`tipoSanguineoUser`) VALUES (nullif(?, 0),?,?,?,?,?,?,?,?,?,?,?,?,?)";
       }
 
       @Override
@@ -89,25 +90,30 @@ public final class CadastroDao_Impl implements CadastroDao {
         } else {
           statement.bindString(9, entity.getEmailUser());
         }
-        if (entity.getNumSusUser() == null) {
+        if (entity.getSenhaUser() == null) {
           statement.bindNull(10);
         } else {
-          statement.bindString(10, entity.getNumSusUser());
+          statement.bindString(10, entity.getSenhaUser());
         }
-        if (entity.getPlanoSaudeUser() == null) {
+        if (entity.getNumSusUser() == null) {
           statement.bindNull(11);
         } else {
-          statement.bindString(11, entity.getPlanoSaudeUser());
+          statement.bindString(11, entity.getNumSusUser());
         }
-        if (entity.getNumPlanoSaudeUser() == null) {
+        if (entity.getPlanoSaudeUser() == null) {
           statement.bindNull(12);
         } else {
-          statement.bindString(12, entity.getNumPlanoSaudeUser());
+          statement.bindString(12, entity.getPlanoSaudeUser());
         }
-        if (entity.getTipoSanguineoUser() == null) {
+        if (entity.getNumPlanoSaudeUser() == null) {
           statement.bindNull(13);
         } else {
-          statement.bindString(13, entity.getTipoSanguineoUser());
+          statement.bindString(13, entity.getNumPlanoSaudeUser());
+        }
+        if (entity.getTipoSanguineoUser() == null) {
+          statement.bindNull(14);
+        } else {
+          statement.bindString(14, entity.getTipoSanguineoUser());
         }
       }
     };
@@ -115,7 +121,7 @@ public final class CadastroDao_Impl implements CadastroDao {
       @Override
       @NonNull
       protected String createQuery() {
-        return "UPDATE OR ABORT `tblCadastro` SET `idUser` = ?,`nomeUser` = ?,`sexoUser` = ?,`dataNascimentoUser` = ?,`cpfUser` = ?,`enderecoUser` = ?,`cepUser` = ?,`telefoneUser` = ?,`emailUser` = ?,`numSusUser` = ?,`planoSaudeUser` = ?,`numPlanoSaudeUser` = ?,`tipoSanguineoUser` = ? WHERE `idUser` = ?";
+        return "UPDATE OR ABORT `tblCadastro` SET `idUser` = ?,`nomeUser` = ?,`sexoUser` = ?,`dataNascimentoUser` = ?,`cpfUser` = ?,`enderecoUser` = ?,`cepUser` = ?,`telefoneUser` = ?,`emailUser` = ?,`senhaUser` = ?,`numSusUser` = ?,`planoSaudeUser` = ?,`numPlanoSaudeUser` = ?,`tipoSanguineoUser` = ? WHERE `idUser` = ?";
       }
 
       @Override
@@ -159,27 +165,32 @@ public final class CadastroDao_Impl implements CadastroDao {
         } else {
           statement.bindString(9, entity.getEmailUser());
         }
-        if (entity.getNumSusUser() == null) {
+        if (entity.getSenhaUser() == null) {
           statement.bindNull(10);
         } else {
-          statement.bindString(10, entity.getNumSusUser());
+          statement.bindString(10, entity.getSenhaUser());
         }
-        if (entity.getPlanoSaudeUser() == null) {
+        if (entity.getNumSusUser() == null) {
           statement.bindNull(11);
         } else {
-          statement.bindString(11, entity.getPlanoSaudeUser());
+          statement.bindString(11, entity.getNumSusUser());
         }
-        if (entity.getNumPlanoSaudeUser() == null) {
+        if (entity.getPlanoSaudeUser() == null) {
           statement.bindNull(12);
         } else {
-          statement.bindString(12, entity.getNumPlanoSaudeUser());
+          statement.bindString(12, entity.getPlanoSaudeUser());
         }
-        if (entity.getTipoSanguineoUser() == null) {
+        if (entity.getNumPlanoSaudeUser() == null) {
           statement.bindNull(13);
         } else {
-          statement.bindString(13, entity.getTipoSanguineoUser());
+          statement.bindString(13, entity.getNumPlanoSaudeUser());
         }
-        statement.bindLong(14, entity.getIdUser());
+        if (entity.getTipoSanguineoUser() == null) {
+          statement.bindNull(14);
+        } else {
+          statement.bindString(14, entity.getTipoSanguineoUser());
+        }
+        statement.bindLong(15, entity.getIdUser());
       }
     };
   }
@@ -241,6 +252,7 @@ public final class CadastroDao_Impl implements CadastroDao {
           final int _cursorIndexOfCepUser = CursorUtil.getColumnIndexOrThrow(_cursor, "cepUser");
           final int _cursorIndexOfTelefoneUser = CursorUtil.getColumnIndexOrThrow(_cursor, "telefoneUser");
           final int _cursorIndexOfEmailUser = CursorUtil.getColumnIndexOrThrow(_cursor, "emailUser");
+          final int _cursorIndexOfSenhaUser = CursorUtil.getColumnIndexOrThrow(_cursor, "senhaUser");
           final int _cursorIndexOfNumSusUser = CursorUtil.getColumnIndexOrThrow(_cursor, "numSusUser");
           final int _cursorIndexOfPlanoSaudeUser = CursorUtil.getColumnIndexOrThrow(_cursor, "planoSaudeUser");
           final int _cursorIndexOfNumPlanoSaudeUser = CursorUtil.getColumnIndexOrThrow(_cursor, "numPlanoSaudeUser");
@@ -296,6 +308,12 @@ public final class CadastroDao_Impl implements CadastroDao {
             } else {
               _tmpEmailUser = _cursor.getString(_cursorIndexOfEmailUser);
             }
+            final String _tmpSenhaUser;
+            if (_cursor.isNull(_cursorIndexOfSenhaUser)) {
+              _tmpSenhaUser = null;
+            } else {
+              _tmpSenhaUser = _cursor.getString(_cursorIndexOfSenhaUser);
+            }
             final String _tmpNumSusUser;
             if (_cursor.isNull(_cursorIndexOfNumSusUser)) {
               _tmpNumSusUser = null;
@@ -320,7 +338,7 @@ public final class CadastroDao_Impl implements CadastroDao {
             } else {
               _tmpTipoSanguineoUser = _cursor.getString(_cursorIndexOfTipoSanguineoUser);
             }
-            _item = new CadastroEntity(_tmpIdUser,_tmpNomeUser,_tmpSexoUser,_tmpDataNascimentoUser,_tmpCpfUser,_tmpEnderecoUser,_tmpCepUser,_tmpTelefoneUser,_tmpEmailUser,_tmpNumSusUser,_tmpPlanoSaudeUser,_tmpNumPlanoSaudeUser,_tmpTipoSanguineoUser);
+            _item = new CadastroEntity(_tmpIdUser,_tmpNomeUser,_tmpSexoUser,_tmpDataNascimentoUser,_tmpCpfUser,_tmpEnderecoUser,_tmpCepUser,_tmpTelefoneUser,_tmpEmailUser,_tmpSenhaUser,_tmpNumSusUser,_tmpPlanoSaudeUser,_tmpNumPlanoSaudeUser,_tmpTipoSanguineoUser);
             _result.add(_item);
           }
           return _result;
@@ -334,6 +352,131 @@ public final class CadastroDao_Impl implements CadastroDao {
         _statement.release();
       }
     });
+  }
+
+  @Override
+  public Object getUserByEmail(final String email,
+      final Continuation<? super CadastroEntity> $completion) {
+    final String _sql = "SELECT * FROM tblCadastro WHERE emailUser = ?";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
+    int _argIndex = 1;
+    if (email == null) {
+      _statement.bindNull(_argIndex);
+    } else {
+      _statement.bindString(_argIndex, email);
+    }
+    final CancellationSignal _cancellationSignal = DBUtil.createCancellationSignal();
+    return CoroutinesRoom.execute(__db, false, _cancellationSignal, new Callable<CadastroEntity>() {
+      @Override
+      @Nullable
+      public CadastroEntity call() throws Exception {
+        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+        try {
+          final int _cursorIndexOfIdUser = CursorUtil.getColumnIndexOrThrow(_cursor, "idUser");
+          final int _cursorIndexOfNomeUser = CursorUtil.getColumnIndexOrThrow(_cursor, "nomeUser");
+          final int _cursorIndexOfSexoUser = CursorUtil.getColumnIndexOrThrow(_cursor, "sexoUser");
+          final int _cursorIndexOfDataNascimentoUser = CursorUtil.getColumnIndexOrThrow(_cursor, "dataNascimentoUser");
+          final int _cursorIndexOfCpfUser = CursorUtil.getColumnIndexOrThrow(_cursor, "cpfUser");
+          final int _cursorIndexOfEnderecoUser = CursorUtil.getColumnIndexOrThrow(_cursor, "enderecoUser");
+          final int _cursorIndexOfCepUser = CursorUtil.getColumnIndexOrThrow(_cursor, "cepUser");
+          final int _cursorIndexOfTelefoneUser = CursorUtil.getColumnIndexOrThrow(_cursor, "telefoneUser");
+          final int _cursorIndexOfEmailUser = CursorUtil.getColumnIndexOrThrow(_cursor, "emailUser");
+          final int _cursorIndexOfSenhaUser = CursorUtil.getColumnIndexOrThrow(_cursor, "senhaUser");
+          final int _cursorIndexOfNumSusUser = CursorUtil.getColumnIndexOrThrow(_cursor, "numSusUser");
+          final int _cursorIndexOfPlanoSaudeUser = CursorUtil.getColumnIndexOrThrow(_cursor, "planoSaudeUser");
+          final int _cursorIndexOfNumPlanoSaudeUser = CursorUtil.getColumnIndexOrThrow(_cursor, "numPlanoSaudeUser");
+          final int _cursorIndexOfTipoSanguineoUser = CursorUtil.getColumnIndexOrThrow(_cursor, "tipoSanguineoUser");
+          final CadastroEntity _result;
+          if (_cursor.moveToFirst()) {
+            final long _tmpIdUser;
+            _tmpIdUser = _cursor.getLong(_cursorIndexOfIdUser);
+            final String _tmpNomeUser;
+            if (_cursor.isNull(_cursorIndexOfNomeUser)) {
+              _tmpNomeUser = null;
+            } else {
+              _tmpNomeUser = _cursor.getString(_cursorIndexOfNomeUser);
+            }
+            final char _tmpSexoUser;
+            _tmpSexoUser = (char) (_cursor.getInt(_cursorIndexOfSexoUser));
+            final Date _tmpDataNascimentoUser;
+            final String _tmp;
+            if (_cursor.isNull(_cursorIndexOfDataNascimentoUser)) {
+              _tmp = null;
+            } else {
+              _tmp = _cursor.getString(_cursorIndexOfDataNascimentoUser);
+            }
+            _tmpDataNascimentoUser = __dateConverter.toDate(_tmp);
+            final String _tmpCpfUser;
+            if (_cursor.isNull(_cursorIndexOfCpfUser)) {
+              _tmpCpfUser = null;
+            } else {
+              _tmpCpfUser = _cursor.getString(_cursorIndexOfCpfUser);
+            }
+            final String _tmpEnderecoUser;
+            if (_cursor.isNull(_cursorIndexOfEnderecoUser)) {
+              _tmpEnderecoUser = null;
+            } else {
+              _tmpEnderecoUser = _cursor.getString(_cursorIndexOfEnderecoUser);
+            }
+            final String _tmpCepUser;
+            if (_cursor.isNull(_cursorIndexOfCepUser)) {
+              _tmpCepUser = null;
+            } else {
+              _tmpCepUser = _cursor.getString(_cursorIndexOfCepUser);
+            }
+            final String _tmpTelefoneUser;
+            if (_cursor.isNull(_cursorIndexOfTelefoneUser)) {
+              _tmpTelefoneUser = null;
+            } else {
+              _tmpTelefoneUser = _cursor.getString(_cursorIndexOfTelefoneUser);
+            }
+            final String _tmpEmailUser;
+            if (_cursor.isNull(_cursorIndexOfEmailUser)) {
+              _tmpEmailUser = null;
+            } else {
+              _tmpEmailUser = _cursor.getString(_cursorIndexOfEmailUser);
+            }
+            final String _tmpSenhaUser;
+            if (_cursor.isNull(_cursorIndexOfSenhaUser)) {
+              _tmpSenhaUser = null;
+            } else {
+              _tmpSenhaUser = _cursor.getString(_cursorIndexOfSenhaUser);
+            }
+            final String _tmpNumSusUser;
+            if (_cursor.isNull(_cursorIndexOfNumSusUser)) {
+              _tmpNumSusUser = null;
+            } else {
+              _tmpNumSusUser = _cursor.getString(_cursorIndexOfNumSusUser);
+            }
+            final String _tmpPlanoSaudeUser;
+            if (_cursor.isNull(_cursorIndexOfPlanoSaudeUser)) {
+              _tmpPlanoSaudeUser = null;
+            } else {
+              _tmpPlanoSaudeUser = _cursor.getString(_cursorIndexOfPlanoSaudeUser);
+            }
+            final String _tmpNumPlanoSaudeUser;
+            if (_cursor.isNull(_cursorIndexOfNumPlanoSaudeUser)) {
+              _tmpNumPlanoSaudeUser = null;
+            } else {
+              _tmpNumPlanoSaudeUser = _cursor.getString(_cursorIndexOfNumPlanoSaudeUser);
+            }
+            final String _tmpTipoSanguineoUser;
+            if (_cursor.isNull(_cursorIndexOfTipoSanguineoUser)) {
+              _tmpTipoSanguineoUser = null;
+            } else {
+              _tmpTipoSanguineoUser = _cursor.getString(_cursorIndexOfTipoSanguineoUser);
+            }
+            _result = new CadastroEntity(_tmpIdUser,_tmpNomeUser,_tmpSexoUser,_tmpDataNascimentoUser,_tmpCpfUser,_tmpEnderecoUser,_tmpCepUser,_tmpTelefoneUser,_tmpEmailUser,_tmpSenhaUser,_tmpNumSusUser,_tmpPlanoSaudeUser,_tmpNumPlanoSaudeUser,_tmpTipoSanguineoUser);
+          } else {
+            _result = null;
+          }
+          return _result;
+        } finally {
+          _cursor.close();
+          _statement.release();
+        }
+      }
+    }, $completion);
   }
 
   @NonNull

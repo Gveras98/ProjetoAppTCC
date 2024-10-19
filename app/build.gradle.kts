@@ -50,6 +50,8 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation("androidx.activity:activity-ktx:1.9.2")
     implementation(libs.androidx.constraintlayout)
+    //Biometria
+    implementation("androidx.biometric:biometric:1.1.0")
 
     // Dependência para ViewModel e Lifecycle
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.5")
@@ -60,6 +62,7 @@ dependencies {
 
     //Google ML Kit
     implementation("com.google.android.gms:play-services-mlkit-document-scanner:16.0.0-beta1")
+    implementation(libs.androidx.annotation)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
@@ -69,5 +72,8 @@ dependencies {
     implementation("androidx.room:room-ktx:2.6.1")
     kapt("androidx.room:room-compiler:2.6.1")
     androidTestImplementation("androidx.room:room-testing:2.6.1")
+    implementation("androidx.room:room-runtime:2.6.1")
+
+
 }
 

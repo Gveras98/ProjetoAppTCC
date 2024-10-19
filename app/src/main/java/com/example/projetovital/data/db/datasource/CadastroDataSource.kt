@@ -18,4 +18,7 @@ class CadastroDataSource(private val cadastroDao: CadastroDao) : CadastroReposit
     override suspend fun updateCadastro(cadastro: CadastroEntity) {
         cadastroDao.update(cadastro)
     }
+    override suspend fun getCadastroByEmail(email: String): CadastroEntity? {
+        return cadastroDao.getUserByEmail(email)
+    }
 }

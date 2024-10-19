@@ -100,6 +100,7 @@ class FormCadastroFragment : Fragment() {
         binding.spinnerTipoSanguineo.setSelection(
             resources.getStringArray(R.array.tipos_sanguineos).indexOf(cadastro.tipoSanguineoUser)
         )
+        binding.EtUserSenha.setText(cadastro.senhaUser)
     }
 
     private fun inserirCadastro(cadastro: CadastroEntity?) {
@@ -155,6 +156,8 @@ class FormCadastroFragment : Fragment() {
             val planoSaude = binding.EtUserPlanoSaude.text.toString()
             val numPlanoSaude = binding.EtUserNumPlanoSaude.text.toString()
             val tipoSanguineo = binding.spinnerTipoSanguineo.selectedItem.toString()
+            val senha = binding.EtUserSenha.text.toString()
+
 
             // Criação da instância do CadastroEntity
             val novocadastro = cadastro?.copy(
@@ -169,7 +172,8 @@ class FormCadastroFragment : Fragment() {
                 numSusUser = sus,
                 planoSaudeUser = planoSaude,
                 numPlanoSaudeUser = numPlanoSaude,
-                tipoSanguineoUser = tipoSanguineo
+                tipoSanguineoUser = tipoSanguineo,
+                senhaUser = senha
             ) ?: CadastroEntity(
                 nomeUser = nome,
                 sexoUser = sexo.firstOrNull() ?: ' ',
@@ -182,7 +186,8 @@ class FormCadastroFragment : Fragment() {
                 numSusUser = sus,
                 planoSaudeUser = planoSaude,
                 numPlanoSaudeUser = numPlanoSaude,
-                tipoSanguineoUser = tipoSanguineo
+                tipoSanguineoUser = tipoSanguineo,
+                senhaUser = senha
             )
             // Chama o método do ViewModel para inserir o cadastro
             if (cadastro != null) {

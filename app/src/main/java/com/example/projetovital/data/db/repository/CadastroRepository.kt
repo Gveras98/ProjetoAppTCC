@@ -7,5 +7,5 @@ interface CadastroRepository {
     fun getAllCadastros(): LiveData<List<CadastroEntity>>
     suspend fun insertCadastro(cadastro: CadastroEntity): Long
     suspend fun updateCadastro(cadastro: CadastroEntity)
-
+    suspend fun getCadastroByEmail(email: String): CadastroEntity?
 }

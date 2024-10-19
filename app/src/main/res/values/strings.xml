@@ -59,6 +59,7 @@
     <string name="CadPlanoSaude">Plano de Saúde:</string>
     <string name="CadNumPlanoSaude">Número do Plano de Saúde:</string>
     <string name="CadTipoSanguineo">Tipo Sanguíneo:</string>
+    <string name="CadSenha"> Senha </string>
     <string name="CadSalvar">Salvar</string>
 
     //Trocar os Hints por Strings
@@ -128,6 +129,19 @@
 
     <string name="update_sucesso"> Atualizado com Sucesso! </string>
     <string name="update_erro"> Erro ao atualizar! </string>
+
+    <!-- Login -->
+    <string name="login"> Faça o Login </string>
+    <string name="username"> Usuario </string>
+    <string name="password"> Senha </string>
+    <string name="btn_login"> Login </string>
+    <string name="btn_registro"> Registrar </string>
+    <string name="btn_biometria"> Login com Biometria </string>
+    <string name="login_sucesso"> Login realizado com sucesso! </string>
+    <string name="login_erro"> Erro no Login! </string>
+    <string name="preencha_campos">Preencha os Campos </string>
+    <string name="usuario_nao_encontrado">Usuario Não Encontrado</string>
+    <string name="senha_invalida">Senha Invalida</string>
 
 
 </resources>
