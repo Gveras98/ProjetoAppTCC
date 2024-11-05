@@ -39,21 +39,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etLoginUsuario"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/inputbox_login"
-            android:drawableStart="@drawable/avatar_login"
-            android:drawablePadding="10dp"
-            android:hint="@string/username"
-            android:inputType="text"
-            android:padding="16dp"
-            android:paddingStart="20dp"
-            android:textColor="#000000"
-            android:textColorHint="#000000"
-            android:textStyle="bold" />
-
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -72,19 +57,6 @@
         app:layout_constraintTop_toBottomOf="@+id/inputLoginUsuario"
         app:layout_constraintVertical_bias="0.5">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etLoginSenha"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/inputbox_login"
-            android:drawableStart="@drawable/password_login"
-            android:drawablePadding="13dp"
-            android:hint="@string/password"
-            android:inputType="textPassword"
-            android:padding="16dp"
-            android:paddingStart="20dp"
-            android:textColor="#000000"
-            android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -93,41 +65,44 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="25dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/btn_background"
         android:text="@string/btn_login"
         android:textColor="#FFFFFF"
         android:textColorLink="@color/blue_light"
-        app:layout_constraintBottom_toTopOf="@id/btnCadastro"
+        app:layout_constraintBottom_toTopOf="@+id/btnCadastro"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/inputLoginSenha" />
+        app:layout_constraintTop_toBottomOf="@+id/etLoginSenha" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnCadastro"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="-30dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="110dp"
         android:background="@drawable/btn_background"
         android:text="@string/btn_registro"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@id/btnBiometria"
+        app:layout_constraintBottom_toTopOf="@+id/btnBiometria"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnLogin" />
+        app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnBiometria"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="-130dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="25dp"
         android:background="@drawable/btn_background"
         android:text="@string/btn_biometria"
         android:textColor="#FFFFFF"
@@ -136,7 +111,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnCadastro"
+        app:layout_constraintTop_toBottomOf="@+id/btnCadastro"
         app:rippleColor="@color/pink_light"
         app:strokeColor="@color/pink_light" />
 
@@ -144,13 +119,45 @@
         android:id="@+id/imageView3"
         android:layout_width="508dp"
         android:layout_height="191dp"
-        app:layout_constraintBottom_toTopOf="@+id/inputLoginUsuario"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo"
-        app:layout_constraintVertical_bias="0.625"
-        app:srcCompat="@drawable/vital_nome2" />
+        app:srcCompat="@drawable/vital_nome2"
+        tools:layout_editor_absoluteY="101dp" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/etLoginUsuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/inputbox_login"
+        android:drawableStart="@drawable/avatar_login"
+        android:drawablePadding="10dp"
+        android:hint="@string/username"
+        android:inputType="text"
+        android:padding="16dp"
+        android:paddingStart="20dp"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="252dp" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/etLoginSenha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/inputbox_login"
+        android:drawableStart="@drawable/password_login"
+        android:drawablePadding="13dp"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:padding="16dp"
+        android:paddingStart="20dp"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="324dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
