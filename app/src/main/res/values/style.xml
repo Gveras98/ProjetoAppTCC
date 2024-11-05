@@ -7,5 +7,22 @@
 
     </style>
 
+    <style name="ContainerComponents">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">370dp</item>
+        <item name="android:background">@drawable/container_components</item>
+        <item name="android:layout_margin">10dp</item>
+    </style>
+
+    <style name="Edit_Text">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/edit_text</item>
+    </style>
+
+    <style name="Buttons">
+        <item name="android:background">@color/blue</item>
+    </style>
+
 
 </resources>

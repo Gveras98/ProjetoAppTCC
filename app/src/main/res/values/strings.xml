@@ -132,7 +132,7 @@
 
     <!-- Login -->
     <string name="login"> Faça o Login </string>
-    <string name="username"> Usuario </string>
+    <string name="username"> Usuário </string>
     <string name="password"> Senha </string>
     <string name="btn_login"> Login </string>
     <string name="btn_registro"> Registrar </string>
