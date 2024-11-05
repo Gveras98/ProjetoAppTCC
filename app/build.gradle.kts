@@ -8,7 +8,7 @@ plugins {
 
 android {
     namespace = "com.example.projetovital"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.projetovital"
@@ -48,17 +48,17 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
-    implementation("androidx.activity:activity-ktx:1.9.2")
+    implementation("androidx.activity:activity-ktx:1.9.3")
     implementation(libs.androidx.constraintlayout)
     //Biometria
     implementation("androidx.biometric:biometric:1.1.0")
 
     // Dependência para ViewModel e Lifecycle
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.5")
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.8.5")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.7")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.8.7")
 
     // Dependência para Fragment
-    implementation("androidx.fragment:fragment-ktx:1.8.3")
+    implementation("androidx.fragment:fragment-ktx:1.8.5")
 
     //Google ML Kit
     implementation("com.google.android.gms:play-services-mlkit-document-scanner:16.0.0-beta1")
