@@ -103,6 +103,7 @@
             android:layout_marginBottom="16dp"
             android:text="@string/med.salvar"
             android:textSize="18sp"
+            android:backgroundTint="@color/blue_btn"
             android:textStyle="bold" />
     </LinearLayout>
 </ScrollView>

@@ -44,9 +44,9 @@ class CadastroFragment : Fragment() {
         binding = FragmentCadastroBinding.inflate(inflater, container, false)
 
         // Define os botões de navegação
-        binding.btnCadastro.setOnClickListener {
-            (activity as? MainActivity)?.replaceFragment(FormCadastroFragment())
-        }
+        //binding.btnCadastro.setOnClickListener {
+        //(activity as? MainActivity)?.replaceFragment(FormCadastroFragment())
+        // }
         binding.btnMedicamentos.setOnClickListener {
             (activity as? MainActivity)?.replaceFragment(MedicamentoFragment())
         }

@@ -94,6 +94,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Scanner"
+            android:backgroundTint="@color/blue_btn"
             android:textSize="16sp" />
 
         <Button
@@ -102,6 +103,7 @@
             android:layout_height="wrap_content"
             android:text="Salvar"
             android:textSize="18sp"
+            android:backgroundTint="@color/blue_btn"
             android:textStyle="bold" />
 
     </LinearLayout>

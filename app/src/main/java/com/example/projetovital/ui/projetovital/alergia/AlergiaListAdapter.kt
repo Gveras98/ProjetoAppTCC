@@ -47,7 +47,7 @@ class AlergiaListAdapter(
             //Confirmação
             AlertDialog.Builder(holder.itemView.context)
                 .setTitle("Confirmação")
-                .setMessage("Tem certeza que deseja editar esta alergia agendamento?")
+                .setMessage("Tem certeza que deseja editar esta alergia ?")
                 .setPositiveButton("Sim") { _, _ ->
                     val fragment = FormAlergiaFragment().apply {
                         arguments = Bundle().apply {

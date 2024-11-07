@@ -93,6 +93,7 @@
                 android:padding="8dp"
                 android:text="@string/editar"
                 android:textSize="12sp"
+                android:backgroundTint="@color/blue_btn"
                 android:textStyle="bold" />
 
             <Button
@@ -104,6 +105,7 @@
                 android:padding="8dp"
                 android:text="@string/deletar"
                 android:textSize="12sp"
+                android:backgroundTint="@color/blue_btn"
                 android:textStyle="bold" />
         </LinearLayout>
 

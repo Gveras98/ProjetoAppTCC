@@ -1,12 +1,24 @@
 <resources>
     <!-- Base application theme. -->
     <style name="Base.Theme.ProjetoVital" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/blue_btn</item> <!-- Cor primária -->
+        <item name="colorPrimaryVariant">@color/blue</item> <!-- Cor variante -->
+        <item name="colorOnPrimary">@color/white
+        </item> <!-- Cor do texto ou ícones sobre a cor primária -->
+        <item name="colorSecondary">@color/blue_light</item>
+        <item name="colorControlActivated">@color/blue_btn</item>
 
+
+        <!-- Cor secundária -->
     </style>
 
-
-    <style name="Theme.ProjetoVital" parent="Base.Theme.ProjetoVital" />
-
+    <style name="Theme.ProjetoVital" parent="Base.Theme.ProjetoVital">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/blue_btn</item> <!-- Cor primária -->
+        <item name="colorPrimaryVariant">@color/blue</item> <!-- Cor variante -->
+        <item name="colorOnPrimary">@color/white
+        </item> <!-- Cor do texto ou ícones sobre a cor primária -->
+        <item name="colorSecondary">@color/blue_light</item>
+        <item name="colorControlActivated">@color/blue_btn</item> <!-- Cor secundária -->
+    </style>
 </resources>

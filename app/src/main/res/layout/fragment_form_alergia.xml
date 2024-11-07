@@ -15,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp"
-            android:text="@string/medicamentos"
+            android:text="@string/alergias"
             android:textAlignment="center"
             android:textSize="36sp"
             android:textStyle="bold" />
@@ -43,6 +43,7 @@
             android:layout_marginBottom="16dp"
             android:text="@string/alergia.salvar"
             android:textSize="18sp"
+            android:backgroundTint="@color/blue_btn"
             android:textStyle="bold" />
 
 

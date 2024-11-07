@@ -5,8 +5,10 @@
     <color name="orange">#FFB344</color>
     <color name="pink">#FB528B</color>
     <color name="pink_light">#F899B9</color>
+    <color name="blue_btn">#1383bf</color>
     <color name="blue">#407bc9</color>
     <color name="blue_light">#5cb6f9</color>
     <color name="white_light">#d1dded</color>
-    <color name="blue_btn">#1383bf</color>
+
+
 </resources>

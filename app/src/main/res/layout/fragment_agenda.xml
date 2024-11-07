@@ -25,6 +25,7 @@
             android:id="@+id/btnCadAgendamento"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/blue_btn"
             android:text="@string/cadastrar_agendamento"
             android:textAlignment="center"
             android:textSize="24sp"

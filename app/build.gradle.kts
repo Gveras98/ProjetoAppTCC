@@ -50,6 +50,7 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation("androidx.activity:activity-ktx:1.9.3")
     implementation(libs.androidx.constraintlayout)
+    implementation("com.google.android.material:material:1.12.0")
     //Biometria
     implementation("androidx.biometric:biometric:1.1.0")
 
