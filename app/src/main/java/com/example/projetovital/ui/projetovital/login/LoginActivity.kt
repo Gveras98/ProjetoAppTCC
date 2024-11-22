@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.projetovital.MainActivity
@@ -17,6 +18,8 @@ import com.example.projetovital.ui.projetovital.cadastro.CadastroViewModel
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
+    private lateinit var biometricPrompt: androidx.biometric.BiometricPrompt
+    private lateinit var promptInfo: androidx.biometric.BiometricPrompt.PromptInfo
 
     private val viewModel: CadastroViewModel by viewModels {
         object : ViewModelProvider.Factory {
@@ -34,6 +37,9 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Configura a autenticação biométrica
+        setupBiometricAuthentication()
+
         // Observa o estado de autenticação
         observeAuthState()
 
@@ -49,6 +55,11 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
+        // Ação do botão de biometria
+        binding.btnBiometria.setOnClickListener {
+            biometricPrompt.authenticate(promptInfo)
+        }
+
         // Ação do botão de cadastro
         binding.btnCadastro.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
@@ -61,16 +72,55 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    private fun setupBiometricAuthentication() {
+        // Configura o prompt de autenticação biométrica
+        val executor = ContextCompat.getMainExecutor(this)
+        biometricPrompt = androidx.biometric.BiometricPrompt(
+            this,
+            executor,
+            object : androidx.biometric.BiometricPrompt.AuthenticationCallback() {
+                override fun onAuthenticationSucceeded(result: androidx.biometric.BiometricPrompt.AuthenticationResult) {
+                    super.onAuthenticationSucceeded(result)
+                    Toast.makeText(
+                        this@LoginActivity,
+                        "Autenticação bem-sucedida!",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    // Navega para a MainActivity após autenticação bem-sucedida
+                    val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }
+
+                override fun onAuthenticationError(errorCode: Int, errString: CharSequence) {
+                    super.onAuthenticationError(errorCode, errString)
+                    Toast.makeText(this@LoginActivity, "Erro: $errString", Toast.LENGTH_SHORT)
+                        .show()
+                }
+
+                override fun onAuthenticationFailed() {
+                    super.onAuthenticationFailed()
+                    Toast.makeText(this@LoginActivity, "Autenticação falhou", Toast.LENGTH_SHORT)
+                        .show()
+                }
+            })
+
+        // Configura as informações do prompt
+        promptInfo = androidx.biometric.BiometricPrompt.PromptInfo.Builder()
+            .setTitle("Autenticação Biométrica")
+            .setSubtitle("Use sua biometria para acessar o aplicativo")
+            .setNegativeButtonText("Cancelar")
+            .build()
+    }
+
     private fun observeAuthState() {
-        // Configura a observação do estado de autenticação
         viewModel.authState.observe(this@LoginActivity) { state ->
             when (state) {
                 is CadastroViewModel.AuthState.Autenticado -> {
                     Toast.makeText(this, "Login bem-sucedido!", Toast.LENGTH_SHORT).show()
-                    // Inicia a MainActivity após o login bem-sucedido
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
-                    finish() // Fecha a LoginActivity
+                    finish()
                 }
 
                 is CadastroViewModel.AuthState.ErroAutenticacao -> {
@@ -82,5 +132,4 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 }
-
 
