@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.projetovital.exames.ExamesFragment">
 
     <LinearLayout
@@ -15,21 +15,36 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp"
+            android:padding="12dp"
             android:text="@string/exame"
             android:textAlignment="center"
-            android:textSize="36sp"
+            android:textColor="@color/blue"
+            android:textSize="48sp"
             android:textStyle="bold" />
 
         <Button
             android:id="@+id/btn_Cad_Exames"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/blue_btn"
             android:text="@string/cadastrar_exame"
             android:textAlignment="center"
             android:textSize="24sp"
-            android:backgroundTint="@color/blue_btn"
             android:textStyle="bold" />
+
+        <!-- MSG Caso Não tenha Informações -->
+        <TextView
+            android:id="@+id/msgExames"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="16dp"
+            android:text="Não Há Exames Cadastrados"
+            android:textAlignment="center"
+            android:textColor="@color/blue"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
 
         <!-- Adicionar lista para exibição dos exames -->
         <androidx.recyclerview.widget.RecyclerView

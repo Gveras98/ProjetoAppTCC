@@ -69,16 +69,24 @@ class ExamesFragment : Fragment() {
 
     private fun observerViewModelEventsExames() {
         viewModel.exibirExames.observe(viewLifecycleOwner) { exames ->
-            val examesListAdapter = ExamesListAdapter(exames, viewModel) { anexo ->
-                abrirPDF(anexo) // Chama a função para abrir o PDF
-            }
+            val isListEmpty = exames.isEmpty()
 
-            with(recyclerExames) {
-                setHasFixedSize(true)
-                adapter = examesListAdapter
+            // Controla a visibilidade do RecyclerView e do TextView
+            binding.recyclerExames.visibility = if (isListEmpty) View.GONE else View.VISIBLE
+            binding.msgExames.visibility = if (isListEmpty) View.VISIBLE else View.GONE
+
+            if (!isListEmpty) {
+                val examesListAdapter = ExamesListAdapter(exames, viewModel) { anexo ->
+                    abrirPDF(anexo) // Chama a função para abrir o PDF
+                }
+                with(binding.recyclerExames) {
+                    setHasFixedSize(true)
+                    adapter = examesListAdapter
+                }
             }
         }
     }
+
 
     // Função para abrir o PDF
     private fun abrirPDF(anexo: String) {

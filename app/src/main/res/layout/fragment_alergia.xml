@@ -16,21 +16,36 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp"
+            android:padding="12dp"
             android:text="@string/alergias"
             android:textAlignment="center"
-            android:textSize="36sp"
+            android:textColor="@color/blue"
+            android:textSize="48sp"
             android:textStyle="bold" />
 
         <Button
             android:id="@+id/btnNovoAlergia"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/blue_btn"
             android:text="@string/alergia.novo"
             android:textAlignment="center"
             android:textSize="24sp"
-            android:backgroundTint="@color/blue_btn"
             android:textStyle="bold" />
+
+        <!-- MSG Caso Não tenha Informações -->
+        <TextView
+            android:id="@+id/msgAlergia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="16dp"
+            android:text="Não Há Alergias Cadastradas"
+            android:textAlignment="center"
+            android:textColor="@color/blue"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerAlergias"

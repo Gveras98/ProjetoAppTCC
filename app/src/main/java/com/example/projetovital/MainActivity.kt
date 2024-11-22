@@ -44,6 +44,7 @@ class MainActivity : AppCompatActivity() {
 
         // Configurar a Toolbar como a ActionBar
         val toolbar = findViewById<MaterialToolbar>(R.id.topAppBar)
+        toolbar.title = ""
         setSupportActionBar(toolbar)
 
         // Verifica se o intent tem o sinalizador para abrir o FormCadastro

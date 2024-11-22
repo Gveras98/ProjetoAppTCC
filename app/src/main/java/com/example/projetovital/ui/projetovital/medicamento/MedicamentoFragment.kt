@@ -59,14 +59,23 @@ class MedicamentoFragment : Fragment() {
 
     private fun observerViewModelEventsMedicamento() {
         viewModel.exibirMedicamento.observe(viewLifecycleOwner) { medicamentoList ->
-            val medicamentoAdapter = MedicamentoListAdapter(medicamentoList, viewModel)
+            val isListEmpty = medicamentoList.isEmpty()
 
-            with(recyclerMedicamento) {
-                setHasFixedSize(true)
-                adapter = medicamentoAdapter
+            // Controla a visibilidade do RecyclerView e do TextView
+            binding.recyclerMedicamento.visibility = if (isListEmpty) View.GONE else View.VISIBLE
+            binding.msgMedicamentos.visibility = if (isListEmpty) View.VISIBLE else View.GONE
+
+            if (!isListEmpty) {
+                val medicamentoAdapter = MedicamentoListAdapter(medicamentoList, viewModel)
+                with(binding.recyclerMedicamento) {
+                    setHasFixedSize(true)
+                    adapter = medicamentoAdapter
+                }
             }
         }
     }
+
+
     //Definir o espaçamento entre os itens
     class SpacingItemDecoration(private val spaceHeight: Int) : RecyclerView.ItemDecoration() {
         override fun getItemOffsets(

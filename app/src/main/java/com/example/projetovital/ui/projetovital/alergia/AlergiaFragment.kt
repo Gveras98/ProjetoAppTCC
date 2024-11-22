@@ -60,14 +60,22 @@ class AlergiaFragment : Fragment() {
 
     private fun observerViewModelEventsAlergia() {
         viewModel.exibirAlergia.observe(viewLifecycleOwner) { exibirAlergia ->
-            val alergiaListAdapter = AlergiaListAdapter(exibirAlergia, viewModel)
+            val isListEmpty = exibirAlergia.isEmpty()
 
-            with(recyclerAlergias) {
-                setHasFixedSize(true)
-                adapter = alergiaListAdapter
+            // Controla a visibilidade do RecyclerView e do TextView
+            binding.recyclerAlergias.visibility = if (isListEmpty) View.GONE else View.VISIBLE
+            binding.msgAlergia.visibility = if (isListEmpty) View.VISIBLE else View.GONE
+
+            if (!isListEmpty) {
+                val alergiaListAdapter = AlergiaListAdapter(exibirAlergia, viewModel)
+                with(binding.recyclerAlergias) {
+                    setHasFixedSize(true)
+                    adapter = alergiaListAdapter
+                }
             }
         }
     }
+
     class SpaceItemDecoration(private val spaceHeight: Int) : RecyclerView.ItemDecoration() {
         override fun getItemOffsets(
             outRect: Rect,

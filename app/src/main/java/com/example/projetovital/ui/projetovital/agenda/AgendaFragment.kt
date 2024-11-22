@@ -61,14 +61,22 @@ class AgendaFragment : Fragment() {
 
     private fun observerViewModelEventsAgenda() {
         viewModel.exibirAgenda.observe(viewLifecycleOwner) { exibirAgenda ->
-            val agendaListAdapter = AgendaListAdapter(exibirAgenda, viewModel)
+            val isListEmpty = exibirAgenda.isEmpty()
 
-            with(recyclerAgenda) {
-                setHasFixedSize(true)
-                adapter = agendaListAdapter
+            // Controla a visibilidade do RecyclerView e do TextView
+            binding.recyclerAgenda.visibility = if (isListEmpty) View.GONE else View.VISIBLE
+            binding.msgAgenda.visibility = if (isListEmpty) View.VISIBLE else View.GONE
+
+            if (!isListEmpty) {
+                val agendaListAdapter = AgendaListAdapter(exibirAgenda, viewModel)
+                with(recyclerAgenda) {
+                    setHasFixedSize(true)
+                    adapter = agendaListAdapter
+                }
             }
         }
     }
+
 
     //Definir o espaçamento entre os itens
     class SpacingItemDecoration(private val spaceHeight: Int) : RecyclerView.ItemDecoration() {

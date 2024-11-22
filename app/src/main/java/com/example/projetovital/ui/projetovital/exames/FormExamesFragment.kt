@@ -112,7 +112,7 @@ class FormExamesFragment : Fragment() {
             val procedimento = binding.etExamesProcedimento.text.toString()
 
             // Conversão de String para Date
-            val dateFormat = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault())
+            val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
             val dataExame: Date? = if (dataExameStr.isNotEmpty()) {
                 try {
                     dateFormat.parse(dataExameStr)

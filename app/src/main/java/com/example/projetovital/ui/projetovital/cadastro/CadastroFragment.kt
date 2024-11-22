@@ -72,7 +72,6 @@ class CadastroFragment : Fragment() {
                 binding.tvCadastroPlanoSaude.text = cadastro.planoSaudeUser
                 binding.tvCadastroNumeroPlanoSaude.text = cadastro.numPlanoSaudeUser
                 binding.tvCadastroTipoSanguineo.text = cadastro.tipoSanguineoUser
-                binding.tvCadastroSenha.text = cadastro.senhaUser
             }
         }
 
