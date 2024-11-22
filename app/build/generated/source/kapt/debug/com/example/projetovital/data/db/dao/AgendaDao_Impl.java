@@ -268,6 +268,75 @@ public final class AgendaDao_Impl implements AgendaDao {
     });
   }
 
+  @Override
+  public List<AgendaEntity> getAgendasForDate(final Date date) {
+    final String _sql = "SELECT * FROM tblAgenda WHERE dataAgenda = ?";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
+    int _argIndex = 1;
+    final String _tmp = __dateConverter.fromDate(date);
+    if (_tmp == null) {
+      _statement.bindNull(_argIndex);
+    } else {
+      _statement.bindString(_argIndex, _tmp);
+    }
+    __db.assertNotSuspendingTransaction();
+    final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+    try {
+      final int _cursorIndexOfIdAgenda = CursorUtil.getColumnIndexOrThrow(_cursor, "idAgenda");
+      final int _cursorIndexOfEspecialidadeAgenda = CursorUtil.getColumnIndexOrThrow(_cursor, "especialidadeAgenda");
+      final int _cursorIndexOfDataAgenda = CursorUtil.getColumnIndexOrThrow(_cursor, "dataAgenda");
+      final int _cursorIndexOfHoraAgenda = CursorUtil.getColumnIndexOrThrow(_cursor, "horaAgenda");
+      final int _cursorIndexOfLocalAgenda = CursorUtil.getColumnIndexOrThrow(_cursor, "localAgenda");
+      final int _cursorIndexOfProcedimentoAgenda = CursorUtil.getColumnIndexOrThrow(_cursor, "procedimentoAgenda");
+      final List<AgendaEntity> _result = new ArrayList<AgendaEntity>(_cursor.getCount());
+      while (_cursor.moveToNext()) {
+        final AgendaEntity _item;
+        final long _tmpIdAgenda;
+        _tmpIdAgenda = _cursor.getLong(_cursorIndexOfIdAgenda);
+        final String _tmpEspecialidadeAgenda;
+        if (_cursor.isNull(_cursorIndexOfEspecialidadeAgenda)) {
+          _tmpEspecialidadeAgenda = null;
+        } else {
+          _tmpEspecialidadeAgenda = _cursor.getString(_cursorIndexOfEspecialidadeAgenda);
+        }
+        final Date _tmpDataAgenda;
+        final String _tmp_1;
+        if (_cursor.isNull(_cursorIndexOfDataAgenda)) {
+          _tmp_1 = null;
+        } else {
+          _tmp_1 = _cursor.getString(_cursorIndexOfDataAgenda);
+        }
+        _tmpDataAgenda = __dateConverter.toDate(_tmp_1);
+        final LocalTime _tmpHoraAgenda;
+        final String _tmp_2;
+        if (_cursor.isNull(_cursorIndexOfHoraAgenda)) {
+          _tmp_2 = null;
+        } else {
+          _tmp_2 = _cursor.getString(_cursorIndexOfHoraAgenda);
+        }
+        _tmpHoraAgenda = __dateConverter.toLocalTime(_tmp_2);
+        final String _tmpLocalAgenda;
+        if (_cursor.isNull(_cursorIndexOfLocalAgenda)) {
+          _tmpLocalAgenda = null;
+        } else {
+          _tmpLocalAgenda = _cursor.getString(_cursorIndexOfLocalAgenda);
+        }
+        final String _tmpProcedimentoAgenda;
+        if (_cursor.isNull(_cursorIndexOfProcedimentoAgenda)) {
+          _tmpProcedimentoAgenda = null;
+        } else {
+          _tmpProcedimentoAgenda = _cursor.getString(_cursorIndexOfProcedimentoAgenda);
+        }
+        _item = new AgendaEntity(_tmpIdAgenda,_tmpEspecialidadeAgenda,_tmpDataAgenda,_tmpHoraAgenda,_tmpLocalAgenda,_tmpProcedimentoAgenda);
+        _result.add(_item);
+      }
+      return _result;
+    } finally {
+      _cursor.close();
+      _statement.release();
+    }
+  }
+
   @NonNull
   public static List<Class<?>> getRequiredConverters() {
     return Collections.emptyList();

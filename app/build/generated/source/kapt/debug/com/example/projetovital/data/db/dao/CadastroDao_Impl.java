@@ -196,8 +196,7 @@ public final class CadastroDao_Impl implements CadastroDao {
   }
 
   @Override
-  public Object insert(final CadastroEntity cadastro,
-      final Continuation<? super Long> $completion) {
+  public Object insert(final CadastroEntity cadastro, final Continuation<? super Long> arg1) {
     return CoroutinesRoom.execute(__db, true, new Callable<Long>() {
       @Override
       @NonNull
@@ -211,12 +210,11 @@ public final class CadastroDao_Impl implements CadastroDao {
           __db.endTransaction();
         }
       }
-    }, $completion);
+    }, arg1);
   }
 
   @Override
-  public Object update(final CadastroEntity cadastro,
-      final Continuation<? super Unit> $completion) {
+  public Object update(final CadastroEntity cadastro, final Continuation<? super Unit> arg1) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       @NonNull
@@ -230,7 +228,7 @@ public final class CadastroDao_Impl implements CadastroDao {
           __db.endTransaction();
         }
       }
-    }, $completion);
+    }, arg1);
   }
 
   @Override
@@ -356,7 +354,7 @@ public final class CadastroDao_Impl implements CadastroDao {
 
   @Override
   public Object getUserByEmail(final String email,
-      final Continuation<? super CadastroEntity> $completion) {
+      final Continuation<? super CadastroEntity> arg1) {
     final String _sql = "SELECT * FROM tblCadastro WHERE emailUser = ?";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
     int _argIndex = 1;
@@ -476,7 +474,7 @@ public final class CadastroDao_Impl implements CadastroDao {
           _statement.release();
         }
       }
-    }, $completion);
+    }, arg1);
   }
 
   @NonNull

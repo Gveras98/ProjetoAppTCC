@@ -7,6 +7,7 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
 import com.example.projetovital.data.db.entity.AgendaEntity
+import java.util.Date
 
 
 @Dao
@@ -26,4 +27,7 @@ interface AgendaDao {
     //Delete
     @Query("DELETE FROM tblAgenda WHERE idAgenda = :id")
     suspend fun delete(id: Long)
+
+    @Query("SELECT * FROM tblAgenda WHERE dataAgenda = :date")
+    fun getAgendasForDate(date: Date): List<AgendaEntity>
 }
