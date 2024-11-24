@@ -5,29 +5,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardCornerRadius="8dp">
+    app:cardCornerRadius="12dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:background="@color/item_back"
         android:padding="16dp">
 
         <!-- Procedimento -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="4dp"
+            android:padding="2dp"
             android:text="@string/alergia.nome"
-            android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:textColor="@color/item_titulo"
+            android:textSize="22sp"
+            android:textStyle="bold" />
         <TextView
             android:id="@+id/tvAlergiaNome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="18sp"
-            android:padding="4dp"
+            android:padding="2dp"
+            android:textColor="@color/item_texto"
             tools:text="Dipirona" />
+
 
         <!-- Botões lado a lado com espaçamento -->
         <LinearLayout

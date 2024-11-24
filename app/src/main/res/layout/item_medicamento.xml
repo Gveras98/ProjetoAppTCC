@@ -5,77 +5,87 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardCornerRadius="8dp">
+    app:cardCornerRadius="12dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:background="@color/item_back"
         android:padding="16dp">
 
         <!-- Nome -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="4dp"
+            android:padding="2dp"
             android:text="@string/med.nome"
-            android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:textColor="@color/item_titulo"
+            android:textSize="22sp"
+            android:textStyle="bold" />
         <TextView
             android:id="@+id/tvMedNome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="18sp"
-            android:padding="4dp"
+            android:padding="2dp"
+            android:textColor="@color/item_texto"
             tools:text="Dipirona" />
 
         <!-- Dose -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="4dp"
+            android:padding="2dp"
             android:text="@string/med.dose"
-            android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:textColor="@color/item_titulo"
+            android:textSize="22sp"
+            android:textStyle="bold" />
         <TextView
             android:id="@+id/tvMedDose"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="18sp"
-            android:padding="4dp"
+            android:padding="2dp"
+            android:textColor="@color/item_texto"
             tools:text="40 Gotas" />
 
         <!-- Duração -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="4dp"
+            android:padding="2dp"
             android:text="@string/med.duracao"
-            android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:textColor="@color/item_titulo"
+            android:textSize="22sp"
+            android:textStyle="bold" />
         <TextView
             android:id="@+id/tvMedDuracao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="18sp"
-            android:padding="4dp"
+            android:padding="2dp"
+            android:textColor="@color/item_texto"
             tools:text="3 Dias" />
 
         <!-- Intervalo -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="4dp"
+            android:padding="2dp"
             android:text="@string/med.intervalo"
-            android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:textColor="@color/item_titulo"
+            android:textSize="22sp"
+            android:textStyle="bold" />
         <TextView
             android:id="@+id/tvMedIntervalo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="18sp"
-            android:padding="4dp"
+            android:padding="2dp"
+            android:textColor="@color/item_texto"
             tools:text="8 em 8 Horas" />
+
 
         <!-- Botões lado a lado com espaçamento -->
         <LinearLayout

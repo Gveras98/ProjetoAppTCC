@@ -50,11 +50,12 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="8dp">
+            app:cardCornerRadius="12dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/item_back"
                 android:orientation="vertical"
                 android:padding="16dp">
 
@@ -64,15 +65,16 @@
                     android:layout_height="wrap_content"
                     android:padding="4dp"
                     android:text="@string/CadNome"
-                    android:textSize="18sp"
+                    android:textColor="@color/item_titulo"
+                    android:textSize="22sp"
                     android:textStyle="bold" />
-
                 <TextView
                     android:id="@+id/tvCadastroNome"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="4dp"
                     android:textSize="18sp"
+                    android:textColor="@color/item_texto"
                     tools:text="Gabriel Veras Sousa de Carvalho" />
 
                 <!-- Sexo -->
@@ -81,15 +83,16 @@
                     android:layout_height="wrap_content"
                     android:padding="4dp"
                     android:text="@string/CadSexo"
-                    android:textSize="18sp"
+                    android:textColor="@color/item_titulo"
+                    android:textSize="22sp"
                     android:textStyle="bold" />
-
                 <TextView
                     android:id="@+id/tvCadastroSexo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="4dp"
                     android:textSize="18sp"
+                    android:textColor="@color/item_texto"
                     tools:text="João" />
 
                 <!-- Nascimento -->
@@ -98,15 +101,16 @@
                     android:layout_height="wrap_content"
                     android:padding="4dp"
                     android:text="@string/CadNascimento"
-                    android:textSize="18sp"
+                    android:textColor="@color/item_titulo"
+                    android:textSize="22sp"
                     android:textStyle="bold" />
-
                 <TextView
                     android:id="@+id/tvCadastroDataNascimento"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="4dp"
                     android:textSize="18sp"
+                    android:textColor="@color/item_texto"
                     tools:text="01/01/2000" />
 
                 <!-- CPF -->
@@ -115,16 +119,17 @@
                     android:layout_height="wrap_content"
                     android:padding="4dp"
                     android:text="@string/CadCPF"
-                    android:textSize="18sp"
+                    android:textColor="@color/item_titulo"
+                    android:textSize="22sp"
                     android:textStyle="bold" />
-
                 <TextView
                     android:id="@+id/tvCadastroCPF"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="4dp"
                     android:textSize="18sp"
-                    tools:text="111.111.111-01 " />
+                    android:textColor="@color/item_texto"
+                    tools:text="111.111.111-01" />
 
                 <!-- Endereço -->
                 <TextView
@@ -132,16 +137,17 @@
                     android:layout_height="wrap_content"
                     android:padding="4dp"
                     android:text="@string/CadEndereco"
-                    android:textSize="18sp"
+                    android:textColor="@color/item_titulo"
+                    android:textSize="22sp"
                     android:textStyle="bold" />
-
                 <TextView
                     android:id="@+id/tvCadastroEndereco"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="4dp"
                     android:textSize="18sp"
-                    tools:text="Rua, 42 " />
+                    android:textColor="@color/item_texto"
+                    tools:text="Rua, 42" />
 
                 <!-- CEP -->
                 <TextView
@@ -149,15 +155,16 @@
                     android:layout_height="wrap_content"
                     android:padding="4dp"
                     android:text="@string/CadCEP"
-                    android:textSize="18sp"
+                    android:textColor="@color/item_titulo"
+                    android:textSize="22sp"
                     android:textStyle="bold" />
-
                 <TextView
                     android:id="@+id/tvCadastroCEP"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="4dp"
                     android:textSize="18sp"
+                    android:textColor="@color/item_texto"
                     tools:text="00000-000" />
 
                 <!-- Telefone -->
@@ -166,15 +173,16 @@
                     android:layout_height="wrap_content"
                     android:padding="4dp"
                     android:text="@string/CadTelefone"
-                    android:textSize="18sp"
+                    android:textColor="@color/item_titulo"
+                    android:textSize="22sp"
                     android:textStyle="bold" />
-
                 <TextView
                     android:id="@+id/tvCadastroTelefone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="4dp"
                     android:textSize="18sp"
+                    android:textColor="@color/item_texto"
                     tools:text="(11) 94002-8922" />
 
                 <!-- Email -->
@@ -183,15 +191,16 @@
                     android:layout_height="wrap_content"
                     android:padding="4dp"
                     android:text="@string/CadEmail"
-                    android:textSize="18sp"
+                    android:textColor="@color/item_titulo"
+                    android:textSize="22sp"
                     android:textStyle="bold" />
-
                 <TextView
                     android:id="@+id/tvCadastroEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="4dp"
                     android:textSize="18sp"
+                    android:textColor="@color/item_texto"
                     tools:text="Email: " />
 
                 <!-- Sus -->
@@ -200,67 +209,72 @@
                     android:layout_height="wrap_content"
                     android:padding="4dp"
                     android:text="@string/CadSus"
-                    android:textSize="18sp"
+                    android:textColor="@color/item_titulo"
+                    android:textSize="22sp"
                     android:textStyle="bold" />
-
                 <TextView
                     android:id="@+id/tvCadastroNumeroSUS"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="4dp"
                     android:textSize="18sp"
+                    android:textColor="@color/item_texto"
                     tools:text="N° Sus: " />
 
-                <!-- Plano de Saude -->
+                <!-- Plano de Saúde -->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="4dp"
                     android:text="@string/CadPlanoSaude"
-                    android:textSize="18sp"
+                    android:textColor="@color/item_titulo"
+                    android:textSize="22sp"
                     android:textStyle="bold" />
-
                 <TextView
                     android:id="@+id/tvCadastroPlanoSaude"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="4dp"
                     android:textSize="18sp"
-                    tools:text="Amil " />
+                    android:textColor="@color/item_texto"
+                    tools:text="Amil" />
 
-                <!-- Plano de Saude -->
+                <!-- N° Plano de Saúde -->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="4dp"
                     android:text="@string/CadNumPlanoSaude"
-                    android:textSize="18sp"
+                    android:textColor="@color/item_titulo"
+                    android:textSize="22sp"
                     android:textStyle="bold" />
-
                 <TextView
                     android:id="@+id/tvCadastroNumeroPlanoSaude"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="4dp"
                     android:textSize="18sp"
-                    tools:text="40028922 " />
+                    android:textColor="@color/item_texto"
+                    tools:text="40028922" />
 
-                <!-- Plano de Saude -->
+                <!-- Tipo Sanguíneo -->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="4dp"
-                    android:text="@string/CadNumPlanoSaude"
-                    android:textSize="18sp"
+                    android:text="@string/CadTipoSanguineo"
+                    android:textColor="@color/item_titulo"
+                    android:textSize="22sp"
                     android:textStyle="bold" />
-
                 <TextView
                     android:id="@+id/tvCadastroTipoSanguineo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="4dp"
                     android:textSize="18sp"
-                    tools:text="Tipo Sanguineo: " />
+                    android:textColor="@color/item_texto"
+                    tools:text="A+" />
+
 
                 <Button
                     android:id="@+id/btnCadastroEditar"

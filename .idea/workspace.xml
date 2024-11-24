@@ -30,11 +30,6 @@
           <theme>@style/Theme.ProjetoVital</theme>
         </config>
       </layout>
-      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_dependente.xml">
-        <config>
-          <theme>@style/Theme.ProjetoVital</theme>
-        </config>
-      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_exames.xml">
         <config>
           <theme>@style/Theme.ProjetoVital</theme>
@@ -716,7 +711,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732296173208</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Projeto Inicial">
+      <option name="closed" value="true" />
+      <created>1732304491578</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1732304491578</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="UpdateCopyrightCheckinHandler">

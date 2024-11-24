@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardCornerRadius="8dp">
+    app:cardCornerRadius="12dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/item_back"
         android:orientation="vertical"
         android:padding="16dp">
 
@@ -17,111 +17,127 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="4dp"
+            android:padding="2dp"
             android:text="@string/ag.especialidade"
-            android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:textColor="@color/item_titulo"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
         <TextView
             android:id="@+id/tvAgendaEspecialidade"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:textColor="@color/item_texto"
             android:textSize="18sp"
-            android:padding="4dp"
             tools:text="Cardiologista" />
 
         <!-- Data -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="4dp"
+            android:padding="2dp"
             android:text="@string/ag.data"
-            android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:textColor="@color/item_titulo"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
         <TextView
             android:id="@+id/tvAgendaData"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:textColor="@color/item_texto"
             android:textSize="18sp"
-            android:padding="4dp"
             tools:text="01/01/2024" />
 
         <!-- Hora -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="4dp"
+            android:padding="2dp"
             android:text="@string/ag.hora"
-            android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:textColor="@color/item_titulo"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
         <TextView
             android:id="@+id/tvAgendaHora"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:textColor="@color/item_texto"
             android:textSize="18sp"
-            android:padding="4dp"
             tools:text="22:00" />
 
         <!-- Local -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="4dp"
+            android:padding="2dp"
             android:text="@string/ag.local"
-            android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:textColor="@color/item_titulo"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
         <TextView
             android:id="@+id/tvAgendaLocal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:textColor="@color/item_texto"
             android:textSize="18sp"
-            android:padding="4dp"
             tools:text="Hospital Santa Casa" />
 
         <!-- Procedimento -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="4dp"
+            android:padding="2dp"
             android:text="@string/ag.procedimento"
-            android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:textColor="@color/item_titulo"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
         <TextView
             android:id="@+id/tvAgendaProcedimento"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:textColor="@color/item_texto"
             android:textSize="18sp"
-            android:padding="4dp"
             tools:text="Radiografia" />
+
 
         <!-- Botões lado a lado com espaçamento -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:layout_marginTop="16dp"
             android:gravity="end"
-            android:layout_marginTop="16dp">
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/btnAgendaEditar"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="@color/blue_btn"
                 android:padding="8dp"
                 android:text="@string/editar"
-                android:textSize="12sp"
-                android:backgroundTint="@color/blue_btn"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <Button
                 android:id="@+id/btnAgendaDelete"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/blue_btn"
                 android:padding="8dp"
                 android:text="@string/deletar"
-                android:textSize="12sp"
-                android:backgroundTint="@color/blue_btn"
+                android:textSize="16sp"
                 android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>

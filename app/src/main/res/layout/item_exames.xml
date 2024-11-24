@@ -5,94 +5,103 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardCornerRadius="8dp">
+    app:cardCornerRadius="12dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:background="@color/item_back"
         android:padding="16dp">
 
         <!-- Especialidade -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="4dp"
+            android:padding="2dp"
             android:text="@string/f.especialidade"
-            android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:textColor="@color/item_titulo"
+            android:textSize="22sp"
+            android:textStyle="bold" />
         <TextView
             android:id="@+id/tvExameEspecialidade"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="18sp"
-            android:padding="4dp"
+            android:padding="2dp"
+            android:textColor="@color/item_texto"
             tools:text="Radiografia" />
 
         <!-- Data -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="4dp"
+            android:padding="2dp"
             android:text="@string/f.data"
-            android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:textColor="@color/item_titulo"
+            android:textSize="22sp"
+            android:textStyle="bold" />
         <TextView
             android:id="@+id/tvExameData"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="18sp"
-            android:padding="4dp"
+            android:padding="2dp"
+            android:textColor="@color/item_texto"
             tools:text="01/10/2024" />
 
         <!-- Local -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="4dp"
+            android:padding="2dp"
             android:text="@string/f.local"
-            android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:textColor="@color/item_titulo"
+            android:textSize="22sp"
+            android:textStyle="bold" />
         <TextView
             android:id="@+id/tvExameLocal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="18sp"
-            android:padding="4dp"
+            android:padding="2dp"
+            android:textColor="@color/item_texto"
             tools:text="Hospital São Paulo" />
 
-        <!-- Local -->
+        <!-- Procedimento -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="4dp"
+            android:padding="2dp"
             android:text="@string/f.procedimento"
-            android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:textColor="@color/item_titulo"
+            android:textSize="22sp"
+            android:textStyle="bold" />
         <TextView
             android:id="@+id/tvExameProcedimento"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="18sp"
-            android:padding="4dp"
+            android:padding="2dp"
+            android:textColor="@color/item_texto"
             tools:text="Hospital São Paulo" />
 
         <!-- Anexo -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="4dp"
+            android:padding="2dp"
             android:text="@string/f.anexo"
-            android:textSize="18sp"
-            android:textStyle="bold"/>
-        <!-- Campo do anexo do PDF -->
+            android:textColor="@color/item_titulo"
+            android:textSize="22sp"
+            android:textStyle="bold" />
 
         <!-- Botões lado a lado com espaçamento -->
         <Button
             android:id="@+id/btnExameAnexo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="4dp"
+            android:padding="2dp"
             android:backgroundTint="@color/blue_btn"
             android:textSize="18sp"
             android:text="Abrir Anexo" />
