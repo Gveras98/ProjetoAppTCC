@@ -84,7 +84,7 @@ class FormAgendaFragment : Fragment() {
             val dia = calendar.get(Calendar.DAY_OF_MONTH)
 
             DatePickerDialog(requireContext(), { _, year, month, dayOfMonth ->
-                val dataSelecionada = String.format("%02d-%02d-%04d", dayOfMonth, month + 1, year)
+                val dataSelecionada = String.format("%02d/%02d/%04d", dayOfMonth, month + 1, year)
                 binding.etAgendaData.setText(dataSelecionada)
             }, ano, mes, dia).show()
         }

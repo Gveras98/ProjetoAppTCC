@@ -34,6 +34,7 @@ class MedicamentoListAdapter(
             AlertDialog.Builder(holder.itemView.context)
                 .setTitle("Confirmação")
                 .setMessage("Tem certeza que deseja excluir este medicamento?")
+                .setIcon(R.drawable.logo_vital2)
                 .setPositiveButton("Sim") { _, _ ->
                     viewModel.deleteMedicamento(medicamento) // Chama o ViewModel para deletar
                 }
@@ -47,6 +48,7 @@ class MedicamentoListAdapter(
             AlertDialog.Builder(holder.itemView.context)
                 .setTitle("Confirmação")
                 .setMessage("Tem Certeza Que Deseja Editar Este Medicamento?")
+                .setIcon(R.drawable.logo_vital2)
                 .setPositiveButton("Sim") { _, _ ->
                     val fragment = FormMedicamentoFragment().apply {
                         arguments = Bundle().apply {

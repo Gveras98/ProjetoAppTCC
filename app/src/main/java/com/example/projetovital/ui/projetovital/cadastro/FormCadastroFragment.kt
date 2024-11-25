@@ -5,8 +5,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.RadioButton
+import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModel
@@ -57,10 +60,33 @@ class FormCadastroFragment : Fragment() {
         ).apply {
             setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         }
+
+        // Configura o adapter para o spinner
         binding.spinnerTipoSanguineo.adapter = adapter
+
+        // Altera a cor do texto do Spinner de Tipo Sanguíneo (para o texto selecionado e itens do dropdown)
+        binding.spinnerTipoSanguineo.onItemSelectedListener = object :
+            AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                if (view is TextView) {
+                    // Altera a cor do texto do item selecionado
+                    view.setTextColor(ContextCompat.getColor(requireContext(), R.color.item_texto))
+                }
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>) {
+                // Do nothing
+            }
+        }
 
         return binding.root
     }
+
 
     // Configuração dos campos do formulário
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -100,7 +100,7 @@ class FormExamesFragment : Fragment() {
 
             DatePickerDialog(requireContext(), { _, selectedYear, selectedMonth, selectedDay ->
                 // Formatar a data e definir no EditText
-                val formattedDate = "$selectedDay-${selectedMonth + 1}-$selectedYear"
+                val formattedDate = "$selectedDay/${selectedMonth + 1}/$selectedYear"
                 binding.etExamesData.setText(formattedDate)
             }, ano, mes, dia).show()
         }

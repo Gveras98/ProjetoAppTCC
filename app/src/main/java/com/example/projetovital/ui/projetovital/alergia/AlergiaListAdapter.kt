@@ -34,6 +34,7 @@ class AlergiaListAdapter(
             AlertDialog.Builder(holder.itemView.context)
                 .setTitle("Confirmação")
                 .setMessage("Tem certeza que deseja excluir esta alergia?")
+                .setIcon(R.drawable.logo_vital2)
                 .setPositiveButton("Sim") { _, _ ->
                     viewModel.deleteAlergia(alergia) // Chama o ViewModel para deletar
                 }
@@ -48,6 +49,7 @@ class AlergiaListAdapter(
             AlertDialog.Builder(holder.itemView.context)
                 .setTitle("Confirmação")
                 .setMessage("Tem certeza que deseja editar esta alergia ?")
+                .setIcon(R.drawable.logo_vital2)
                 .setPositiveButton("Sim") { _, _ ->
                     val fragment = FormAlergiaFragment().apply {
                         arguments = Bundle().apply {

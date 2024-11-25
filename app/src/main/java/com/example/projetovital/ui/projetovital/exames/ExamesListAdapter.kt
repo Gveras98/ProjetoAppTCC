@@ -37,6 +37,7 @@ class ExamesListAdapter(
             AlertDialog.Builder(holder.itemView.context)
                 .setTitle("Confirmação")
                 .setMessage("Tem certeza que deseja excluir este exame?")
+                .setIcon(R.drawable.logo_vital2)
                 .setPositiveButton("Sim") { _, _ ->
                     viewModel.deleteExames(exames) // Chama o ViewModel para deletar
                 }
@@ -51,6 +52,7 @@ class ExamesListAdapter(
             AlertDialog.Builder(holder.itemView.context)
                 .setTitle("Confirmação")
                 .setMessage("Tem Certeza Que Deseja Editar Este Exame?")
+                .setIcon(R.drawable.logo_vital2)
                 .setPositiveButton("Sim") { _, _ ->
                     val fragment = FormExamesFragment().apply {
                         arguments = Bundle().apply {

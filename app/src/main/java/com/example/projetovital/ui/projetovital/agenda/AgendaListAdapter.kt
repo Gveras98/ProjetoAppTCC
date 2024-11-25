@@ -38,6 +38,7 @@ class AgendaListAdapter(
             AlertDialog.Builder(holder.itemView.context)
                 .setTitle("Confirmação")
                 .setMessage("Tem Certeza Que Deseja Excluir Este Agendamento?")
+                .setIcon(R.drawable.logo_vital2)
                 .setPositiveButton("Sim") { _, _ ->
                     viewModel.deleteAgenda(agenda) // Chama o ViewModel para deletar
                 }
@@ -52,6 +53,7 @@ class AgendaListAdapter(
             AlertDialog.Builder(holder.itemView.context)
                 .setTitle("Confirmação")
                 .setMessage("Tem Certeza Que Deseja Editar Este Agendamento?")
+                .setIcon(R.drawable.logo_vital2)
                 .setPositiveButton("Sim") { _, _ ->
                     val fragment = FormAgendaFragment().apply {
                         arguments = Bundle().apply {
@@ -66,6 +68,7 @@ class AgendaListAdapter(
                 .setNegativeButton("Não", null)
                 .show()
         }
+
 
     }
 

@@ -10,6 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.projetovital.MainActivity
+import com.example.projetovital.R
 import com.example.projetovital.data.db.AppDatabase
 import com.example.projetovital.data.db.dao.CadastroDao
 import com.example.projetovital.data.db.datasource.CadastroDataSource
@@ -81,6 +82,7 @@ class CadastroFragment : Fragment() {
             AlertDialog.Builder(context)
                 .setTitle("Editar Cadastro")
                 .setMessage("Deseja editar o cadastro?")
+                .setIcon(R.drawable.logo_vital2)
                 .setPositiveButton("Sim") { _, _ ->
                     cadastro?.let {
                         val bundle = Bundle().apply {

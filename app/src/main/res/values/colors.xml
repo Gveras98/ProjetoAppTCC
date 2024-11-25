@@ -16,5 +16,5 @@
     <!-- Cores do Cards -->
     <color name="item_titulo">#1383bf</color>
     <color name="item_texto">#1383bf</color>
-    <color name="item_back">#B0E0E6</color>
+    <color name="item_back">#87CEEB</color>
 </resources>

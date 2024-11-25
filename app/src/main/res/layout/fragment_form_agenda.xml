@@ -17,14 +17,16 @@
         android:padding="16dp"
         android:text="@string/agenda"
         android:textAlignment="center"
-        android:textSize="36sp"
+        android:textColor="@color/blue"
+        android:textSize="48sp"
         android:textStyle="bold" />
 
         <!-- Especialidade -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/inputEtAgendaEspecialidade"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/item_texto"> <!-- Cor do texto da hint -->
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etAgendaEspecialidade"
@@ -32,14 +34,16 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/ag.especialidade"
                 android:inputType="text"
-                android:padding="16dp" />
+                android:padding="16dp"
+                android:textColor="@color/item_texto" /> <!-- Cor do texto digitado -->
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Data -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/inputEtAgendaData"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/item_texto"> <!-- Cor do texto da hint -->
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etAgendaData"
@@ -48,14 +52,16 @@
                 android:hint="@string/ag.data"
                 android:focusable="false"
                 android:inputType="none"
-                android:padding="16dp" />
+                android:padding="16dp"
+                android:textColor="@color/item_texto" /> <!-- Cor do texto digitado -->
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Hora -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/inputEtAgendaHora"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/item_texto"> <!-- Cor do texto da hint -->
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etAgendaHora"
@@ -64,14 +70,16 @@
                 android:hint="@string/ag.hora"
                 android:focusable="false"
                 android:inputType="none"
-                android:padding="16dp" />
+                android:padding="16dp"
+                android:textColor="@color/item_texto" /> <!-- Cor do texto digitado -->
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Local -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/inputEtAgendaLocal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/item_texto"> <!-- Cor do texto da hint -->
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etAgendaLocal"
@@ -79,14 +87,16 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/ag.local"
                 android:inputType="text"
-                android:padding="16dp" />
+                android:padding="16dp"
+                android:textColor="@color/item_texto" /> <!-- Cor do texto digitado -->
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Procedimento -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/inputEtAgendaProcedimento"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/item_texto"> <!-- Cor do texto da hint -->
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etAgendaProcedimento"
@@ -94,8 +104,10 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/ag.procedimento"
                 android:inputType="text"
-                android:padding="16dp" />
+                android:padding="16dp"
+                android:textColor="@color/item_texto" /> <!-- Cor do texto digitado -->
         </com.google.android.material.textfield.TextInputLayout>
+
 
         <Button
             android:id="@+id/btnAgendaSalvar"

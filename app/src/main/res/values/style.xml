@@ -30,4 +30,6 @@
     <style name="BottomNavigationInactiveTextStyle" parent="TextAppearance.AppCompat">
         <item name="android:textSize">16sp</item>
     </style>
+
+
 </resources>

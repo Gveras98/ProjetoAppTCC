@@ -17,14 +17,16 @@
             android:padding="16dp"
             android:text="@string/medicamentos"
             android:textAlignment="center"
-            android:textSize="36sp"
+            android:textColor="@color/blue"
+            android:textSize="48sp"
             android:textStyle="bold" />
 
         <!-- Nome Medicamento -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/inputEtNome"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/item_texto"> <!-- Cor do texto da hint -->
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etMedNome"
@@ -32,14 +34,16 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/med.nome"
                 android:inputType="text"
-                android:padding="16dp" />
+                android:padding="16dp"
+                android:textColor="@color/item_texto" /> <!-- Cor do texto digitado -->
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Dose Medicamento -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/inputEtDose"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/item_texto"> <!-- Cor do texto da hint -->
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etMedDose"
@@ -47,18 +51,18 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/med.dose"
                 android:inputType="text"
-                android:padding="16dp" />
+                android:padding="16dp"
+                android:textColor="@color/item_texto" /> <!-- Cor do texto digitado -->
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Duração Medicamento -->
-        <!-- Verificar a possibilidade: Ao Inves de Intervalo - Data Inicio / Data Fim -->
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="8dp"
             android:text="@string/med.duracao"
             android:textSize="16sp"
+            android:textColor="@color/item_texto"
             android:textStyle="bold" />
 
         <com.google.android.material.textfield.TextInputLayout
@@ -70,30 +74,34 @@
                 android:id="@+id/spinnerEtDuracaoMed"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="16dp" />
+                android:backgroundTint="@color/item_texto"
+                android:padding="16dp"
+                android:textColor="@color/item_texto" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Intervalo Medicamento -->
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="8dp"
             android:text="@string/med.intervalo"
             android:textSize="16sp"
+            android:textColor="@color/item_texto"
             android:textStyle="bold" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/inputSpinnerEtIntercaloMed"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"> <!-- Cor do texto da hint -->
 
             <Spinner
                 android:id="@+id/spinnerEtIntercaloMed"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/item_texto"
                 android:padding="16dp" />
         </com.google.android.material.textfield.TextInputLayout>
+
 
         <Button
             android:id="@+id/btnMedSalvar"

@@ -17,14 +17,16 @@
             android:padding="16dp"
             android:text="@string/cadastro"
             android:textAlignment="center"
-            android:textSize="36sp"
+            android:textColor="@color/blue"
+            android:textSize="48sp"
             android:textStyle="bold" />
 
         <!-- Nome -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/inputEtUserNome"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/item_texto">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etUserNome"
@@ -32,7 +34,8 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/CadNome"
                 android:inputType="text"
-                android:padding="16dp" />
+                android:padding="16dp"
+                android:textColor="@color/item_texto" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Sexo -->
@@ -42,12 +45,14 @@
             android:padding="8dp"
             android:text="@string/CadSexo"
             android:textSize="16sp"
+            android:textColor="@color/item_texto"
             android:textStyle="bold" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/inputEtUserSexo"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/item_texto">
 
             <RadioGroup
                 android:id="@+id/etUserSexo"
@@ -62,6 +67,7 @@
                     android:layout_height="wrap_content"
                     android:padding="8dp"
                     android:text="@string/CadMasculino"
+                    android:textColor="@color/item_texto"
                     android:value="M" />
 
                 <RadioButton
@@ -70,6 +76,7 @@
                     android:layout_height="wrap_content"
                     android:padding="8dp"
                     android:text="@string/CadFeminino"
+                    android:textColor="@color/item_texto"
                     android:value="F" />
             </RadioGroup>
         </com.google.android.material.textfield.TextInputLayout>
@@ -78,7 +85,8 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/inputEtUserNascimento"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/item_texto">
 
             <EditText
                 android:id="@+id/etUserNascimento"
@@ -87,13 +95,17 @@
                 android:hint="@string/CadNascimento"
                 android:focusable="false"
                 android:inputType="none"
-                android:padding="16dp" />
+                android:padding="16dp"
+                android:textColor="@color/item_texto"
+                android:textColorHint="@color/item_texto" />
         </com.google.android.material.textfield.TextInputLayout>
+
         <!-- CPF -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/inputEtUserCpf"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/item_texto">
 
             <EditText
                 android:id="@+id/etUserCpf"
@@ -102,14 +114,17 @@
                 android:hint="@string/CadCPF"
                 android:inputType="number"
                 android:maxLength="14"
-                android:padding="16dp" />
+                android:padding="16dp"
+                android:textColor="@color/item_texto"
+                android:textColorHint="@color/item_texto" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Endereço -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/inputEtUserEndereco"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/item_texto">
 
             <EditText
                 android:id="@+id/EtUserEndereco"
@@ -117,14 +132,17 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/CadEndereco"
                 android:inputType="text"
-                android:padding="16dp" />
+                android:padding="16dp"
+                android:textColor="@color/item_texto"
+                android:textColorHint="@color/item_texto" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- CEP -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/inputEtUserCep"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/item_texto">
 
             <EditText
                 android:id="@+id/EtUserCep"
@@ -133,14 +151,17 @@
                 android:hint="@string/CadCEP"
                 android:inputType="number"
                 android:maxLength="9"
-                android:padding="16dp" />
+                android:padding="16dp"
+                android:textColor="@color/item_texto"
+                android:textColorHint="@color/item_texto" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Telefone -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/inputEtUserTelefone"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/item_texto">
 
             <EditText
                 android:id="@+id/EtUserTelefone"
@@ -149,14 +170,17 @@
                 android:hint="@string/CadTelefone"
                 android:inputType="phone"
                 android:maxLength="15"
-                android:padding="16dp" />
+                android:padding="16dp"
+                android:textColor="@color/item_texto"
+                android:textColorHint="@color/item_texto" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Email -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/inputEtUserEmail"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/item_texto">
 
             <EditText
                 android:id="@+id/EtUserEmail"
@@ -164,14 +188,17 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/CadEmail"
                 android:inputType="textEmailAddress"
-                android:padding="16dp" />
+                android:padding="16dp"
+                android:textColor="@color/item_texto"
+                android:textColorHint="@color/item_texto" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- N° Sus -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/inputEtUserSus"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/item_texto">
 
             <EditText
                 android:id="@+id/EtUserSus"
@@ -179,14 +206,17 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/CadSus"
                 android:inputType="number"
-                android:padding="16dp" />
+                android:padding="16dp"
+                android:textColor="@color/item_texto"
+                android:textColorHint="@color/item_texto" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Plano de Saúde -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/inputEtUserPlanoSaude"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/item_texto">
 
             <EditText
                 android:id="@+id/EtUserPlanoSaude"
@@ -194,14 +224,17 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/CadPlanoSaude"
                 android:inputType="text"
-                android:padding="16dp" />
+                android:padding="16dp"
+                android:textColor="@color/item_texto"
+                android:textColorHint="@color/item_texto" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- N° Plano de Saúde -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/inputEtUserNumPlanoSaude"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/item_texto">
 
             <EditText
                 android:id="@+id/EtUserNumPlanoSaude"
@@ -209,7 +242,9 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/CadNumPlanoSaude"
                 android:inputType="number"
-                android:padding="16dp" />
+                android:padding="16dp"
+                android:textColor="@color/item_texto"
+                android:textColorHint="@color/item_texto" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Tipo Sanguíneo -->
@@ -219,12 +254,14 @@
             android:padding="8dp"
             android:text="@string/CadTipoSanguineo"
             android:textSize="16sp"
+            android:textColor="@color/item_texto"
             android:textStyle="bold" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/inputSpinnerTipoSanguineo"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/item_texto">
 
             <Spinner
                 android:id="@+id/spinnerTipoSanguineo"
@@ -237,7 +274,8 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/inputEtUserSenha"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/item_texto">
 
             <EditText
                 android:id="@+id/EtUserSenha"
@@ -245,7 +283,9 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/CadSenha"
                 android:inputType="number"
-                android:padding="16dp" />
+                android:padding="16dp"
+                android:textColor="@color/item_texto"
+                android:textColorHint="@color/item_texto" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button

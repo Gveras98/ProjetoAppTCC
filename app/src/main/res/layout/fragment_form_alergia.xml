@@ -17,14 +17,16 @@
             android:padding="16dp"
             android:text="@string/alergias"
             android:textAlignment="center"
-            android:textSize="36sp"
+            android:textColor="@color/blue"
+            android:textSize="48sp"
             android:textStyle="bold" />
 
         <!-- Nome Alergia -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/inputEtAlergiaNome"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/item_texto"> <!-- Cor do texto da hint -->
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etAlergiaNome"
@@ -32,7 +34,8 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/alergia.nome"
                 android:inputType="text"
-                android:padding="16dp" />
+                android:padding="16dp"
+                android:textColor="@color/item_texto" /> <!-- Cor do texto digitado -->
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
