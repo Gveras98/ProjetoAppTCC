@@ -45,7 +45,7 @@ abstract class AppDatabase : RoomDatabase() {
         fun getInstance(context: Context): AppDatabase {
             return INSTANCE ?: synchronized(this) {
                 val instance = Room.databaseBuilder(
-                    context.applicationContext,  // Usa o contexto da aplicação para evitar vazamentos
+                    context.applicationContext,
                     AppDatabase::class.java,
                     "app_database"
                 ).build()

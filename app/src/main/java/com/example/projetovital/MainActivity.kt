@@ -118,7 +118,7 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
             }
-        }, 10000) // 10 segundos após o login
+        }, 5000) // 10 segundos após o login
     }
 
     // Enviar notificação com agendamentos para o dia seguinte

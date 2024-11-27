@@ -108,7 +108,7 @@ class FormAgendaFragment : Fragment() {
             val local = binding.etAgendaLocal.text.toString()
             val procedimento = binding.etAgendaProcedimento.text.toString()
 
-            val dateFormat = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault())
+            val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
             val dataAgenda: Date? = try {
                 dateFormat.parse(dataString)
             } catch (e: Exception) {

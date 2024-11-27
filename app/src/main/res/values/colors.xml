@@ -11,10 +11,13 @@
     <color name="white_light">#d1dded</color>
     <color name="main">#F0FFFF</color>
     <color name="main2">#1383bf</color>
-    <!-- F0FFFF / F0F8FF -->
+    <!-- back - ADD8E6
+         titulo -
+         item
+         -->
 
     <!-- Cores do Cards -->
-    <color name="item_titulo">#1383bf</color>
+    <color name="item_titulo">#1e71ba</color>
     <color name="item_texto">#1383bf</color>
-    <color name="item_back">#87CEEB</color>
+    <color name="item_back">#ADD8E6</color>
 </resources>
